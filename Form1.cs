@@ -875,7 +875,14 @@ namespace Vision_Automix
 
         private void TickGUIupdate_Tick(object sender, EventArgs e)
         {
+            //GLOBAL ACTIONS
+            companionToggleButton.Text = (runData.companionOutputEnabled ? "Companion Enabled" : "Companion Disabled");
+            companionToggleButton.ForeColor = (runData.companionOutputEnabled ? Color.DarkGreen : Color.DarkRed);
+
+
+
             if (tabControl1.SelectedIndex == 1) {
+                //AUDIO SETUP PAGE
                 volumeBar1.Value = runData.speaker1Volume;
                 volumeBar2.Value = runData.speaker2Volume;
                 volumeBar3.Value = runData.speaker3Volume;
@@ -899,7 +906,7 @@ namespace Vision_Automix
 
                 labelPGM.Text = ("Camera " + runData.cameraPGM.ToString());
                 labelPRW.Text = ("Camera " + runData.cameraPRW.ToString());
-                shottimeLabel.Text = ("Shot time: " + runData.currentShotTime.ToString());
+                shottimeLabel.Text = ("Shot time: " + ((runData.currentShotTime < 99999) ? (runData.currentShotTime.ToString() + "s") : "0s"));
 
                 nextSpeakerPercentLabel.Text = ((runData.nextSpeakerVotePercent.ToString() + "%"));
 
@@ -1602,7 +1609,10 @@ namespace Vision_Automix
 
         private void RestartDirector()
         {
-           ///NOT IMPLEMENTED YET
+            director.Initialize();
+            cameraOp.Initialize();
+            switcher.Initialize();
+            runData.resetToDefault();
         }
    
 
@@ -1657,6 +1667,12 @@ namespace Vision_Automix
         private void SlowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CallMixPreset("slow");
+        }
+
+        private void companionToggleButton_Click(object sender, EventArgs e)
+        {
+            runData.companionOutputEnabled = (runData.companionOutputEnabled ? false : true);
+            Console.WriteLine(runData.companionOutputEnabled ? "Companion output enabled" : "Companion output disabled");
         }
     }
 }

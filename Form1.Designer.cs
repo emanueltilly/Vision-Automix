@@ -463,6 +463,8 @@
             this.tickGUIupdate = new System.Windows.Forms.Timer(this.components);
             this.tickAudio = new System.Windows.Forms.Timer(this.components);
             this.tickDirector = new System.Windows.Forms.Timer(this.components);
+            this.companionToggleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).BeginInit();
@@ -790,6 +792,11 @@
             this.numUpDwnMinShotTime.Location = new System.Drawing.Point(12, 180);
             this.numUpDwnMinShotTime.Maximum = new decimal(new int[] {
             60,
+            0,
+            0,
+            0});
+            this.numUpDwnMinShotTime.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
@@ -7494,9 +7501,11 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.applyButton,
             this.toolStripDropDownButton1,
-            this.dropDownButtonMixPresets});
+            this.dropDownButtonMixPresets,
+            this.companionToggleButton,
+            this.toolStripSeparator1,
+            this.applyButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(997, 25);
@@ -7617,6 +7626,24 @@
             this.tickDirector.Enabled = true;
             this.tickDirector.Interval = 50;
             this.tickDirector.Tick += new System.EventHandler(this.TickDirector_Tick);
+            // 
+            // companionToggleButton
+            // 
+            this.companionToggleButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.companionToggleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.companionToggleButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companionToggleButton.Image = ((System.Drawing.Image)(resources.GetObject("companionToggleButton.Image")));
+            this.companionToggleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.companionToggleButton.Name = "companionToggleButton";
+            this.companionToggleButton.Size = new System.Drawing.Size(123, 22);
+            this.companionToggleButton.Text = "Companion Disabled";
+            this.companionToggleButton.Click += new System.EventHandler(this.companionToggleButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // Form1
             // 
@@ -8299,6 +8326,8 @@
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carefulToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem slowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton companionToggleButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

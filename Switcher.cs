@@ -14,7 +14,10 @@ namespace Vision_Automix
 
         private bool wideShotIsLive = false;
 
-
+        public void Initialize()
+        {
+            localCurrentSpeaker = 99;
+        }
 
         public void Tick(ProjectData data, RuntimeData runData)
         {
@@ -67,6 +70,7 @@ namespace Vision_Automix
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             localCurrentSpeaker = runData.currentSpeaker;
+                            Console.WriteLine("Camera ID: " + cameraID);
                             TellMixer(data, runData, true, cameraID);
                             runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
                             wideShotIsLive = true;                                         //Set wideshot flag
@@ -96,7 +100,6 @@ namespace Vision_Automix
             ///
             if (runData.changedNextSpeaker == true && (runData.cameraPRW != runData.changePRWcam))
             {
-                Console.WriteLine(runData.changedNextSpeaker);
                 TellMixer(data, runData, false, runData.changePRWcam);
                 runData.changePRW = false;
             }
@@ -156,7 +159,7 @@ namespace Vision_Automix
             }
 
             //Send button press to companion
-            companion.sendPush(companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
+            companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
             
 
             //Set GUI
@@ -178,11 +181,12 @@ namespace Vision_Automix
             }
 
             //Check if the cameras found are currently busy
-            /*loopCounter = 0;
-            /foreach(bool b in runData.cameraBusy)
+            loopCounter = 0;
+            foreach(bool b in runData.cameraBusy)
             {
                 if (result[loopCounter] == true && runData.cameraBusy[loopCounter] == true) { result[loopCounter] = false; }
-            }*/
+                
+            }
 
 
 

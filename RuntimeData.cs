@@ -45,11 +45,14 @@ namespace Vision_Automix
 
         public Int64 lastTalkingTime = 0;
 
+
         //CameraOperator
         public int[] cameraPosition = new int[] { 99, 99, 99, 99, 99, 99, 99, 99 };
         public bool[] cameraBusy = new bool[] {true, true, true, true, true, true, true, true};
         public Int64[] camerBusyTime = new Int64[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-        
+
+        //Companion
+        public bool companionOutputEnabled = false;
 
 
         //Triggers
@@ -60,6 +63,61 @@ namespace Vision_Automix
 
         public bool changePRW = false;
         public int changePRWcam = 0;
+
+        public void resetToDefault()
+        {
+            //Cam Pos Matrix - Used to quickly idenfify what positions are enabled for what cameras
+            camposMatrix = new bool[8, 9];
+
+            //Speakers
+            speaker1Volume = 0;
+            speaker2Volume = 0;
+            speaker3Volume = 0;
+            speaker4Volume = 0;
+            speaker5Volume = 0;
+            speaker6Volume = 0;
+            speaker7Volume = 0;
+            speaker8Volume = 0;
+            speakersOpen = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+            //Director
+
+            currentSpeaker = 1;
+            nextSpeaker = 1;
+            longestSpeaker = 1;
+
+            multipleSpeakers = false;
+            noSpeakers = false;
+
+            nextSpeakerVotePercent = 0;
+
+            //Switcher
+
+            cameraPGM = 1;
+            cameraPRW = 1;
+
+            lastCutTime = 0;
+            currentShotTime = 0;
+
+            lastTalkingTime = 0;
+
+            //CameraOperator
+            cameraPosition = new[] { 99, 99, 99, 99, 99, 99, 99, 99 };
+            cameraBusy = new[] { true, true, true, true, true, true, true, true };
+            camerBusyTime = new Int64[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
+
+
+        //Triggers
+            changedPGM = false;
+            changedPRW = false;
+            changedCurrentSpeaker = false;
+            changedNextSpeaker = false;
+
+            changePRW = false;
+            changePRWcam = 0;
+        }
 
 
     }

@@ -13,29 +13,36 @@ namespace Vision_Automix
 {
     class Companion
     {
-        public void sendPush(string ip, int port, int page, int bank)
+        public void sendPush(RuntimeData runData, string ip, int port, int page, int bank)
         {
-            Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-
-            try
+            if (runData.companionOutputEnabled == true)
             {
-                string message = ("BANK-PRESS " + page.ToString() + " " + bank.ToString());
+                Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 
-                byte[] packetData = System.Text.ASCIIEncoding.ASCII.GetBytes(message);
+                try
+                {
+                    string message = ("BANK-PRESS " + page.ToString() + " " + bank.ToString());
 
-                IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ip), port);
+                    byte[] packetData = System.Text.ASCIIEncoding.ASCII.GetBytes(message);
+
+                    IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ip), port);
 
 
-                client.SendTo(packetData, ep);
+                    client.SendTo(packetData, ep);
 
-                //Console.WriteLine("Pressing button " + page + "-" + bank);
+                    //Console.WriteLine("Pressing button " + page + "-" + bank);
 
-            }
-            catch (Exception e)
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error sending TCP packet");
+                    MessageBox.Show("Error sending TCP packet to Companion. The TCP client has probably not been initialized with a IP and Port yet.        " + e);
+                }
+            } else
             {
-                Console.WriteLine("Error sending TCP packet");
-                MessageBox.Show("Error sending TCP packet to Companion. The TCP client has probably not been initialized with a IP and Port yet.        " + e);
+                Console.WriteLine("Companion output disabled, no command was sent.");
             }
+            
 
 
         }

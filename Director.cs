@@ -25,13 +25,21 @@ namespace Vision_Automix
     public void Initialize()
         {
             voteArray = new int[voteLength];
-
+            historyRowCounter = 0;
             //Fill history with 0
             history = Fill2DArray(history);
 
             //Fill vote array with 0
             voteArray = FillArray(voteArray);
+
+            voteLength = 40;
+            voteLengthPrev = 40;
+            voteCounter = 0;
             
+            history = new int[15, 8];
+            historyWeighted = new int[] { 0,0,0,0,0,0,0,0};
+
+
         }
 
         public void Tick(ProjectData data, RuntimeData runData)

@@ -13,6 +13,11 @@ namespace Vision_Automix
 
         private int speakerHistory = 99; //99 only to trigger change on init
 
+        public void Initialize()
+        {
+            speakerHistory = 99;
+        }
+
         public void Tick(ProjectData data, RuntimeData runData)
         {
             if (runData.nextSpeaker != speakerHistory)
@@ -416,7 +421,7 @@ namespace Vision_Automix
                 runData.cameraPosition[(cam - 1)] = pos;
 
                 //Tell Companion to push the button
-                companion.sendPush(companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
+                companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
 
                 
             }

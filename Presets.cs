@@ -14,14 +14,14 @@ namespace Vision_Automix
             {
                 case "instant":
                     data.voteLength = 5;
-                    data.minimumShotTime = 0;
+                    data.minimumShotTime = 1;
                     data.maximumQuietTime = 10;
                     data.enableCutToWideOnQuiet = true;
                     return true;
                     
                 case "fast":
                     data.voteLength = 10;
-                    data.minimumShotTime = 2;
+                    data.minimumShotTime = 3;
                     data.maximumQuietTime = 10;
                     data.enableCutToWideOnQuiet = true;
                     return true;
