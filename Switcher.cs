@@ -55,7 +55,7 @@ namespace Vision_Automix
                 switch (switchType)
                 {
                     case 1:
-                        cameraID = GetCamera(runData, false, runData.currentSpeaker);
+                        cameraID = GetCamera(data, runData, false, runData.currentSpeaker);
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             localCurrentSpeaker = runData.currentSpeaker;
@@ -65,7 +65,7 @@ namespace Vision_Automix
                         }
                         break;
                     case 2:
-                        cameraID = GetCamera(runData, true, 0);
+                        cameraID = GetCamera(data, runData, true, 0);
                         
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
@@ -77,7 +77,7 @@ namespace Vision_Automix
                         }
                         break;
                     case 3:
-                        cameraID = GetCamera(runData, true, 0);
+                        cameraID = GetCamera(data, runData, true, 0);
                         Console.WriteLine("Camera id NO SOUND: " + cameraID);
                         
                         if (cameraID != 0)                                                  //Catch no camera is available
@@ -198,7 +198,7 @@ namespace Vision_Automix
 
         //Select a camera for switching
         //Will return 0 if no camera available
-        private int GetCamera(RuntimeData runData, bool wideShot, int speakerID)
+        private int GetCamera(ProjectData data, RuntimeData runData, bool wideShot, int speakerID)
         {
 
 
@@ -209,13 +209,25 @@ namespace Vision_Automix
 
             //Return if not camera is available
             if (CountTrueInBoolArray(availableCameras) < 1) { return 0; }
+
             //If one or more cameras is available
             else
             {
-                
+
                 int loopcounter = 0;
                 bool foundCamera = false;
                 int cameraIDfound = 0;
+                
+
+                //Check if preferred camera is available
+                if (availableCameras[((data.prefPos[speakerID]) - 1)] == true)
+                {
+                    foundCamera = true;
+                    cameraIDfound = data.prefPos[speakerID];
+                    return cameraIDfound;
+                }
+
+                //If not search for another camera
                 foreach (bool b in availableCameras)
                 {
                     if (availableCameras[loopcounter] == true && foundCamera == false)

@@ -449,7 +449,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.logLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.applyButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.saveProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveProjectAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -460,11 +459,13 @@
             this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carefulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companionToggleButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.applyButton = new System.Windows.Forms.ToolStripButton();
             this.tickGUIupdate = new System.Windows.Forms.Timer(this.components);
             this.tickAudio = new System.Windows.Forms.Timer(this.components);
             this.tickDirector = new System.Windows.Forms.Timer(this.components);
-            this.companionToggleButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.labelSpeakerOnPGM = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).BeginInit();
@@ -7220,6 +7221,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.labelSpeakerOnPGM);
             this.tabPage4.Controls.Add(this.label83);
             this.tabPage4.Controls.Add(this.labelBusy8);
             this.tabPage4.Controls.Add(this.labelBusy7);
@@ -7512,19 +7514,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // applyButton
-            // 
-            this.applyButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.applyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.applyButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.applyButton.Image = ((System.Drawing.Image)(resources.GetObject("applyButton.Image")));
-            this.applyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(89, 22);
-            this.applyButton.Text = "Apply settings";
-            this.applyButton.ToolTipText = "Apply";
-            this.applyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -7609,6 +7598,37 @@
             this.slowToolStripMenuItem.Text = "Slow";
             this.slowToolStripMenuItem.Click += new System.EventHandler(this.SlowToolStripMenuItem_Click);
             // 
+            // companionToggleButton
+            // 
+            this.companionToggleButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.companionToggleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.companionToggleButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.companionToggleButton.Image = ((System.Drawing.Image)(resources.GetObject("companionToggleButton.Image")));
+            this.companionToggleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.companionToggleButton.Name = "companionToggleButton";
+            this.companionToggleButton.Size = new System.Drawing.Size(123, 22);
+            this.companionToggleButton.Text = "Companion Disabled";
+            this.companionToggleButton.Click += new System.EventHandler(this.CompanionToggleButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // applyButton
+            // 
+            this.applyButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.applyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.applyButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applyButton.Image = ((System.Drawing.Image)(resources.GetObject("applyButton.Image")));
+            this.applyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(89, 22);
+            this.applyButton.Text = "Apply settings";
+            this.applyButton.ToolTipText = "Apply";
+            this.applyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+            // 
             // tickGUIupdate
             // 
             this.tickGUIupdate.Enabled = true;
@@ -7627,23 +7647,19 @@
             this.tickDirector.Interval = 50;
             this.tickDirector.Tick += new System.EventHandler(this.TickDirector_Tick);
             // 
-            // companionToggleButton
+            // labelSpeakerOnPGM
             // 
-            this.companionToggleButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.companionToggleButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.companionToggleButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.companionToggleButton.Image = ((System.Drawing.Image)(resources.GetObject("companionToggleButton.Image")));
-            this.companionToggleButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.companionToggleButton.Name = "companionToggleButton";
-            this.companionToggleButton.Size = new System.Drawing.Size(123, 22);
-            this.companionToggleButton.Text = "Companion Disabled";
-            this.companionToggleButton.Click += new System.EventHandler(this.companionToggleButton_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.labelSpeakerOnPGM.AutoSize = true;
+            this.labelSpeakerOnPGM.BackColor = System.Drawing.Color.Snow;
+            this.labelSpeakerOnPGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerOnPGM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelSpeakerOnPGM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSpeakerOnPGM.Location = new System.Drawing.Point(316, 293);
+            this.labelSpeakerOnPGM.Name = "labelSpeakerOnPGM";
+            this.labelSpeakerOnPGM.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelSpeakerOnPGM.Size = new System.Drawing.Size(28, 24);
+            this.labelSpeakerOnPGM.TabIndex = 21;
+            this.labelSpeakerOnPGM.Text = "---";
             // 
             // Form1
             // 
@@ -8328,6 +8344,7 @@
         private System.Windows.Forms.ToolStripMenuItem slowToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton companionToggleButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Label labelSpeakerOnPGM;
     }
 }
 

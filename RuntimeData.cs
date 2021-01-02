@@ -9,8 +9,7 @@ namespace Vision_Automix
     class RuntimeData
     {
         // This is all realtime data that does not need to be stored in the project
-        //This comment is a test
-        public int test = 0;
+
         //Cam Pos Matrix - Used to quickly idenfify what positions are enabled for what cameras
         public bool[,] camposMatrix = new bool[8, 9];
 
@@ -65,7 +64,7 @@ namespace Vision_Automix
         public bool changePRW = false;
         public int changePRWcam = 0;
 
-        public void resetToDefault()
+        public void ResetToDefault()
         {
             //Cam Pos Matrix - Used to quickly idenfify what positions are enabled for what cameras
             camposMatrix = new bool[8, 9];
@@ -110,7 +109,7 @@ namespace Vision_Automix
 
 
 
-        //Triggers
+            //Triggers
             changedPGM = false;
             changedPRW = false;
             changedCurrentSpeaker = false;

@@ -908,6 +908,8 @@ namespace Vision_Automix
                 labelPRW.Text = ("Camera " + runData.cameraPRW.ToString());
                 shottimeLabel.Text = ("Shot time: " + ((runData.currentShotTime < 99999) ? (runData.currentShotTime.ToString() + "s") : "0s"));
 
+                labelSpeakerOnPGM.Text = ("On Air: Speaker " + (runData.cameraPosition[(runData.cameraPGM - 1)]).ToString());
+
                 nextSpeakerPercentLabel.Text = ((runData.nextSpeakerVotePercent.ToString() + "%"));
 
                 if (runData.noSpeakers == true && runData.multipleSpeakers == true) { liveStatusLabel.Text = "ERROR"; }
@@ -1612,7 +1614,7 @@ namespace Vision_Automix
             director.Initialize();
             cameraOp.Initialize();
             switcher.Initialize();
-            runData.resetToDefault();
+            runData.ResetToDefault();
         }
    
 
@@ -1669,7 +1671,7 @@ namespace Vision_Automix
             CallMixPreset("slow");
         }
 
-        private void companionToggleButton_Click(object sender, EventArgs e)
+        private void CompanionToggleButton_Click(object sender, EventArgs e)
         {
             runData.companionOutputEnabled = (runData.companionOutputEnabled ? false : true);
             Console.WriteLine(runData.companionOutputEnabled ? "Companion output enabled" : "Companion output disabled");
