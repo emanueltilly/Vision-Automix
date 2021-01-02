@@ -9,7 +9,8 @@ namespace Vision_Automix
     class RuntimeData
     {
         // This is all realtime data that does not need to be stored in the project
-
+        //This comment is a test
+        public int test = 0;
         //Cam Pos Matrix - Used to quickly idenfify what positions are enabled for what cameras
         public bool[,] camposMatrix = new bool[8, 9];
 
