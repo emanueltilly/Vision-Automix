@@ -20,11 +20,48 @@ namespace Vision_Automix
 
         public void Tick(ProjectData data, RuntimeData runData)
         {
+            //Force reset speaker history
+            if (runData.forceResetSpeakerHistory == true) { speakerHistory = 99; }
+            //Sync realtime positions with static positions
+            for (int iii = 0; iii < 8; iii++)
+            {
+                if (data.staticCameras[iii] == true)
+                {
+                    runData.cameraPosition[iii] = data.staticCameraPositions[iii];
+                    runData.cameraBusy[iii] = false;
+                }
+            }
+
             if (runData.nextSpeaker != speakerHistory)
             {
                 speakerHistory = runData.nextSpeaker;       //Update local history
+                int prefCam = data.prefPos[runData.nextSpeaker];       //Get preferred camera for next speaker 
 
-                int prefCam = data.prefPos[runData.nextSpeaker];       //Get preferred camer for next speaker
+                //Check if static camera is available
+                if (data.staticCameraPositions.Contains(runData.nextSpeaker))
+                {
+                    int cameraIndex = 1;
+                    
+                    //Search for index of first static camera with correct position
+                    int loop = 0;
+                    bool breakLoop = false;
+                    while (loop < 8 && breakLoop == false)
+                    {
+                        if (data.staticCameraPositions[loop] == runData.nextSpeaker)
+                        {
+                            cameraIndex = (loop + 1);
+                            breakLoop = true;
+                        }
+                        loop++;
+                    }
+
+                    //Flag for switcher to load camera on Preview bus
+                    runData.changePRWcam = cameraIndex;
+                    runData.changePRW = true;
+                    
+                }
+
+                
 
                 //Check if preferred camera is available
                 bool prefCAMposEnabled = GetCameraPositionEnabled(runData, prefCam, runData.nextSpeaker);
@@ -49,7 +86,7 @@ namespace Vision_Automix
                     {
                         if (availableCameras[loopcounter] == true && runData.cameraBusy[loopcounter] == false && GetCameraEnabled(data, (loopcounter + 1)) == true)
                         {
-                            CallPosition(data, runData, (loopcounter + 1), runData.nextSpeaker);
+                            if((loopcounter + 1) != runData.cameraPGM) { CallPosition(data, runData, (loopcounter + 1), runData.nextSpeaker); }
                             //Flag for switcher to load camera on Preview bus
                             runData.changePRWcam = (loopcounter + 1);
                             runData.changePRW = true;
@@ -73,8 +110,9 @@ namespace Vision_Automix
         private void CallPosition(ProjectData data, RuntimeData runData, int cam, int pos)
         {
             int cameraCurrentPosition = runData.cameraPosition[(cam - 1)];      //Get the current position of the camera
+           
 
-            if (cameraCurrentPosition != pos)
+            if (cameraCurrentPosition != pos && data.staticCameras[(cam - 1)] != true)
             {
                 Console.WriteLine("Calling position " + pos + " on camera " + cam);
                 //Init variables

@@ -33,6 +33,9 @@ namespace Vision_Automix
         public bool enabledCamera7 = true;
         public bool enabledCamera8 = true;
 
+        //SPEAKER NAMES
+        public string[] speakerNames = new string[8] { "Speaker 1", "Speaker 2", "Speaker 3", "Speaker 4", "Speaker 5", "Speaker 6", "Speaker 7", "Speaker 8" };
+
         //1 DEVICE SETUP
         public int speakers = 8;
         public int cameras = 8;
@@ -91,6 +94,11 @@ namespace Vision_Automix
 
 
         //3 PTZ SETUP
+
+
+        //Static settings
+        public bool[] staticCameras = new bool[8] { false, false, false, false, false, false, false, false };
+        public int[] staticCameraPositions = new int[8] { 1, 2, 3, 4, 5, 6, 7, 8 };
 
         
 

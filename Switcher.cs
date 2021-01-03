@@ -45,23 +45,53 @@ namespace Vision_Automix
                 // 3 - Quiet / No speakers
                 
                 int switchType;
-                if (runData.currentSpeaker != localCurrentSpeaker && runData.currentSpeaker != 0) { switchType = 1; }
+                bool currentPgmShowsSpeakerTalkning = (runData.cameraPosition[(runData.cameraPGM - 1)] == runData.currentSpeaker);
+
+
+                // Wide is live, but only one speaker is talking
+                if (wideShotIsLive == true && runData.currentSpeaker != 0) { switchType = 1; runData.forceResetSpeakerHistory = true; }
+                // Closeup is live, but on the incorrect speaker
+                else if (wideShotIsLive != true && currentPgmShowsSpeakerTalkning != true) {
+                    if(GetCamera(data, runData, false, runData.currentSpeaker) != runData.cameraPGM)
+                    {
+                        switchType = 4;
+                        Console.WriteLine("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ");
+                    } else
+                    {
+                        switchType = 2;
+                        runData.forceResetSpeakerHistory = true;
+
+                    }
+                }
+                // Multple speakers are talking and wide camera is not live
+                else if (wideShotIsLive != true && runData.currentSpeaker == 0 && runData.multipleSpeakers == true) { switchType = 2;}
+                // No speaker is talking and wide camera is not live
+                else if (wideShotIsLive != true && runData.currentSpeaker == 0 && runData.noSpeakers == true) { switchType = 3;}
+                // Catch
+                else { switchType = 0; }
+
+                /*
+                if ((runData.cameraPosition[(runData.cameraPGM - 1)] != runData.currentSpeaker) && runData.currentSpeaker != 0) { switchType = 1; }
+                else if ((runData.cameraPosition[(runData.cameraPGM - 1)] == 0) && runData.currentSpeaker != 0) { switchType = 2; }
+                else if (runData.currentSpeaker != localCurrentSpeaker && runData.currentSpeaker != 0) { switchType = 1; }
                 else if (runData.multipleSpeakers == true && runData.currentSpeaker == 0 && wideShotIsLive == false) { switchType = 2; }
                 else if (runData.noSpeakers == true && data.enableCutToWideOnQuiet == true && wideShotIsLive == false && localQuietTime > data.minimumShotTime) { switchType = 3; }
                 else { switchType = 0; }
-
+                */
 
                 //PREFORM CUT
                 switch (switchType)
                 {
                     case 1:
                         cameraID = GetCamera(data, runData, false, runData.currentSpeaker);
+                        
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             localCurrentSpeaker = runData.currentSpeaker;
-                            TellMixer(data, runData, true, runData.currentSpeaker);
+                            TellMixer(data, runData, true, cameraID);
                             runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
                             wideShotIsLive = false;                                         //Set wideshot flag
+                            
                         }
                         break;
                     case 2:
@@ -72,6 +102,7 @@ namespace Vision_Automix
                             TellMixer(data, runData, true, cameraID);
                             runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
                             wideShotIsLive = true;                                         //Set wideshot flag
+                            
                         }
                         break;
                     case 3:
@@ -83,6 +114,17 @@ namespace Vision_Automix
                             wideShotIsLive = true;                                         //Set wideshot flag
                         }
                         break;
+                    case 4:
+                        cameraID = GetCamera(data, runData, true, 0);
+                        if (cameraID != 0)                                                  //Catch no camera is available
+                        {
+                            TellMixer(data, runData, true, cameraID);
+                            runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
+                            wideShotIsLive = true;                                         //Set wideshot flag
+                        }
+                        break;
+
+
                 }
                 
    

@@ -50,6 +50,7 @@ namespace Vision_Automix
         public int[] cameraPosition = new int[] { 99, 99, 99, 99, 99, 99, 99, 99 };
         public bool[] cameraBusy = new bool[] {true, true, true, true, true, true, true, true};
         public Int64[] camerBusyTime = new Int64[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+        public bool forceResetSpeakerHistory = false;
 
         //Companion
         public bool companionOutputEnabled = false;
@@ -105,7 +106,7 @@ namespace Vision_Automix
             cameraPosition = new[] { 99, 99, 99, 99, 99, 99, 99, 99 };
             cameraBusy = new[] { true, true, true, true, true, true, true, true };
             camerBusyTime = new Int64[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-
+            
 
 
 
