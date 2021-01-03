@@ -425,6 +425,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.labelSpeakerOnPGM = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.labelBusy8 = new System.Windows.Forms.Label();
             this.labelBusy7 = new System.Windows.Forms.Label();
@@ -465,7 +466,7 @@
             this.tickGUIupdate = new System.Windows.Forms.Timer(this.components);
             this.tickAudio = new System.Windows.Forms.Timer(this.components);
             this.tickDirector = new System.Windows.Forms.Timer(this.components);
-            this.labelSpeakerOnPGM = new System.Windows.Forms.Label();
+            this.checkBoxEnablePRWbus = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).BeginInit();
@@ -705,6 +706,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.checkBoxEnablePRWbus);
             this.tabPage1.Controls.Add(this.checkBoxUseQuiet);
             this.tabPage1.Controls.Add(this.label86);
             this.tabPage1.Controls.Add(this.numUpDwnQuietTime);
@@ -7250,6 +7252,20 @@
             this.tabPage4.Text = "4 - Live Monitor";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // labelSpeakerOnPGM
+            // 
+            this.labelSpeakerOnPGM.AutoSize = true;
+            this.labelSpeakerOnPGM.BackColor = System.Drawing.Color.Snow;
+            this.labelSpeakerOnPGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerOnPGM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelSpeakerOnPGM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSpeakerOnPGM.Location = new System.Drawing.Point(316, 293);
+            this.labelSpeakerOnPGM.Name = "labelSpeakerOnPGM";
+            this.labelSpeakerOnPGM.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelSpeakerOnPGM.Size = new System.Drawing.Size(28, 24);
+            this.labelSpeakerOnPGM.TabIndex = 21;
+            this.labelSpeakerOnPGM.Text = "---";
+            // 
             // label83
             // 
             this.label83.AutoSize = true;
@@ -7647,19 +7663,15 @@
             this.tickDirector.Interval = 50;
             this.tickDirector.Tick += new System.EventHandler(this.TickDirector_Tick);
             // 
-            // labelSpeakerOnPGM
+            // checkBoxEnablePRWbus
             // 
-            this.labelSpeakerOnPGM.AutoSize = true;
-            this.labelSpeakerOnPGM.BackColor = System.Drawing.Color.Snow;
-            this.labelSpeakerOnPGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSpeakerOnPGM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelSpeakerOnPGM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelSpeakerOnPGM.Location = new System.Drawing.Point(316, 293);
-            this.labelSpeakerOnPGM.Name = "labelSpeakerOnPGM";
-            this.labelSpeakerOnPGM.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelSpeakerOnPGM.Size = new System.Drawing.Size(28, 24);
-            this.labelSpeakerOnPGM.TabIndex = 21;
-            this.labelSpeakerOnPGM.Text = "---";
+            this.checkBoxEnablePRWbus.AutoSize = true;
+            this.checkBoxEnablePRWbus.Location = new System.Drawing.Point(12, 282);
+            this.checkBoxEnablePRWbus.Name = "checkBoxEnablePRWbus";
+            this.checkBoxEnablePRWbus.Size = new System.Drawing.Size(143, 17);
+            this.checkBoxEnablePRWbus.TabIndex = 42;
+            this.checkBoxEnablePRWbus.Text = "Enable PRW bus control";
+            this.checkBoxEnablePRWbus.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -8345,6 +8357,7 @@
         private System.Windows.Forms.ToolStripButton companionToggleButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Label labelSpeakerOnPGM;
+        private System.Windows.Forms.CheckBox checkBoxEnablePRWbus;
     }
 }
 

@@ -61,6 +61,7 @@ namespace Vision_Automix
             numUpDwnMinShotTime.Value = data.minimumShotTime;
             numUpDwnQuietTime.Value = data.maximumQuietTime;
             checkBoxUseQuiet.Checked = data.enableCutToWideOnQuiet;
+            checkBoxEnablePRWbus.Checked = data.enablePRWbusControl;
 
             compIP1.Text = data.companionCon[0].ToString();
             compIP2.Text = data.companionCon[1].ToString();
@@ -454,6 +455,7 @@ namespace Vision_Automix
             data.minimumShotTime = (int)numUpDwnMinShotTime.Value;
             data.maximumQuietTime = (int)numUpDwnQuietTime.Value;
             data.enableCutToWideOnQuiet = checkBoxUseQuiet.Checked;
+            data.enablePRWbusControl = checkBoxEnablePRWbus.Checked;
 
             data.companionCon[0] = int.Parse(compIP1.Text);
             data.companionCon[1] = int.Parse(compIP2.Text);

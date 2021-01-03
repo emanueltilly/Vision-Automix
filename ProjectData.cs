@@ -42,6 +42,7 @@ namespace Vision_Automix
         public int minimumShotTime = 2;
         public int maximumQuietTime = 2;
         public bool enableCutToWideOnQuiet = true;
+        public bool enablePRWbusControl = true;
 
         public int voteLength = 40;
 

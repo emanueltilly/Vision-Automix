@@ -112,9 +112,10 @@ namespace Vision_Automix
             ///FALSE = PREVIEW
             ///
 
+            
 
             //Log
-            Console.WriteLine("Setting PGM to Camera " + camera);
+            if (bus == true) { Console.WriteLine("Setting PGM to Camera " + camera); }
 
             int page = 1;
             int bank = 1;
@@ -158,7 +159,11 @@ namespace Vision_Automix
             }
 
             //Send button press to companion
-            companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
+            if ((bus == false && data.enablePRWbusControl == false) != true )      //Dont send command for PRW is PRW control is disabled
+            {
+                companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
+            }
+                
 
             
             
