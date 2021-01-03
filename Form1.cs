@@ -1043,9 +1043,12 @@ namespace Vision_Automix
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
-            SaveGUItoData();
-            UpdateEnabledDevicesGUI();
+            
+            //ORDER IS IMPORTANT
+            //Saving GUI data before restarting director will result in CamposMatrix not working.
             RestartDirector();
+            UpdateEnabledDevicesGUI();
+            SaveGUItoData();
 
         }
 
@@ -1620,6 +1623,7 @@ namespace Vision_Automix
 
         private void TickDirector_Tick(object sender, EventArgs e)
         {
+
             //1-Director decides who is currently speaking
             director.Tick(data, runData);
             //2-Camera Operator moves cameras accordingly

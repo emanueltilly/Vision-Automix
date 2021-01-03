@@ -66,11 +66,9 @@ namespace Vision_Automix
                         break;
                     case 2:
                         cameraID = GetCamera(data, runData, true, 0);
-                        
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             localCurrentSpeaker = runData.currentSpeaker;
-                            Console.WriteLine("Camera ID: " + cameraID);
                             TellMixer(data, runData, true, cameraID);
                             runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
                             wideShotIsLive = true;                                         //Set wideshot flag
@@ -78,8 +76,6 @@ namespace Vision_Automix
                         break;
                     case 3:
                         cameraID = GetCamera(data, runData, true, 0);
-                        Console.WriteLine("Camera id NO SOUND: " + cameraID);
-                        
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             TellMixer(data, runData, true, cameraID);
@@ -116,6 +112,9 @@ namespace Vision_Automix
             ///FALSE = PREVIEW
             ///
 
+
+            //Log
+            Console.WriteLine("Setting PGM to Camera " + camera);
 
             int page = 1;
             int bank = 1;
@@ -160,6 +159,8 @@ namespace Vision_Automix
 
             //Send button press to companion
             companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
+
+            
             
 
             //Set GUI

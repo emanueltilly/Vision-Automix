@@ -34,7 +34,7 @@ namespace Vision_Automix
                     //Flag for switcher to load camera on Preview bus
                     runData.changePRWcam = prefCam;
                     runData.changePRW = true;
-                    Console.WriteLine("PREF POS IS AVAILABLE");
+                    
                 }
                 else //If preferred camera is unavailable
                 {
@@ -58,7 +58,7 @@ namespace Vision_Automix
                         
                         loopcounter++;
                     }
-                    Console.WriteLine("PREF POS IS NOT  NOT  NOT  AVAILABLE:" + prefCam);
+                    
 
 
                 }
@@ -616,6 +616,8 @@ namespace Vision_Automix
             }
             
         }
+
+        
 
     }
 }
