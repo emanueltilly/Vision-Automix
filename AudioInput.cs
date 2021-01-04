@@ -38,7 +38,8 @@ namespace Vision_Automix
             Console.WriteLine("Initializing Audio Input " + globalInterfaceIndex);
 
             recorder = new WaveIn();
-            recorder.StartRecording();
+            try { recorder.StartRecording(); }
+            catch { MessageBox.Show("No audio devices found. Application may not run correctly.", "AUDIO DEVICE ERROR"); }
 
             var devices = masterEnumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
 
