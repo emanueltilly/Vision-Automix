@@ -55,7 +55,7 @@ namespace Vision_Automix
                     if(GetCamera(data, runData, false, runData.currentSpeaker) != runData.cameraPGM)
                     {
                         switchType = 4;
-                        Console.WriteLine("HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE HERE ");
+                        
                     } else
                     {
                         switchType = 2;
