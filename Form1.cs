@@ -1140,7 +1140,7 @@ namespace Vision_Automix
         {
             //ORDER IS IMPORTANT
             //Saving GUI data before restarting director will result in CamposMatrix not working.
-            RestartDirector();
+            //RestartDirector();
             SaveGUItoData();
             LoadGUIfromData();
             UpdateEnabledDevicesGUI();
