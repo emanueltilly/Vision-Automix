@@ -1770,6 +1770,44 @@ namespace Vision_Automix
             a88.Enabled = (data.enabledCamera8 && data.enabledSpeaker8 && (data.staticCameras[7] != true));
             b88.Enabled = (data.enabledCamera8 && data.enabledSpeaker8 && (data.staticCameras[7] != true));
             e88.Enabled = (data.enabledCamera8 && data.enabledSpeaker8 && (data.staticCameras[7] != true));
+
+
+            // 4 - Live monitor
+            labelSpeakerBoxSpeaker1.Visible = (data.enabledSpeaker1);
+            labelSpeakerBoxSpeaker2.Visible = (data.enabledSpeaker2);
+            labelSpeakerBoxSpeaker3.Visible = (data.enabledSpeaker3);
+            labelSpeakerBoxSpeaker4.Visible = (data.enabledSpeaker4);
+            labelSpeakerBoxSpeaker5.Visible = (data.enabledSpeaker5);
+            labelSpeakerBoxSpeaker6.Visible = (data.enabledSpeaker6);
+            labelSpeakerBoxSpeaker7.Visible = (data.enabledSpeaker7);
+            labelSpeakerBoxSpeaker8.Visible = (data.enabledSpeaker8);
+
+            camBoxLabelCam1.Visible = (data.enabledCamera1);
+            camBoxLabelCam2.Visible = (data.enabledCamera2);
+            camBoxLabelCam3.Visible = (data.enabledCamera3);
+            camBoxLabelCam4.Visible = (data.enabledCamera4);
+            camBoxLabelCam5.Visible = (data.enabledCamera5);
+            camBoxLabelCam6.Visible = (data.enabledCamera6);
+            camBoxLabelCam7.Visible = (data.enabledCamera7);
+            camBoxLabelCam8.Visible = (data.enabledCamera8);
+
+            labelCameraBoxStatus1.Visible = (data.enabledCamera1);
+            labelCameraBoxStatus2.Visible = (data.enabledCamera2);
+            labelCameraBoxStatus3.Visible = (data.enabledCamera3);
+            labelCameraBoxStatus4.Visible = (data.enabledCamera4);
+            labelCameraBoxStatus5.Visible = (data.enabledCamera5);
+            labelCameraBoxStatus6.Visible = (data.enabledCamera6);
+            labelCameraBoxStatus7.Visible = (data.enabledCamera7);
+            labelCameraBoxStatus8.Visible = (data.enabledCamera8);
+
+            labelCameraBoxPosition1.Visible = (data.enabledCamera1);
+            labelCameraBoxPosition2.Visible = (data.enabledCamera2);
+            labelCameraBoxPosition3.Visible = (data.enabledCamera3);
+            labelCameraBoxPosition4.Visible = (data.enabledCamera4);
+            labelCameraBoxPosition5.Visible = (data.enabledCamera5);
+            labelCameraBoxPosition6.Visible = (data.enabledCamera6);
+            labelCameraBoxPosition7.Visible = (data.enabledCamera7);
+            labelCameraBoxPosition8.Visible = (data.enabledCamera8);
         }
 
         private void SaveProjectToolStripMenuItem_Click(object sender, EventArgs e)
