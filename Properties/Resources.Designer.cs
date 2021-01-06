@@ -63,9 +63,69 @@ namespace Vision_Automix.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _4_Live_Monitor_Bg_001 {
+            get {
+                object obj = ResourceManager.GetObject("4 Live Monitor Bg 001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_Live_Monitor_Bg_002 {
+            get {
+                object obj = ResourceManager.GetObject("4 Live Monitor Bg 002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_Live_Monitor_Bg_003 {
+            get {
+                object obj = ResourceManager.GetObject("4 Live Monitor Bg 003", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_Live_Monitor_SpeakerButton_off {
+            get {
+                object obj = ResourceManager.GetObject("4 Live Monitor SpeakerButton off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_Live_Monitor_SpeakerButton_on {
+            get {
+                object obj = ResourceManager.GetObject("4 Live Monitor SpeakerButton on", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PTZSetupBackground {
             get {
                 object obj = ResourceManager.GetObject("PTZSetupBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PTZSetupBackground_v2 {
+            get {
+                object obj = ResourceManager.GetObject("PTZSetupBackground v2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -489,8 +489,22 @@ namespace Vision_Automix
             e88.Checked = Convert.ToBoolean(data.c8p8[2]);
 
 
+
+            //5-NEW LIVE MONITOR
+            labelSpeakerBoxSpeaker1.Text = data.speakerNames[0];
+            labelSpeakerBoxSpeaker2.Text = data.speakerNames[1];
+            labelSpeakerBoxSpeaker3.Text = data.speakerNames[2];
+            labelSpeakerBoxSpeaker4.Text = data.speakerNames[3];
+            labelSpeakerBoxSpeaker5.Text = data.speakerNames[4];
+            labelSpeakerBoxSpeaker6.Text = data.speakerNames[5];
+            labelSpeakerBoxSpeaker7.Text = data.speakerNames[6];
+            labelSpeakerBoxSpeaker8.Text = data.speakerNames[7];
+
+
             //Update CamPosMatrix
             GenerateCamPosMatrix();
+
+            unsavedChanges(false);
 
 
         }
@@ -507,20 +521,25 @@ namespace Vision_Automix
             data.enableCutToWideOnQuiet = checkBoxUseQuiet.Checked;
             data.enablePRWbusControl = checkBoxEnablePRWbus.Checked;
 
-            data.speakerNames[0] = txtBoxNameSpeaker1.Text;
-            data.speakerNames[1] = txtBoxNameSpeaker2.Text;
-            data.speakerNames[2] = txtBoxNameSpeaker3.Text;
-            data.speakerNames[3] = txtBoxNameSpeaker4.Text;
-            data.speakerNames[4] = txtBoxNameSpeaker5.Text;
-            data.speakerNames[5] = txtBoxNameSpeaker6.Text;
-            data.speakerNames[6] = txtBoxNameSpeaker7.Text;
-            data.speakerNames[7] = txtBoxNameSpeaker8.Text;
+            if (InputValidation.FriendlyName("Speaker name 1", txtBoxNameSpeaker1.Text)) { data.speakerNames[0] = txtBoxNameSpeaker1.Text; }
+            if (InputValidation.FriendlyName("Speaker name 2", txtBoxNameSpeaker2.Text)) { data.speakerNames[1] = txtBoxNameSpeaker2.Text; }
+            if (InputValidation.FriendlyName("Speaker name 3", txtBoxNameSpeaker3.Text)) { data.speakerNames[2] = txtBoxNameSpeaker3.Text; }
+            if (InputValidation.FriendlyName("Speaker name 4", txtBoxNameSpeaker4.Text)) { data.speakerNames[3] = txtBoxNameSpeaker4.Text; }
+            if (InputValidation.FriendlyName("Speaker name 5", txtBoxNameSpeaker5.Text)) { data.speakerNames[4] = txtBoxNameSpeaker5.Text; }
+            if (InputValidation.FriendlyName("Speaker name 6", txtBoxNameSpeaker6.Text)) { data.speakerNames[5] = txtBoxNameSpeaker6.Text; }
+            if (InputValidation.FriendlyName("Speaker name 7", txtBoxNameSpeaker7.Text)) { data.speakerNames[6] = txtBoxNameSpeaker7.Text; }
+            if (InputValidation.FriendlyName("Speaker name 8", txtBoxNameSpeaker8.Text)) { data.speakerNames[7] = txtBoxNameSpeaker8.Text; }
 
-            data.companionCon[0] = int.Parse(compIP1.Text);
-            data.companionCon[1] = int.Parse(compIP2.Text);
-            data.companionCon[2] = int.Parse(compIP3.Text);
-            data.companionCon[3] = int.Parse(compIP4.Text);
-            data.companionCon[4] = int.Parse(compPort.Text);
+
+            if (InputValidation.IpAddress("Companion IP address", compIP1.Text, compIP2.Text, compIP3.Text, compIP4.Text) && InputValidation.Port("Companion port number", compPort.Text))
+            {
+                data.companionCon[0] = int.Parse(compIP1.Text);
+                data.companionCon[1] = int.Parse(compIP2.Text);
+                data.companionCon[2] = int.Parse(compIP3.Text);
+                data.companionCon[3] = int.Parse(compIP4.Text);
+                data.companionCon[4] = int.Parse(compPort.Text);
+            }
+            
 
             data.voteLength = votelengthTrackBar.Value;
             
@@ -961,7 +980,8 @@ namespace Vision_Automix
 
 
 
-            if (tabControl1.SelectedIndex == 1) {
+            if (tabControl1.SelectedIndex == 1)
+            {
                 //AUDIO SETUP PAGE
                 volumeBar1.Value = runData.speaker1Volume;
                 volumeBar2.Value = runData.speaker2Volume;
@@ -978,49 +998,119 @@ namespace Vision_Automix
                 //PTZ SETUP PAGE
             }
 
+            
+
             if (tabControl1.SelectedIndex == 3)
             {
-                //LIVE MONITOR PAGE
-                labelCurrentSpeaker.Text = ("Speaker " + runData.currentSpeaker.ToString());
-                labelNextSpeaker.Text = ("Speaker " + runData.nextSpeaker.ToString());
+                //LIVE MONITOR PAGE NICE ONE
 
-                labelPGM.Text = ("Camera " + runData.cameraPGM.ToString());
-                labelPRW.Text = ("Camera " + runData.cameraPRW.ToString());
-                shottimeLabel.Text = ("Shot time: " + ((runData.currentShotTime < 99999) ? (runData.currentShotTime.ToString() + "s") : "0s"));
+                //PREVIEW BOX
+                if (runData.cameraPRW != 0)
+                {
+                    labelPreviewCamera.Text = ("CAM " + runData.cameraPRW.ToString());
 
-                labelSpeakerOnPGM.Text = ("On Air: Speaker " + (runData.cameraPosition[(runData.cameraPGM - 1)]).ToString());
-
-                nextSpeakerPercentLabel.Text = ((runData.nextSpeakerVotePercent.ToString() + "%"));
-
-                if (runData.noSpeakers == true && runData.multipleSpeakers == true) { liveStatusLabel.Text = "ERROR"; }
-                if (runData.noSpeakers == false && runData.multipleSpeakers == false) { liveStatusLabel.Text = "One Speaker"; }
-                if (runData.noSpeakers == true && runData.multipleSpeakers == false) { liveStatusLabel.Text = "No Speakers"; }
-                if (runData.noSpeakers == false && runData.multipleSpeakers == true) { liveStatusLabel.Text = "Multiple Speakers"; }
-
-                labelBusy1.BackColor = (runData.cameraBusy[0] ? Color.Red : Color.Green);
-                labelBusy2.BackColor = (runData.cameraBusy[1] ? Color.Red : Color.Green);
-                labelBusy3.BackColor = (runData.cameraBusy[2] ? Color.Red : Color.Green);
-                labelBusy4.BackColor = (runData.cameraBusy[3] ? Color.Red : Color.Green);
-                labelBusy5.BackColor = (runData.cameraBusy[4] ? Color.Red : Color.Green);
-                labelBusy6.BackColor = (runData.cameraBusy[5] ? Color.Red : Color.Green);
-                labelBusy7.BackColor = (runData.cameraBusy[6] ? Color.Red : Color.Green);
-                labelBusy8.BackColor = (runData.cameraBusy[7] ? Color.Red : Color.Green);
-
-                labelCameraPos1.Text = runData.cameraPosition[0].ToString();
-                labelCameraPos2.Text = runData.cameraPosition[1].ToString();
-                labelCameraPos3.Text = runData.cameraPosition[2].ToString();
-                labelCameraPos4.Text = runData.cameraPosition[3].ToString();
-                labelCameraPos5.Text = runData.cameraPosition[4].ToString();
-                labelCameraPos6.Text = runData.cameraPosition[5].ToString();
-                labelCameraPos7.Text = runData.cameraPosition[6].ToString();
-                labelCameraPos8.Text = runData.cameraPosition[7].ToString();
+                    int previewSpeakerId = runData.cameraPosition[(runData.cameraPRW - 1)];
+                    if (previewSpeakerId >= 0 && previewSpeakerId < 9)
+                    {
+                        labelPreviewSpeaker.Text = ((previewSpeakerId == 0) ? "Group shot" : data.speakerNames[(previewSpeakerId - 1)]);
+                    }
+                    else { labelPreviewSpeaker.Text = "Unknown position"; }
+                } else
+                {
+                    labelPreviewCamera.Text = "N/A";
+                    labelPreviewSpeaker.Text = "---";
+                }
 
 
 
+
+
+                //PROGRAM BOX
+                if (runData.cameraPGM != 0)
+                {
+                    labelProgramCamera.Text = ("CAM " + runData.cameraPGM.ToString());
+
+                    int programSpeakerId = runData.cameraPosition[(runData.cameraPGM - 1)];
+                    if (programSpeakerId >= 0 && programSpeakerId < 9)
+                    {
+                        labelProgramSpeaker.Text = ((programSpeakerId == 0) ? "Group shot" : data.speakerNames[(programSpeakerId - 1)]);
+                    }
+                    else { labelProgramSpeaker.Text = "Unknown position"; }
+                }
+                else
+                {
+                    labelProgramCamera.Text = "N/A";
+                    labelProgramSpeaker.Text = "---";
+                }
+
+                //SPEAKER BOX
+                labelSpeakerBoxSpeaker1.ForeColor = ((runData.speaker1Volume >= data.audioThreshold1) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker2.ForeColor = ((runData.speaker2Volume >= data.audioThreshold2) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker3.ForeColor = ((runData.speaker3Volume >= data.audioThreshold3) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker4.ForeColor = ((runData.speaker4Volume >= data.audioThreshold4) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker5.ForeColor = ((runData.speaker5Volume >= data.audioThreshold5) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker6.ForeColor = ((runData.speaker6Volume >= data.audioThreshold6) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker7.ForeColor = ((runData.speaker7Volume >= data.audioThreshold7) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+                labelSpeakerBoxSpeaker8.ForeColor = ((runData.speaker8Volume >= data.audioThreshold8) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
+
+                //CAMERAS BOX
+                //Status
+                labelCameraBoxStatus1.Text = (runData.cameraBusy[0] ? "MOVING" : ((runData.cameraPGM == 1) ? "ON AIR" : ""));
+                labelCameraBoxStatus2.Text = (runData.cameraBusy[1] ? "MOVING" : ((runData.cameraPGM == 2) ? "ON AIR" : ""));
+                labelCameraBoxStatus3.Text = (runData.cameraBusy[2] ? "MOVING" : ((runData.cameraPGM == 3) ? "ON AIR" : ""));
+                labelCameraBoxStatus4.Text = (runData.cameraBusy[3] ? "MOVING" : ((runData.cameraPGM == 4) ? "ON AIR" : ""));
+                labelCameraBoxStatus5.Text = (runData.cameraBusy[4] ? "MOVING" : ((runData.cameraPGM == 5) ? "ON AIR" : ""));
+                labelCameraBoxStatus6.Text = (runData.cameraBusy[5] ? "MOVING" : ((runData.cameraPGM == 6) ? "ON AIR" : ""));
+                labelCameraBoxStatus7.Text = (runData.cameraBusy[6] ? "MOVING" : ((runData.cameraPGM == 7) ? "ON AIR" : ""));
+                labelCameraBoxStatus8.Text = (runData.cameraBusy[7] ? "MOVING" : ((runData.cameraPGM == 8) ? "ON AIR" : ""));
+                //Position
+                labelCameraBoxPosition1.Text = ((runData.cameraPosition[0] == 0) ? "Group shot" : ((runData.cameraPosition[0] > 0 && runData.cameraPosition[0] < 9) ? (data.speakerNames[(runData.cameraPosition[0] - 1)]) : ""));
+                labelCameraBoxPosition2.Text = ((runData.cameraPosition[1] == 0) ? "Group shot" : ((runData.cameraPosition[1] > 0 && runData.cameraPosition[1] < 9) ? (data.speakerNames[(runData.cameraPosition[1] - 1)]) : ""));
+                labelCameraBoxPosition3.Text = ((runData.cameraPosition[2] == 0) ? "Group shot" : ((runData.cameraPosition[2] > 0 && runData.cameraPosition[2] < 9) ? (data.speakerNames[(runData.cameraPosition[2] - 1)]) : ""));
+                labelCameraBoxPosition4.Text = ((runData.cameraPosition[3] == 0) ? "Group shot" : ((runData.cameraPosition[3] > 0 && runData.cameraPosition[3] < 9) ? (data.speakerNames[(runData.cameraPosition[3] - 1)]) : ""));
+                labelCameraBoxPosition5.Text = ((runData.cameraPosition[4] == 0) ? "Group shot" : ((runData.cameraPosition[4] > 0 && runData.cameraPosition[4] < 9) ? (data.speakerNames[(runData.cameraPosition[4] - 1)]) : ""));
+                labelCameraBoxPosition6.Text = ((runData.cameraPosition[5] == 0) ? "Group shot" : ((runData.cameraPosition[5] > 0 && runData.cameraPosition[5] < 9) ? (data.speakerNames[(runData.cameraPosition[5] - 1)]) : ""));
+                labelCameraBoxPosition7.Text = ((runData.cameraPosition[6] == 0) ? "Group shot" : ((runData.cameraPosition[6] > 0 && runData.cameraPosition[6] < 9) ? (data.speakerNames[(runData.cameraPosition[6] - 1)]) : ""));
+                labelCameraBoxPosition8.Text = ((runData.cameraPosition[7] == 0) ? "Group shot" : ((runData.cameraPosition[7] > 0 && runData.cameraPosition[7] < 9) ? (data.speakerNames[(runData.cameraPosition[7] - 1)]) : ""));
+                //Colors
+                 Color colorNORMAL = Color.WhiteSmoke;
+                 Color colorPGM = Color.FromArgb(255, 233, 69, 69);
+                 Color colorPRW = Color.FromArgb(255, 69, 233, 69);
+                if (runData.cameraPGM == 1) { camBoxLabelCam1.ForeColor = colorPGM; labelCameraBoxPosition1.ForeColor = colorPGM; labelCameraBoxStatus1.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 1) { camBoxLabelCam1.ForeColor = colorPRW; labelCameraBoxPosition1.ForeColor = colorPRW; labelCameraBoxStatus1.ForeColor = colorPRW; }
+                else { camBoxLabelCam1.ForeColor = colorNORMAL; labelCameraBoxPosition1.ForeColor = colorNORMAL; labelCameraBoxStatus1.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 2) { camBoxLabelCam2.ForeColor = colorPGM; labelCameraBoxPosition2.ForeColor = colorPGM; labelCameraBoxStatus2.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 2) { camBoxLabelCam2.ForeColor = colorPRW; labelCameraBoxPosition2.ForeColor = colorPRW; labelCameraBoxStatus2.ForeColor = colorPRW; }
+                else { camBoxLabelCam2.ForeColor = colorNORMAL; labelCameraBoxPosition2.ForeColor = colorNORMAL; labelCameraBoxStatus2.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 3) { camBoxLabelCam3.ForeColor = colorPGM; labelCameraBoxPosition3.ForeColor = colorPGM; labelCameraBoxStatus3.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 3) { camBoxLabelCam3.ForeColor = colorPRW; labelCameraBoxPosition3.ForeColor = colorPRW; labelCameraBoxStatus3.ForeColor = colorPRW; }
+                else { camBoxLabelCam3.ForeColor = colorNORMAL; labelCameraBoxPosition3.ForeColor = colorNORMAL; labelCameraBoxStatus3.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 4) { camBoxLabelCam4.ForeColor = colorPGM; labelCameraBoxPosition4.ForeColor = colorPGM; labelCameraBoxStatus4.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 4) { camBoxLabelCam4.ForeColor = colorPRW; labelCameraBoxPosition4.ForeColor = colorPRW; labelCameraBoxStatus4.ForeColor = colorPRW; }
+                else { camBoxLabelCam4.ForeColor = colorNORMAL; labelCameraBoxPosition4.ForeColor = colorNORMAL; labelCameraBoxStatus4.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 5) { camBoxLabelCam5.ForeColor = colorPGM; labelCameraBoxPosition5.ForeColor = colorPGM; labelCameraBoxStatus5.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 5) { camBoxLabelCam5.ForeColor = colorPRW; labelCameraBoxPosition5.ForeColor = colorPRW; labelCameraBoxStatus5.ForeColor = colorPRW; }
+                else { camBoxLabelCam5.ForeColor = colorNORMAL; labelCameraBoxPosition5.ForeColor = colorNORMAL; labelCameraBoxStatus5.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 6) { camBoxLabelCam6.ForeColor = colorPGM; labelCameraBoxPosition6.ForeColor = colorPGM; labelCameraBoxStatus6.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 6) { camBoxLabelCam6.ForeColor = colorPRW; labelCameraBoxPosition6.ForeColor = colorPRW; labelCameraBoxStatus6.ForeColor = colorPRW; }
+                else { camBoxLabelCam6.ForeColor = colorNORMAL; labelCameraBoxPosition6.ForeColor = colorNORMAL; labelCameraBoxStatus6.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 7) { camBoxLabelCam7.ForeColor = colorPGM; labelCameraBoxPosition7.ForeColor = colorPGM; labelCameraBoxStatus7.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 7) { camBoxLabelCam7.ForeColor = colorPRW; labelCameraBoxPosition7.ForeColor = colorPRW; labelCameraBoxStatus7.ForeColor = colorPRW; }
+                else { camBoxLabelCam7.ForeColor = colorNORMAL; labelCameraBoxPosition7.ForeColor = colorNORMAL; labelCameraBoxStatus7.ForeColor = colorNORMAL; }
+
+                if (runData.cameraPGM == 8) { camBoxLabelCam8.ForeColor = colorPGM; labelCameraBoxPosition8.ForeColor = colorPGM; labelCameraBoxStatus8.ForeColor = colorPGM; }
+                else if (runData.cameraPRW == 8) { camBoxLabelCam8.ForeColor = colorPRW; labelCameraBoxPosition8.ForeColor = colorPRW; labelCameraBoxStatus8.ForeColor = colorPRW; }
+                else { camBoxLabelCam8.ForeColor = colorNORMAL; labelCameraBoxPosition8.ForeColor = colorNORMAL; labelCameraBoxStatus8.ForeColor = colorNORMAL; }
             }
         }
-        //CamPos Matrix is used to identify what cameras are enabled for what positions
-        private void GenerateCamPosMatrix()
+            //CamPos Matrix is used to identify what cameras are enabled for what positions
+            private void GenerateCamPosMatrix()
         {
             Console.WriteLine("CamPos Matrix update has started...");
 
@@ -1144,6 +1234,8 @@ namespace Vision_Automix
             SaveGUItoData();
             LoadGUIfromData();
             UpdateEnabledDevicesGUI();
+
+            unsavedChanges(false);
         }
 
         private void UpdateAudioInterfacesList()
@@ -1805,6 +1897,39 @@ namespace Vision_Automix
             txtBoxNameSpeaker6.Text = "Speaker 6";
             txtBoxNameSpeaker7.Text = "Speaker 7";
             txtBoxNameSpeaker8.Text = "Speaker 8";
+            unsavedChanges(true);
         }
+
+ 
+        
+
+        private void unsavedChanges(bool exists)
+        {
+            if (exists == true) { unchangedSettingsTimer.Enabled = true; applyButton.Enabled = true; }
+            else { unchangedSettingsTimer.Enabled = false; applyButton.Enabled = false; }
+        }
+
+        private void unchangedSettingsTimer_Tick(object sender, EventArgs e)
+        {
+            applyButton.Enabled = true;
+            applyButton.ForeColor = ((applyButton.ForeColor == Color.LightGray) ? Color.Black : Color.LightGray);
+        }
+
+        private void stat1_MouseUp_1(object sender, MouseEventArgs e)
+        {
+            unsavedChanges(true);
+        }
+
+        private void b8prw_ValueChanged(object sender, EventArgs e)
+        {
+            unsavedChanges(true);
+        }
+
+        private void comboBoxSpeaker2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            unsavedChanges(true);
+        }
+
+
     }
 }

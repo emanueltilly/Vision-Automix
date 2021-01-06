@@ -32,31 +32,58 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.checkBoxUseQuiet = new System.Windows.Forms.CheckBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.numUpDwnQuietTime = new System.Windows.Forms.NumericUpDown();
-            this.label85 = new System.Windows.Forms.Label();
-            this.numUpDwnMinShotTime = new System.Windows.Forms.NumericUpDown();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.votelengthLabel = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.votelengthTrackBar = new System.Windows.Forms.TrackBar();
-            this.label70 = new System.Windows.Forms.Label();
-            this.numUpDownCameraMoveTime = new System.Windows.Forms.NumericUpDown();
-            this.label65 = new System.Windows.Forms.Label();
-            this.compPort = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.compIP4 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.resetNamesToDefaultBtn = new System.Windows.Forms.Button();
+            this.txtBoxNameSpeaker8 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker7 = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker6 = new System.Windows.Forms.TextBox();
+            this.label98 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker5 = new System.Windows.Forms.TextBox();
+            this.label99 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker4 = new System.Windows.Forms.TextBox();
+            this.label94 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker3 = new System.Windows.Forms.TextBox();
+            this.label95 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker2 = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.txtBoxNameSpeaker1 = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.compIP3 = new System.Windows.Forms.TextBox();
-            this.compIP2 = new System.Windows.Forms.TextBox();
-            this.compIP1 = new System.Windows.Forms.TextBox();
-            this.numUpDownCameras = new System.Windows.Forms.NumericUpDown();
-            this.numUpDownSpeakers = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.compIP1 = new System.Windows.Forms.TextBox();
+            this.checkBoxEnablePRWbus = new System.Windows.Forms.CheckBox();
+            this.compIP2 = new System.Windows.Forms.TextBox();
+            this.compIP4 = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.compPort = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label84 = new System.Windows.Forms.Label();
+            this.numUpDwnMinShotTime = new System.Windows.Forms.NumericUpDown();
+            this.label86 = new System.Windows.Forms.Label();
+            this.checkBoxUseQuiet = new System.Windows.Forms.CheckBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.numUpDwnQuietTime = new System.Windows.Forms.NumericUpDown();
+            this.votelengthLabel = new System.Windows.Forms.Label();
+            this.votelengthTrackBar = new System.Windows.Forms.TrackBar();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.numUpDownCameras = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numUpDownSpeakers = new System.Windows.Forms.NumericUpDown();
+            this.label65 = new System.Windows.Forms.Label();
+            this.numUpDownCameraMoveTime = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.numUpDwnGain8 = new System.Windows.Forms.NumericUpDown();
             this.label79 = new System.Windows.Forms.Label();
@@ -147,6 +174,41 @@
             this.labelAudioSetupSpeakerName1 = new System.Windows.Forms.Label();
             this.comboBoxSpeaker1 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.stat8 = new System.Windows.Forms.CheckBox();
+            this.statPos8 = new System.Windows.Forms.NumericUpDown();
+            this.stat7 = new System.Windows.Forms.CheckBox();
+            this.statPos7 = new System.Windows.Forms.NumericUpDown();
+            this.stat6 = new System.Windows.Forms.CheckBox();
+            this.statPos6 = new System.Windows.Forms.NumericUpDown();
+            this.stat5 = new System.Windows.Forms.CheckBox();
+            this.statPos5 = new System.Windows.Forms.NumericUpDown();
+            this.stat4 = new System.Windows.Forms.CheckBox();
+            this.statPos4 = new System.Windows.Forms.NumericUpDown();
+            this.stat3 = new System.Windows.Forms.CheckBox();
+            this.statPos3 = new System.Windows.Forms.NumericUpDown();
+            this.stat2 = new System.Windows.Forms.CheckBox();
+            this.statPos2 = new System.Windows.Forms.NumericUpDown();
+            this.stat1 = new System.Windows.Forms.CheckBox();
+            this.statPos1 = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
             this.b8prw = new System.Windows.Forms.NumericUpDown();
             this.a8prw = new System.Windows.Forms.NumericUpDown();
             this.b8pgm = new System.Windows.Forms.NumericUpDown();
@@ -424,29 +486,45 @@
             this.labelPTZsetupSpeaker3 = new System.Windows.Forms.Label();
             this.labelPTZsetupSpeaker2 = new System.Windows.Forms.Label();
             this.labelPTZsetupSpeaker1 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.labelSpeakerOnPGM = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.labelBusy8 = new System.Windows.Forms.Label();
-            this.labelBusy7 = new System.Windows.Forms.Label();
-            this.labelBusy6 = new System.Windows.Forms.Label();
-            this.labelBusy5 = new System.Windows.Forms.Label();
-            this.labelBusy4 = new System.Windows.Forms.Label();
-            this.labelBusy3 = new System.Windows.Forms.Label();
-            this.labelBusy2 = new System.Windows.Forms.Label();
-            this.labelBusy1 = new System.Windows.Forms.Label();
-            this.liveStatusLabel = new System.Windows.Forms.Label();
-            this.shottimeLabel = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.nextSpeakerPercentLabel = new System.Windows.Forms.Label();
-            this.labelPRW = new System.Windows.Forms.Label();
-            this.labelPGM = new System.Windows.Forms.Label();
-            this.labelNextSpeaker = new System.Windows.Forms.Label();
-            this.labelCurrentSpeaker = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.labelCameraBoxStatus8 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus7 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus6 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus5 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus4 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus3 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus2 = new System.Windows.Forms.Label();
+            this.labelCameraBoxStatus1 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition8 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition7 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition6 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition5 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition4 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition3 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition2 = new System.Windows.Forms.Label();
+            this.labelCameraBoxPosition1 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam8 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam7 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam6 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam5 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam4 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam3 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam2 = new System.Windows.Forms.Label();
+            this.camBoxLabelCam1 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker8 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker7 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker6 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker5 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker4 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker3 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker2 = new System.Windows.Forms.Label();
+            this.labelSpeakerBoxSpeaker1 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.labelPreviewSpeaker = new System.Windows.Forms.Label();
+            this.labelPreviewCamera = new System.Windows.Forms.Label();
+            this.labelProgramSpeaker = new System.Windows.Forms.Label();
+            this.labelProgramCamera = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.logLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -466,68 +544,19 @@
             this.tickGUIupdate = new System.Windows.Forms.Timer(this.components);
             this.tickAudio = new System.Windows.Forms.Timer(this.components);
             this.tickDirector = new System.Windows.Forms.Timer(this.components);
-            this.checkBoxEnablePRWbus = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker1 = new System.Windows.Forms.TextBox();
-            this.txtBoxNameSpeaker2 = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker4 = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker3 = new System.Windows.Forms.TextBox();
-            this.label95 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker8 = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker7 = new System.Windows.Forms.TextBox();
-            this.label97 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker6 = new System.Windows.Forms.TextBox();
-            this.label98 = new System.Windows.Forms.Label();
-            this.txtBoxNameSpeaker5 = new System.Windows.Forms.TextBox();
-            this.label99 = new System.Windows.Forms.Label();
-            this.resetNamesToDefaultBtn = new System.Windows.Forms.Button();
-            this.stat8 = new System.Windows.Forms.CheckBox();
-            this.statPos8 = new System.Windows.Forms.NumericUpDown();
-            this.stat7 = new System.Windows.Forms.CheckBox();
-            this.statPos7 = new System.Windows.Forms.NumericUpDown();
-            this.stat6 = new System.Windows.Forms.CheckBox();
-            this.statPos6 = new System.Windows.Forms.NumericUpDown();
-            this.stat5 = new System.Windows.Forms.CheckBox();
-            this.statPos5 = new System.Windows.Forms.NumericUpDown();
-            this.stat4 = new System.Windows.Forms.CheckBox();
-            this.statPos4 = new System.Windows.Forms.NumericUpDown();
-            this.stat3 = new System.Windows.Forms.CheckBox();
-            this.statPos3 = new System.Windows.Forms.NumericUpDown();
-            this.stat2 = new System.Windows.Forms.CheckBox();
-            this.statPos2 = new System.Windows.Forms.NumericUpDown();
-            this.stat1 = new System.Windows.Forms.CheckBox();
-            this.statPos1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.labelCameraPos8 = new System.Windows.Forms.Label();
-            this.labelCameraPos7 = new System.Windows.Forms.Label();
-            this.labelCameraPos6 = new System.Windows.Forms.Label();
-            this.labelCameraPos5 = new System.Windows.Forms.Label();
-            this.labelCameraPos4 = new System.Windows.Forms.Label();
-            this.labelCameraPos3 = new System.Windows.Forms.Label();
-            this.labelCameraPos2 = new System.Windows.Forms.Label();
-            this.labelCameraPos1 = new System.Windows.Forms.Label();
+            this.unchangedSettingsTimer = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnMinShotTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.votelengthTrackBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCameraMoveTime)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCameras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownSpeakers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCameraMoveTime)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnGain8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnGain6)).BeginInit();
@@ -554,6 +583,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.thresholdBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnChannelSpeaker1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b8prw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a8prw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b8pgm)).BeginInit();
@@ -739,21 +776,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.a11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.b10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a10)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -761,7 +786,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(0, 26);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -783,46 +808,340 @@
             this.tabPage1.Text = "1 - Device Setup";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // checkBoxUseQuiet
+            // groupBox4
             // 
-            this.checkBoxUseQuiet.AutoSize = true;
-            this.checkBoxUseQuiet.Location = new System.Drawing.Point(9, 128);
-            this.checkBoxUseQuiet.Name = "checkBoxUseQuiet";
-            this.checkBoxUseQuiet.Size = new System.Drawing.Size(134, 17);
-            this.checkBoxUseQuiet.TabIndex = 41;
-            this.checkBoxUseQuiet.Text = "Cut to wide when quiet";
-            this.checkBoxUseQuiet.UseVisualStyleBackColor = true;
+            this.groupBox4.Controls.Add(this.resetNamesToDefaultBtn);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker8);
+            this.groupBox4.Controls.Add(this.label96);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker7);
+            this.groupBox4.Controls.Add(this.label97);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker6);
+            this.groupBox4.Controls.Add(this.label98);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker5);
+            this.groupBox4.Controls.Add(this.label99);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker4);
+            this.groupBox4.Controls.Add(this.label94);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker3);
+            this.groupBox4.Controls.Add(this.label95);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker2);
+            this.groupBox4.Controls.Add(this.label93);
+            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker1);
+            this.groupBox4.Controls.Add(this.label92);
+            this.groupBox4.Location = new System.Drawing.Point(486, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(233, 395);
+            this.groupBox4.TabIndex = 45;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Speaker Names";
             // 
-            // label86
+            // resetNamesToDefaultBtn
             // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(168, 230);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(54, 13);
-            this.label86.TabIndex = 40;
-            this.label86.Text = "Very Slow";
+            this.resetNamesToDefaultBtn.Location = new System.Drawing.Point(9, 358);
+            this.resetNamesToDefaultBtn.Name = "resetNamesToDefaultBtn";
+            this.resetNamesToDefaultBtn.Size = new System.Drawing.Size(210, 23);
+            this.resetNamesToDefaultBtn.TabIndex = 47;
+            this.resetNamesToDefaultBtn.Text = "Reset names to default";
+            this.resetNamesToDefaultBtn.UseVisualStyleBackColor = true;
+            this.resetNamesToDefaultBtn.Click += new System.EventHandler(this.ResetNamesToDefaultBtn_Click);
             // 
-            // numUpDwnQuietTime
+            // txtBoxNameSpeaker8
             // 
-            this.numUpDwnQuietTime.Location = new System.Drawing.Point(9, 102);
-            this.numUpDwnQuietTime.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.numUpDwnQuietTime.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numUpDwnQuietTime.Name = "numUpDwnQuietTime";
-            this.numUpDwnQuietTime.Size = new System.Drawing.Size(76, 20);
-            this.numUpDwnQuietTime.TabIndex = 39;
-            this.numUpDwnQuietTime.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.txtBoxNameSpeaker8.Location = new System.Drawing.Point(9, 330);
+            this.txtBoxNameSpeaker8.MaxLength = 20;
+            this.txtBoxNameSpeaker8.Name = "txtBoxNameSpeaker8";
+            this.txtBoxNameSpeaker8.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker8.TabIndex = 15;
+            this.txtBoxNameSpeaker8.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(6, 314);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(59, 13);
+            this.label96.TabIndex = 14;
+            this.label96.Text = "Speaker 8:";
+            // 
+            // txtBoxNameSpeaker7
+            // 
+            this.txtBoxNameSpeaker7.Location = new System.Drawing.Point(9, 289);
+            this.txtBoxNameSpeaker7.MaxLength = 20;
+            this.txtBoxNameSpeaker7.Name = "txtBoxNameSpeaker7";
+            this.txtBoxNameSpeaker7.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker7.TabIndex = 13;
+            this.txtBoxNameSpeaker7.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(6, 273);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(59, 13);
+            this.label97.TabIndex = 12;
+            this.label97.Text = "Speaker 7:";
+            // 
+            // txtBoxNameSpeaker6
+            // 
+            this.txtBoxNameSpeaker6.Location = new System.Drawing.Point(9, 249);
+            this.txtBoxNameSpeaker6.MaxLength = 20;
+            this.txtBoxNameSpeaker6.Name = "txtBoxNameSpeaker6";
+            this.txtBoxNameSpeaker6.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker6.TabIndex = 11;
+            this.txtBoxNameSpeaker6.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(6, 233);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(59, 13);
+            this.label98.TabIndex = 10;
+            this.label98.Text = "Speaker 6:";
+            // 
+            // txtBoxNameSpeaker5
+            // 
+            this.txtBoxNameSpeaker5.Location = new System.Drawing.Point(9, 208);
+            this.txtBoxNameSpeaker5.MaxLength = 20;
+            this.txtBoxNameSpeaker5.Name = "txtBoxNameSpeaker5";
+            this.txtBoxNameSpeaker5.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker5.TabIndex = 9;
+            this.txtBoxNameSpeaker5.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(6, 192);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(59, 13);
+            this.label99.TabIndex = 8;
+            this.label99.Text = "Speaker 5:";
+            // 
+            // txtBoxNameSpeaker4
+            // 
+            this.txtBoxNameSpeaker4.Location = new System.Drawing.Point(9, 166);
+            this.txtBoxNameSpeaker4.MaxLength = 20;
+            this.txtBoxNameSpeaker4.Name = "txtBoxNameSpeaker4";
+            this.txtBoxNameSpeaker4.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker4.TabIndex = 7;
+            this.txtBoxNameSpeaker4.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(6, 150);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(59, 13);
+            this.label94.TabIndex = 6;
+            this.label94.Text = "Speaker 4:";
+            // 
+            // txtBoxNameSpeaker3
+            // 
+            this.txtBoxNameSpeaker3.Location = new System.Drawing.Point(9, 125);
+            this.txtBoxNameSpeaker3.MaxLength = 20;
+            this.txtBoxNameSpeaker3.Name = "txtBoxNameSpeaker3";
+            this.txtBoxNameSpeaker3.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker3.TabIndex = 5;
+            this.txtBoxNameSpeaker3.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(6, 109);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(59, 13);
+            this.label95.TabIndex = 4;
+            this.label95.Text = "Speaker 3:";
+            // 
+            // txtBoxNameSpeaker2
+            // 
+            this.txtBoxNameSpeaker2.Location = new System.Drawing.Point(9, 85);
+            this.txtBoxNameSpeaker2.MaxLength = 20;
+            this.txtBoxNameSpeaker2.Name = "txtBoxNameSpeaker2";
+            this.txtBoxNameSpeaker2.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker2.TabIndex = 3;
+            this.txtBoxNameSpeaker2.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(6, 69);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(59, 13);
+            this.label93.TabIndex = 2;
+            this.label93.Text = "Speaker 2:";
+            // 
+            // txtBoxNameSpeaker1
+            // 
+            this.txtBoxNameSpeaker1.Location = new System.Drawing.Point(9, 44);
+            this.txtBoxNameSpeaker1.MaxLength = 20;
+            this.txtBoxNameSpeaker1.Name = "txtBoxNameSpeaker1";
+            this.txtBoxNameSpeaker1.Size = new System.Drawing.Size(210, 20);
+            this.txtBoxNameSpeaker1.TabIndex = 1;
+            this.txtBoxNameSpeaker1.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(6, 28);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(59, 13);
+            this.label92.TabIndex = 0;
+            this.label92.Text = "Speaker 1:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.compIP3);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.compIP1);
+            this.groupBox3.Controls.Add(this.checkBoxEnablePRWbus);
+            this.groupBox3.Controls.Add(this.compIP2);
+            this.groupBox3.Controls.Add(this.compIP4);
+            this.groupBox3.Controls.Add(this.label63);
+            this.groupBox3.Controls.Add(this.compPort);
+            this.groupBox3.Location = new System.Drawing.Point(247, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(233, 186);
+            this.groupBox3.TabIndex = 46;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Companion Connection";
+            // 
+            // compIP3
+            // 
+            this.compIP3.Location = new System.Drawing.Point(117, 39);
+            this.compIP3.Name = "compIP3";
+            this.compIP3.Size = new System.Drawing.Size(48, 20);
+            this.compIP3.TabIndex = 22;
+            this.compIP3.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Companion IP:";
+            // 
+            // compIP1
+            // 
+            this.compIP1.Location = new System.Drawing.Point(9, 39);
+            this.compIP1.Name = "compIP1";
+            this.compIP1.Size = new System.Drawing.Size(48, 20);
+            this.compIP1.TabIndex = 20;
+            this.compIP1.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // checkBoxEnablePRWbus
+            // 
+            this.checkBoxEnablePRWbus.AutoSize = true;
+            this.checkBoxEnablePRWbus.Location = new System.Drawing.Point(9, 123);
+            this.checkBoxEnablePRWbus.Name = "checkBoxEnablePRWbus";
+            this.checkBoxEnablePRWbus.Size = new System.Drawing.Size(155, 17);
+            this.checkBoxEnablePRWbus.TabIndex = 42;
+            this.checkBoxEnablePRWbus.Text = "Enable Preview bus control";
+            this.checkBoxEnablePRWbus.UseVisualStyleBackColor = true;
+            this.checkBoxEnablePRWbus.CheckedChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // compIP2
+            // 
+            this.compIP2.Location = new System.Drawing.Point(63, 39);
+            this.compIP2.Name = "compIP2";
+            this.compIP2.Size = new System.Drawing.Size(48, 20);
+            this.compIP2.TabIndex = 21;
+            this.compIP2.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // compIP4
+            // 
+            this.compIP4.Location = new System.Drawing.Point(171, 39);
+            this.compIP4.Name = "compIP4";
+            this.compIP4.Size = new System.Drawing.Size(48, 20);
+            this.compIP4.TabIndex = 23;
+            this.compIP4.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(6, 71);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(111, 13);
+            this.label63.TabIndex = 26;
+            this.label63.Text = "Companion UDP Port:";
+            // 
+            // compPort
+            // 
+            this.compPort.Location = new System.Drawing.Point(9, 87);
+            this.compPort.Name = "compPort";
+            this.compPort.Size = new System.Drawing.Size(210, 20);
+            this.compPort.TabIndex = 27;
+            this.compPort.TextChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label91);
+            this.groupBox2.Controls.Add(this.label90);
+            this.groupBox2.Controls.Add(this.label89);
+            this.groupBox2.Controls.Add(this.label88);
+            this.groupBox2.Controls.Add(this.label85);
+            this.groupBox2.Controls.Add(this.label84);
+            this.groupBox2.Controls.Add(this.numUpDwnMinShotTime);
+            this.groupBox2.Controls.Add(this.label86);
+            this.groupBox2.Controls.Add(this.checkBoxUseQuiet);
+            this.groupBox2.Controls.Add(this.label73);
+            this.groupBox2.Controls.Add(this.numUpDwnQuietTime);
+            this.groupBox2.Controls.Add(this.votelengthLabel);
+            this.groupBox2.Controls.Add(this.votelengthTrackBar);
+            this.groupBox2.Controls.Add(this.label72);
+            this.groupBox2.Controls.Add(this.label70);
+            this.groupBox2.Controls.Add(this.label71);
+            this.groupBox2.Location = new System.Drawing.Point(8, 211);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(233, 290);
+            this.groupBox2.TabIndex = 45;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Director Preferences";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label91.Location = new System.Drawing.Point(6, 269);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(204, 12);
+            this.label91.TabIndex = 44;
+            this.label91.Text = "Lower number = More receptive for short sounds";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label90.Location = new System.Drawing.Point(6, 257);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(203, 12);
+            this.label90.TabIndex = 43;
+            this.label90.Text = "Higher number = Less receptive for short sounds";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label89.Location = new System.Drawing.Point(6, 245);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(66, 12);
+            this.label89.TabIndex = 42;
+            this.label89.Text = "20 votes / sec.";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label88.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label88.Location = new System.Drawing.Point(6, 89);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(172, 12);
+            this.label88.TabIndex = 31;
+            this.label88.Text = "Time with no speakers before cut to wide";
             // 
             // label85
             // 
@@ -832,6 +1151,15 @@
             this.label85.Size = new System.Drawing.Size(112, 13);
             this.label85.TabIndex = 38;
             this.label85.Text = "Max Quiet Time (Sec):";
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(6, 28);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(134, 13);
+            this.label84.TabIndex = 36;
+            this.label84.Text = "Minumum Shot Time (Sec):";
             // 
             // numUpDwnMinShotTime
             // 
@@ -854,15 +1182,27 @@
             0,
             0,
             0});
+            this.numUpDwnMinShotTime.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
-            // label84
+            // label86
             // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(6, 28);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(134, 13);
-            this.label84.TabIndex = 36;
-            this.label84.Text = "Minumum Shot Time (Sec):";
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(168, 230);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(54, 13);
+            this.label86.TabIndex = 40;
+            this.label86.Text = "Very Slow";
+            // 
+            // checkBoxUseQuiet
+            // 
+            this.checkBoxUseQuiet.AutoSize = true;
+            this.checkBoxUseQuiet.Location = new System.Drawing.Point(9, 128);
+            this.checkBoxUseQuiet.Name = "checkBoxUseQuiet";
+            this.checkBoxUseQuiet.Size = new System.Drawing.Size(134, 17);
+            this.checkBoxUseQuiet.TabIndex = 41;
+            this.checkBoxUseQuiet.Text = "Cut to wide when quiet";
+            this.checkBoxUseQuiet.UseVisualStyleBackColor = true;
+            this.checkBoxUseQuiet.CheckedChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label73
             // 
@@ -873,6 +1213,29 @@
             this.label73.TabIndex = 35;
             this.label73.Text = "Instant";
             // 
+            // numUpDwnQuietTime
+            // 
+            this.numUpDwnQuietTime.Location = new System.Drawing.Point(9, 102);
+            this.numUpDwnQuietTime.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.numUpDwnQuietTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDwnQuietTime.Name = "numUpDwnQuietTime";
+            this.numUpDwnQuietTime.Size = new System.Drawing.Size(76, 20);
+            this.numUpDwnQuietTime.TabIndex = 39;
+            this.numUpDwnQuietTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDwnQuietTime.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
             // votelengthLabel
             // 
             this.votelengthLabel.AutoSize = true;
@@ -881,24 +1244,6 @@
             this.votelengthLabel.Size = new System.Drawing.Size(13, 13);
             this.votelengthLabel.TabIndex = 34;
             this.votelengthLabel.Text = "0";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(116, 230);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(30, 13);
-            this.label72.TabIndex = 33;
-            this.label72.Text = "Slow";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(60, 230);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(40, 13);
-            this.label71.TabIndex = 32;
-            this.label71.Text = "Normal";
             // 
             // votelengthTrackBar
             // 
@@ -913,6 +1258,16 @@
             this.votelengthTrackBar.TickFrequency = 10;
             this.votelengthTrackBar.Value = 100;
             this.votelengthTrackBar.Scroll += new System.EventHandler(this.VotelengthTrackBar_Scroll);
+            this.votelengthTrackBar.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(116, 230);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(30, 13);
+            this.label72.TabIndex = 33;
+            this.label72.Text = "Slow";
             // 
             // label70
             // 
@@ -923,80 +1278,41 @@
             this.label70.TabIndex = 30;
             this.label70.Text = "Vote length:";
             // 
-            // numUpDownCameraMoveTime
+            // label71
             // 
-            this.numUpDownCameraMoveTime.Location = new System.Drawing.Point(9, 150);
-            this.numUpDownCameraMoveTime.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numUpDownCameraMoveTime.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numUpDownCameraMoveTime.Name = "numUpDownCameraMoveTime";
-            this.numUpDownCameraMoveTime.Size = new System.Drawing.Size(76, 20);
-            this.numUpDownCameraMoveTime.TabIndex = 29;
-            this.numUpDownCameraMoveTime.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(60, 230);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(40, 13);
+            this.label71.TabIndex = 32;
+            this.label71.Text = "Normal";
             // 
-            // label65
+            // groupBox1
             // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(6, 123);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(97, 13);
-            this.label65.TabIndex = 28;
-            this.label65.Text = "Camera move-time:";
+            this.groupBox1.Controls.Add(this.label87);
+            this.groupBox1.Controls.Add(this.numUpDownCameras);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.numUpDownSpeakers);
+            this.groupBox1.Controls.Add(this.label65);
+            this.groupBox1.Controls.Add(this.numUpDownCameraMoveTime);
+            this.groupBox1.Location = new System.Drawing.Point(8, 19);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(233, 186);
+            this.groupBox1.TabIndex = 44;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Studio Setup";
             // 
-            // compPort
+            // label87
             // 
-            this.compPort.Location = new System.Drawing.Point(9, 87);
-            this.compPort.Name = "compPort";
-            this.compPort.Size = new System.Drawing.Size(210, 20);
-            this.compPort.TabIndex = 27;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(6, 71);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(111, 13);
-            this.label63.TabIndex = 26;
-            this.label63.Text = "Companion UDP Port:";
-            // 
-            // compIP4
-            // 
-            this.compIP4.Location = new System.Drawing.Point(171, 39);
-            this.compIP4.Name = "compIP4";
-            this.compIP4.Size = new System.Drawing.Size(48, 20);
-            this.compIP4.TabIndex = 23;
-            // 
-            // compIP3
-            // 
-            this.compIP3.Location = new System.Drawing.Point(117, 39);
-            this.compIP3.Name = "compIP3";
-            this.compIP3.Size = new System.Drawing.Size(48, 20);
-            this.compIP3.TabIndex = 22;
-            // 
-            // compIP2
-            // 
-            this.compIP2.Location = new System.Drawing.Point(63, 39);
-            this.compIP2.Name = "compIP2";
-            this.compIP2.Size = new System.Drawing.Size(48, 20);
-            this.compIP2.TabIndex = 21;
-            // 
-            // compIP1
-            // 
-            this.compIP1.Location = new System.Drawing.Point(9, 39);
-            this.compIP1.Name = "compIP1";
-            this.compIP1.Size = new System.Drawing.Size(48, 20);
-            this.compIP1.TabIndex = 20;
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label87.Location = new System.Drawing.Point(6, 137);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(179, 12);
+            this.label87.TabIndex = 30;
+            this.label87.Text = "Maximum movement time for PTZ camera";
             // 
             // numUpDownCameras
             // 
@@ -1019,6 +1335,25 @@
             0,
             0,
             0});
+            this.numUpDownCameras.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Speakers:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Cameras:";
             // 
             // numUpDownSpeakers
             // 
@@ -1041,33 +1376,39 @@
             0,
             0,
             0});
+            this.numUpDownSpeakers.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
-            // label4
+            // label65
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Cameras:";
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(6, 123);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(97, 13);
+            this.label65.TabIndex = 28;
+            this.label65.Text = "Camera move-time:";
             // 
-            // label3
+            // numUpDownCameraMoveTime
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Speakers:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Companion IP:";
+            this.numUpDownCameraMoveTime.Location = new System.Drawing.Point(9, 150);
+            this.numUpDownCameraMoveTime.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numUpDownCameraMoveTime.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDownCameraMoveTime.Name = "numUpDownCameraMoveTime";
+            this.numUpDownCameraMoveTime.Size = new System.Drawing.Size(76, 20);
+            this.numUpDownCameraMoveTime.TabIndex = 29;
+            this.numUpDownCameraMoveTime.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDownCameraMoveTime.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // tabPage2
             // 
@@ -1178,6 +1519,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain8.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label79
             // 
@@ -1199,6 +1541,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain6.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label80
             // 
@@ -1220,6 +1563,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain4.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label81
             // 
@@ -1241,6 +1585,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain2.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label82
             // 
@@ -1262,6 +1607,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain7.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label78
             // 
@@ -1283,6 +1629,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain5.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label77
             // 
@@ -1304,6 +1651,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain3.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label76
             // 
@@ -1325,6 +1673,7 @@
             0,
             0,
             0});
+            this.numUpDwnGain1.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label75
             // 
@@ -1361,6 +1710,7 @@
             this.thresholdBar8.Name = "thresholdBar8";
             this.thresholdBar8.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar8.TabIndex = 69;
+            this.thresholdBar8.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar8
             // 
@@ -1392,6 +1742,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker8.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label37
             // 
@@ -1428,6 +1779,7 @@
             this.comboBoxSpeaker8.Name = "comboBoxSpeaker8";
             this.comboBoxSpeaker8.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker8.TabIndex = 63;
+            this.comboBoxSpeaker8.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label40
             // 
@@ -1455,6 +1807,7 @@
             this.thresholdBar7.Name = "thresholdBar7";
             this.thresholdBar7.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar7.TabIndex = 60;
+            this.thresholdBar7.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar7
             // 
@@ -1486,6 +1839,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker7.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label42
             // 
@@ -1522,6 +1876,7 @@
             this.comboBoxSpeaker7.Name = "comboBoxSpeaker7";
             this.comboBoxSpeaker7.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker7.TabIndex = 54;
+            this.comboBoxSpeaker7.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -1549,6 +1904,7 @@
             this.thresholdBar6.Name = "thresholdBar6";
             this.thresholdBar6.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar6.TabIndex = 51;
+            this.thresholdBar6.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar6
             // 
@@ -1580,6 +1936,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker6.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label27
             // 
@@ -1616,6 +1973,7 @@
             this.comboBoxSpeaker6.Name = "comboBoxSpeaker6";
             this.comboBoxSpeaker6.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker6.TabIndex = 45;
+            this.comboBoxSpeaker6.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label30
             // 
@@ -1643,6 +2001,7 @@
             this.thresholdBar5.Name = "thresholdBar5";
             this.thresholdBar5.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar5.TabIndex = 42;
+            this.thresholdBar5.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar5
             // 
@@ -1674,6 +2033,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker5.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label32
             // 
@@ -1710,6 +2070,7 @@
             this.comboBoxSpeaker5.Name = "comboBoxSpeaker5";
             this.comboBoxSpeaker5.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker5.TabIndex = 36;
+            this.comboBoxSpeaker5.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -1737,6 +2098,7 @@
             this.thresholdBar4.Name = "thresholdBar4";
             this.thresholdBar4.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar4.TabIndex = 33;
+            this.thresholdBar4.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar4
             // 
@@ -1768,6 +2130,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker4.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label17
             // 
@@ -1804,6 +2167,7 @@
             this.comboBoxSpeaker4.Name = "comboBoxSpeaker4";
             this.comboBoxSpeaker4.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker4.TabIndex = 27;
+            this.comboBoxSpeaker4.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -1831,6 +2195,7 @@
             this.thresholdBar3.Name = "thresholdBar3";
             this.thresholdBar3.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar3.TabIndex = 24;
+            this.thresholdBar3.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar3
             // 
@@ -1862,6 +2227,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker3.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label22
             // 
@@ -1898,6 +2264,7 @@
             this.comboBoxSpeaker3.Name = "comboBoxSpeaker3";
             this.comboBoxSpeaker3.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker3.TabIndex = 18;
+            this.comboBoxSpeaker3.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -1925,6 +2292,7 @@
             this.thresholdBar2.Name = "thresholdBar2";
             this.thresholdBar2.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar2.TabIndex = 15;
+            this.thresholdBar2.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar2
             // 
@@ -1956,6 +2324,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker2.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label12
             // 
@@ -1992,6 +2361,7 @@
             this.comboBoxSpeaker2.Name = "comboBoxSpeaker2";
             this.comboBoxSpeaker2.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker2.TabIndex = 9;
+            this.comboBoxSpeaker2.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -2019,6 +2389,7 @@
             this.thresholdBar1.Name = "thresholdBar1";
             this.thresholdBar1.Size = new System.Drawing.Size(290, 45);
             this.thresholdBar1.TabIndex = 6;
+            this.thresholdBar1.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // volumeBar1
             // 
@@ -2050,6 +2421,7 @@
             0,
             0,
             0});
+            this.numUpDwnChannelSpeaker1.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label7
             // 
@@ -2086,10 +2458,27 @@
             this.comboBoxSpeaker1.Name = "comboBoxSpeaker1";
             this.comboBoxSpeaker1.Size = new System.Drawing.Size(270, 21);
             this.comboBoxSpeaker1.TabIndex = 0;
+            this.comboBoxSpeaker1.SelectedIndexChanged += new System.EventHandler(this.comboBoxSpeaker2_SelectedIndexChanged);
             // 
             // tabPage3
             // 
-            this.tabPage3.BackgroundImage = global::Vision_Automix.Properties.Resources.PTZSetupBackground1;
+            this.tabPage3.BackgroundImage = global::Vision_Automix.Properties.Resources.PTZSetupBackground_v2;
+            this.tabPage3.Controls.Add(this.label47);
+            this.tabPage3.Controls.Add(this.label48);
+            this.tabPage3.Controls.Add(this.label49);
+            this.tabPage3.Controls.Add(this.label50);
+            this.tabPage3.Controls.Add(this.label51);
+            this.tabPage3.Controls.Add(this.label100);
+            this.tabPage3.Controls.Add(this.label101);
+            this.tabPage3.Controls.Add(this.label102);
+            this.tabPage3.Controls.Add(this.label39);
+            this.tabPage3.Controls.Add(this.label44);
+            this.tabPage3.Controls.Add(this.label45);
+            this.tabPage3.Controls.Add(this.label46);
+            this.tabPage3.Controls.Add(this.label29);
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.label19);
             this.tabPage3.Controls.Add(this.label14);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.stat8);
@@ -2393,6 +2782,437 @@
             this.tabPage3.Text = "3 - PTZ Setup";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label47.Location = new System.Drawing.Point(931, 37);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(26, 12);
+            this.label47.TabIndex = 461;
+            this.label47.Text = "Bank";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label48.Location = new System.Drawing.Point(901, 37);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(26, 12);
+            this.label48.TabIndex = 460;
+            this.label48.Text = "Page";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label49.Location = new System.Drawing.Point(834, 37);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(26, 12);
+            this.label49.TabIndex = 459;
+            this.label49.Text = "Bank";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label50.Location = new System.Drawing.Point(804, 37);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(26, 12);
+            this.label50.TabIndex = 458;
+            this.label50.Text = "Page";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label51.Location = new System.Drawing.Point(734, 37);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(26, 12);
+            this.label51.TabIndex = 457;
+            this.label51.Text = "Bank";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label100.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label100.Location = new System.Drawing.Point(704, 37);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(26, 12);
+            this.label100.TabIndex = 456;
+            this.label100.Text = "Page";
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label101.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label101.Location = new System.Drawing.Point(637, 37);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(26, 12);
+            this.label101.TabIndex = 455;
+            this.label101.Text = "Bank";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label102.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label102.Location = new System.Drawing.Point(607, 37);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(26, 12);
+            this.label102.TabIndex = 454;
+            this.label102.Text = "Page";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label39.Location = new System.Drawing.Point(539, 37);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(26, 12);
+            this.label39.TabIndex = 453;
+            this.label39.Text = "Bank";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label44.Location = new System.Drawing.Point(509, 37);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(26, 12);
+            this.label44.TabIndex = 452;
+            this.label44.Text = "Page";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label45.Location = new System.Drawing.Point(442, 37);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(26, 12);
+            this.label45.TabIndex = 451;
+            this.label45.Text = "Bank";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label46.Location = new System.Drawing.Point(412, 37);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(26, 12);
+            this.label46.TabIndex = 450;
+            this.label46.Text = "Page";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label29.Location = new System.Drawing.Point(342, 37);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(26, 12);
+            this.label29.TabIndex = 449;
+            this.label29.Text = "Bank";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label34.Location = new System.Drawing.Point(312, 37);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(26, 12);
+            this.label34.TabIndex = 448;
+            this.label34.Text = "Page";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label24.Location = new System.Drawing.Point(245, 37);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(26, 12);
+            this.label24.TabIndex = 447;
+            this.label24.Text = "Bank";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label19.Location = new System.Drawing.Point(215, 37);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(26, 12);
+            this.label19.TabIndex = 446;
+            this.label19.Text = "Page";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(12, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(150, 12);
+            this.label14.TabIndex = 445;
+            this.label14.Text = "Value: 0 = Group Shot,  1-8 Speaker";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(12, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 12);
+            this.label5.TabIndex = 444;
+            this.label5.Text = "Check box for static camera";
+            // 
+            // stat8
+            // 
+            this.stat8.AutoSize = true;
+            this.stat8.Location = new System.Drawing.Point(886, 117);
+            this.stat8.Name = "stat8";
+            this.stat8.Size = new System.Drawing.Size(15, 14);
+            this.stat8.TabIndex = 443;
+            this.stat8.UseVisualStyleBackColor = true;
+            this.stat8.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos8
+            // 
+            this.statPos8.Location = new System.Drawing.Point(903, 114);
+            this.statPos8.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos8.Name = "statPos8";
+            this.statPos8.Size = new System.Drawing.Size(63, 20);
+            this.statPos8.TabIndex = 442;
+            this.statPos8.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos8.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat7
+            // 
+            this.stat7.AutoSize = true;
+            this.stat7.Location = new System.Drawing.Point(789, 117);
+            this.stat7.Name = "stat7";
+            this.stat7.Size = new System.Drawing.Size(15, 14);
+            this.stat7.TabIndex = 441;
+            this.stat7.UseVisualStyleBackColor = true;
+            this.stat7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos7
+            // 
+            this.statPos7.Location = new System.Drawing.Point(806, 114);
+            this.statPos7.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos7.Name = "statPos7";
+            this.statPos7.Size = new System.Drawing.Size(63, 20);
+            this.statPos7.TabIndex = 440;
+            this.statPos7.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos7.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat6
+            // 
+            this.stat6.AutoSize = true;
+            this.stat6.Location = new System.Drawing.Point(689, 117);
+            this.stat6.Name = "stat6";
+            this.stat6.Size = new System.Drawing.Size(15, 14);
+            this.stat6.TabIndex = 439;
+            this.stat6.UseVisualStyleBackColor = true;
+            this.stat6.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos6
+            // 
+            this.statPos6.Location = new System.Drawing.Point(706, 114);
+            this.statPos6.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos6.Name = "statPos6";
+            this.statPos6.Size = new System.Drawing.Size(63, 20);
+            this.statPos6.TabIndex = 438;
+            this.statPos6.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos6.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat5
+            // 
+            this.stat5.AutoSize = true;
+            this.stat5.Location = new System.Drawing.Point(592, 117);
+            this.stat5.Name = "stat5";
+            this.stat5.Size = new System.Drawing.Size(15, 14);
+            this.stat5.TabIndex = 437;
+            this.stat5.UseVisualStyleBackColor = true;
+            this.stat5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos5
+            // 
+            this.statPos5.Location = new System.Drawing.Point(609, 114);
+            this.statPos5.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos5.Name = "statPos5";
+            this.statPos5.Size = new System.Drawing.Size(63, 20);
+            this.statPos5.TabIndex = 436;
+            this.statPos5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos5.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat4
+            // 
+            this.stat4.AutoSize = true;
+            this.stat4.Location = new System.Drawing.Point(494, 117);
+            this.stat4.Name = "stat4";
+            this.stat4.Size = new System.Drawing.Size(15, 14);
+            this.stat4.TabIndex = 435;
+            this.stat4.UseVisualStyleBackColor = true;
+            this.stat4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos4
+            // 
+            this.statPos4.Location = new System.Drawing.Point(511, 114);
+            this.statPos4.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos4.Name = "statPos4";
+            this.statPos4.Size = new System.Drawing.Size(63, 20);
+            this.statPos4.TabIndex = 434;
+            this.statPos4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos4.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat3
+            // 
+            this.stat3.AutoSize = true;
+            this.stat3.Location = new System.Drawing.Point(397, 117);
+            this.stat3.Name = "stat3";
+            this.stat3.Size = new System.Drawing.Size(15, 14);
+            this.stat3.TabIndex = 433;
+            this.stat3.UseVisualStyleBackColor = true;
+            this.stat3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos3
+            // 
+            this.statPos3.Location = new System.Drawing.Point(414, 114);
+            this.statPos3.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos3.Name = "statPos3";
+            this.statPos3.Size = new System.Drawing.Size(63, 20);
+            this.statPos3.TabIndex = 432;
+            this.statPos3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos3.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat2
+            // 
+            this.stat2.AutoSize = true;
+            this.stat2.Location = new System.Drawing.Point(297, 117);
+            this.stat2.Name = "stat2";
+            this.stat2.Size = new System.Drawing.Size(15, 14);
+            this.stat2.TabIndex = 431;
+            this.stat2.UseVisualStyleBackColor = true;
+            this.stat2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos2
+            // 
+            this.statPos2.Location = new System.Drawing.Point(314, 114);
+            this.statPos2.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos2.Name = "statPos2";
+            this.statPos2.Size = new System.Drawing.Size(63, 20);
+            this.statPos2.TabIndex = 430;
+            this.statPos2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos2.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // stat1
+            // 
+            this.stat1.AutoSize = true;
+            this.stat1.Location = new System.Drawing.Point(200, 117);
+            this.stat1.Name = "stat1";
+            this.stat1.Size = new System.Drawing.Size(15, 14);
+            this.stat1.TabIndex = 429;
+            this.stat1.UseVisualStyleBackColor = true;
+            this.stat1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
+            // 
+            // statPos1
+            // 
+            this.statPos1.Location = new System.Drawing.Point(217, 114);
+            this.statPos1.Maximum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.statPos1.Name = "statPos1";
+            this.statPos1.Size = new System.Drawing.Size(63, 20);
+            this.statPos1.TabIndex = 428;
+            this.statPos1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.statPos1.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 113);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 427;
+            this.label2.Text = "Camera is static";
+            // 
             // b8prw
             // 
             this.b8prw.Location = new System.Drawing.Point(933, 74);
@@ -2414,6 +3234,7 @@
             0,
             0,
             0});
+            this.b8prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a8prw
             // 
@@ -2436,6 +3257,7 @@
             0,
             0,
             0});
+            this.a8prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b8pgm
             // 
@@ -2458,6 +3280,7 @@
             0,
             0,
             0});
+            this.b8pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a8pgm
             // 
@@ -2480,6 +3303,7 @@
             0,
             0,
             0});
+            this.a8pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b7prw
             // 
@@ -2502,6 +3326,7 @@
             0,
             0,
             0});
+            this.b7prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a7prw
             // 
@@ -2524,6 +3349,7 @@
             0,
             0,
             0});
+            this.a7prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b7pgm
             // 
@@ -2546,6 +3372,7 @@
             0,
             0,
             0});
+            this.b7pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a7pgm
             // 
@@ -2568,6 +3395,7 @@
             0,
             0,
             0});
+            this.a7pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b6prw
             // 
@@ -2590,6 +3418,7 @@
             0,
             0,
             0});
+            this.b6prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a6prw
             // 
@@ -2612,6 +3441,7 @@
             0,
             0,
             0});
+            this.a6prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b6pgm
             // 
@@ -2634,6 +3464,7 @@
             0,
             0,
             0});
+            this.b6pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a6pgm
             // 
@@ -2656,6 +3487,7 @@
             0,
             0,
             0});
+            this.a6pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b5prw
             // 
@@ -2678,6 +3510,7 @@
             0,
             0,
             0});
+            this.b5prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a5prw
             // 
@@ -2700,6 +3533,7 @@
             0,
             0,
             0});
+            this.a5prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b5pgm
             // 
@@ -2722,6 +3556,7 @@
             0,
             0,
             0});
+            this.b5pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a5pgm
             // 
@@ -2744,6 +3579,7 @@
             0,
             0,
             0});
+            this.a5pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b4prw
             // 
@@ -2766,6 +3602,7 @@
             0,
             0,
             0});
+            this.b4prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a4prw
             // 
@@ -2788,6 +3625,7 @@
             0,
             0,
             0});
+            this.a4prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b4pgm
             // 
@@ -2810,6 +3648,7 @@
             0,
             0,
             0});
+            this.b4pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a4pgm
             // 
@@ -2832,6 +3671,7 @@
             0,
             0,
             0});
+            this.a4pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b3prw
             // 
@@ -2854,6 +3694,7 @@
             0,
             0,
             0});
+            this.b3prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a3prw
             // 
@@ -2876,6 +3717,7 @@
             0,
             0,
             0});
+            this.a3prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b3pgm
             // 
@@ -2898,6 +3740,7 @@
             0,
             0,
             0});
+            this.b3pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a3pgm
             // 
@@ -2920,6 +3763,7 @@
             0,
             0,
             0});
+            this.a3pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b2prw
             // 
@@ -2942,6 +3786,7 @@
             0,
             0,
             0});
+            this.b2prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a2prw
             // 
@@ -2964,6 +3809,7 @@
             0,
             0,
             0});
+            this.a2prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b2pgm
             // 
@@ -2986,6 +3832,7 @@
             0,
             0,
             0});
+            this.b2pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a2pgm
             // 
@@ -3008,6 +3855,7 @@
             0,
             0,
             0});
+            this.a2pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b1prw
             // 
@@ -3030,6 +3878,7 @@
             0,
             0,
             0});
+            this.b1prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a1prw
             // 
@@ -3052,6 +3901,7 @@
             0,
             0,
             0});
+            this.a1prw.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // b1pgm
             // 
@@ -3074,6 +3924,7 @@
             0,
             0,
             0});
+            this.b1pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a1pgm
             // 
@@ -3096,6 +3947,7 @@
             0,
             0,
             0});
+            this.a1pgm.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label62
             // 
@@ -3145,6 +3997,7 @@
             0,
             0,
             0});
+            this.prfCam8.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam7
             // 
@@ -3167,6 +4020,7 @@
             0,
             0,
             0});
+            this.prfCam7.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam6
             // 
@@ -3189,6 +4043,7 @@
             0,
             0,
             0});
+            this.prfCam6.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam5
             // 
@@ -3211,6 +4066,7 @@
             0,
             0,
             0});
+            this.prfCam5.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam4
             // 
@@ -3233,6 +4089,7 @@
             0,
             0,
             0});
+            this.prfCam4.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam3
             // 
@@ -3255,6 +4112,7 @@
             0,
             0,
             0});
+            this.prfCam3.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam2
             // 
@@ -3277,6 +4135,7 @@
             0,
             0,
             0});
+            this.prfCam2.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam1
             // 
@@ -3299,6 +4158,7 @@
             0,
             0,
             0});
+            this.prfCam1.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // prfCam0
             // 
@@ -3321,6 +4181,7 @@
             0,
             0,
             0});
+            this.prfCam0.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e88
             // 
@@ -3330,6 +4191,7 @@
             this.e88.Size = new System.Drawing.Size(15, 14);
             this.e88.TabIndex = 367;
             this.e88.UseVisualStyleBackColor = true;
+            this.e88.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b88
             // 
@@ -3352,6 +4214,7 @@
             0,
             0,
             0});
+            this.b88.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a88
             // 
@@ -3374,6 +4237,7 @@
             0,
             0,
             0});
+            this.a88.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e87
             // 
@@ -3383,6 +4247,7 @@
             this.e87.Size = new System.Drawing.Size(15, 14);
             this.e87.TabIndex = 364;
             this.e87.UseVisualStyleBackColor = true;
+            this.e87.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b87
             // 
@@ -3405,6 +4270,7 @@
             0,
             0,
             0});
+            this.b87.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a87
             // 
@@ -3427,6 +4293,7 @@
             0,
             0,
             0});
+            this.a87.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e86
             // 
@@ -3436,6 +4303,7 @@
             this.e86.Size = new System.Drawing.Size(15, 14);
             this.e86.TabIndex = 361;
             this.e86.UseVisualStyleBackColor = true;
+            this.e86.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b86
             // 
@@ -3458,6 +4326,7 @@
             0,
             0,
             0});
+            this.b86.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a86
             // 
@@ -3480,6 +4349,7 @@
             0,
             0,
             0});
+            this.a86.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e85
             // 
@@ -3489,6 +4359,7 @@
             this.e85.Size = new System.Drawing.Size(15, 14);
             this.e85.TabIndex = 358;
             this.e85.UseVisualStyleBackColor = true;
+            this.e85.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b85
             // 
@@ -3511,6 +4382,7 @@
             0,
             0,
             0});
+            this.b85.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a85
             // 
@@ -3533,6 +4405,7 @@
             0,
             0,
             0});
+            this.a85.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e84
             // 
@@ -3542,6 +4415,7 @@
             this.e84.Size = new System.Drawing.Size(15, 14);
             this.e84.TabIndex = 355;
             this.e84.UseVisualStyleBackColor = true;
+            this.e84.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b84
             // 
@@ -3564,6 +4438,7 @@
             0,
             0,
             0});
+            this.b84.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a84
             // 
@@ -3586,6 +4461,7 @@
             0,
             0,
             0});
+            this.a84.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e83
             // 
@@ -3595,6 +4471,7 @@
             this.e83.Size = new System.Drawing.Size(15, 14);
             this.e83.TabIndex = 352;
             this.e83.UseVisualStyleBackColor = true;
+            this.e83.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b83
             // 
@@ -3617,6 +4494,7 @@
             0,
             0,
             0});
+            this.b83.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a83
             // 
@@ -3639,6 +4517,7 @@
             0,
             0,
             0});
+            this.a83.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e82
             // 
@@ -3648,6 +4527,7 @@
             this.e82.Size = new System.Drawing.Size(15, 14);
             this.e82.TabIndex = 349;
             this.e82.UseVisualStyleBackColor = true;
+            this.e82.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b82
             // 
@@ -3670,6 +4550,7 @@
             0,
             0,
             0});
+            this.b82.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a82
             // 
@@ -3692,6 +4573,7 @@
             0,
             0,
             0});
+            this.a82.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e81
             // 
@@ -3701,6 +4583,7 @@
             this.e81.Size = new System.Drawing.Size(15, 14);
             this.e81.TabIndex = 346;
             this.e81.UseVisualStyleBackColor = true;
+            this.e81.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b81
             // 
@@ -3723,6 +4606,7 @@
             0,
             0,
             0});
+            this.b81.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a81
             // 
@@ -3745,6 +4629,7 @@
             0,
             0,
             0});
+            this.a81.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e80
             // 
@@ -3754,6 +4639,7 @@
             this.e80.Size = new System.Drawing.Size(15, 14);
             this.e80.TabIndex = 343;
             this.e80.UseVisualStyleBackColor = true;
+            this.e80.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b80
             // 
@@ -3776,6 +4662,7 @@
             0,
             0,
             0});
+            this.b80.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a80
             // 
@@ -3798,6 +4685,7 @@
             0,
             0,
             0});
+            this.a80.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label56
             // 
@@ -3816,6 +4704,7 @@
             this.e78.Size = new System.Drawing.Size(15, 14);
             this.e78.TabIndex = 339;
             this.e78.UseVisualStyleBackColor = true;
+            this.e78.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b78
             // 
@@ -3838,6 +4727,7 @@
             0,
             0,
             0});
+            this.b78.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a78
             // 
@@ -3860,6 +4750,7 @@
             0,
             0,
             0});
+            this.a78.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e77
             // 
@@ -3869,6 +4760,7 @@
             this.e77.Size = new System.Drawing.Size(15, 14);
             this.e77.TabIndex = 336;
             this.e77.UseVisualStyleBackColor = true;
+            this.e77.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b77
             // 
@@ -3891,6 +4783,7 @@
             0,
             0,
             0});
+            this.b77.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a77
             // 
@@ -3913,6 +4806,7 @@
             0,
             0,
             0});
+            this.a77.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e76
             // 
@@ -3922,6 +4816,7 @@
             this.e76.Size = new System.Drawing.Size(15, 14);
             this.e76.TabIndex = 333;
             this.e76.UseVisualStyleBackColor = true;
+            this.e76.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b76
             // 
@@ -3944,6 +4839,7 @@
             0,
             0,
             0});
+            this.b76.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a76
             // 
@@ -3966,6 +4862,7 @@
             0,
             0,
             0});
+            this.a76.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e75
             // 
@@ -3975,6 +4872,7 @@
             this.e75.Size = new System.Drawing.Size(15, 14);
             this.e75.TabIndex = 330;
             this.e75.UseVisualStyleBackColor = true;
+            this.e75.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b75
             // 
@@ -3997,6 +4895,7 @@
             0,
             0,
             0});
+            this.b75.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a75
             // 
@@ -4019,6 +4918,7 @@
             0,
             0,
             0});
+            this.a75.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e74
             // 
@@ -4028,6 +4928,7 @@
             this.e74.Size = new System.Drawing.Size(15, 14);
             this.e74.TabIndex = 327;
             this.e74.UseVisualStyleBackColor = true;
+            this.e74.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b74
             // 
@@ -4050,6 +4951,7 @@
             0,
             0,
             0});
+            this.b74.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a74
             // 
@@ -4072,6 +4974,7 @@
             0,
             0,
             0});
+            this.a74.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e73
             // 
@@ -4081,6 +4984,7 @@
             this.e73.Size = new System.Drawing.Size(15, 14);
             this.e73.TabIndex = 324;
             this.e73.UseVisualStyleBackColor = true;
+            this.e73.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b73
             // 
@@ -4103,6 +5007,7 @@
             0,
             0,
             0});
+            this.b73.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a73
             // 
@@ -4125,6 +5030,7 @@
             0,
             0,
             0});
+            this.a73.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e72
             // 
@@ -4134,6 +5040,7 @@
             this.e72.Size = new System.Drawing.Size(15, 14);
             this.e72.TabIndex = 321;
             this.e72.UseVisualStyleBackColor = true;
+            this.e72.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b72
             // 
@@ -4156,6 +5063,7 @@
             0,
             0,
             0});
+            this.b72.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a72
             // 
@@ -4178,6 +5086,7 @@
             0,
             0,
             0});
+            this.a72.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e71
             // 
@@ -4187,6 +5096,7 @@
             this.e71.Size = new System.Drawing.Size(15, 14);
             this.e71.TabIndex = 318;
             this.e71.UseVisualStyleBackColor = true;
+            this.e71.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b71
             // 
@@ -4209,6 +5119,7 @@
             0,
             0,
             0});
+            this.b71.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a71
             // 
@@ -4231,6 +5142,7 @@
             0,
             0,
             0});
+            this.a71.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e70
             // 
@@ -4240,6 +5152,7 @@
             this.e70.Size = new System.Drawing.Size(15, 14);
             this.e70.TabIndex = 315;
             this.e70.UseVisualStyleBackColor = true;
+            this.e70.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b70
             // 
@@ -4262,6 +5175,7 @@
             0,
             0,
             0});
+            this.b70.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a70
             // 
@@ -4284,6 +5198,7 @@
             0,
             0,
             0});
+            this.a70.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label57
             // 
@@ -4302,6 +5217,7 @@
             this.e68.Size = new System.Drawing.Size(15, 14);
             this.e68.TabIndex = 311;
             this.e68.UseVisualStyleBackColor = true;
+            this.e68.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b68
             // 
@@ -4324,6 +5240,7 @@
             0,
             0,
             0});
+            this.b68.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a68
             // 
@@ -4346,6 +5263,7 @@
             0,
             0,
             0});
+            this.a68.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e67
             // 
@@ -4355,6 +5273,7 @@
             this.e67.Size = new System.Drawing.Size(15, 14);
             this.e67.TabIndex = 308;
             this.e67.UseVisualStyleBackColor = true;
+            this.e67.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b67
             // 
@@ -4377,6 +5296,7 @@
             0,
             0,
             0});
+            this.b67.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a67
             // 
@@ -4399,6 +5319,7 @@
             0,
             0,
             0});
+            this.a67.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e66
             // 
@@ -4408,6 +5329,7 @@
             this.e66.Size = new System.Drawing.Size(15, 14);
             this.e66.TabIndex = 305;
             this.e66.UseVisualStyleBackColor = true;
+            this.e66.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b66
             // 
@@ -4430,6 +5352,7 @@
             0,
             0,
             0});
+            this.b66.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a66
             // 
@@ -4452,6 +5375,7 @@
             0,
             0,
             0});
+            this.a66.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e65
             // 
@@ -4461,6 +5385,7 @@
             this.e65.Size = new System.Drawing.Size(15, 14);
             this.e65.TabIndex = 302;
             this.e65.UseVisualStyleBackColor = true;
+            this.e65.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b65
             // 
@@ -4483,6 +5408,7 @@
             0,
             0,
             0});
+            this.b65.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a65
             // 
@@ -4505,6 +5431,7 @@
             0,
             0,
             0});
+            this.a65.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e64
             // 
@@ -4514,6 +5441,7 @@
             this.e64.Size = new System.Drawing.Size(15, 14);
             this.e64.TabIndex = 299;
             this.e64.UseVisualStyleBackColor = true;
+            this.e64.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b64
             // 
@@ -4536,6 +5464,7 @@
             0,
             0,
             0});
+            this.b64.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a64
             // 
@@ -4558,6 +5487,7 @@
             0,
             0,
             0});
+            this.a64.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e63
             // 
@@ -4567,6 +5497,7 @@
             this.e63.Size = new System.Drawing.Size(15, 14);
             this.e63.TabIndex = 296;
             this.e63.UseVisualStyleBackColor = true;
+            this.e63.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b63
             // 
@@ -4589,6 +5520,7 @@
             0,
             0,
             0});
+            this.b63.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a63
             // 
@@ -4611,6 +5543,7 @@
             0,
             0,
             0});
+            this.a63.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e62
             // 
@@ -4620,6 +5553,7 @@
             this.e62.Size = new System.Drawing.Size(15, 14);
             this.e62.TabIndex = 293;
             this.e62.UseVisualStyleBackColor = true;
+            this.e62.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b62
             // 
@@ -4642,6 +5576,7 @@
             0,
             0,
             0});
+            this.b62.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a62
             // 
@@ -4664,6 +5599,7 @@
             0,
             0,
             0});
+            this.a62.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e61
             // 
@@ -4673,6 +5609,7 @@
             this.e61.Size = new System.Drawing.Size(15, 14);
             this.e61.TabIndex = 290;
             this.e61.UseVisualStyleBackColor = true;
+            this.e61.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b61
             // 
@@ -4695,6 +5632,7 @@
             0,
             0,
             0});
+            this.b61.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a61
             // 
@@ -4717,6 +5655,7 @@
             0,
             0,
             0});
+            this.a61.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e60
             // 
@@ -4726,6 +5665,7 @@
             this.e60.Size = new System.Drawing.Size(15, 14);
             this.e60.TabIndex = 287;
             this.e60.UseVisualStyleBackColor = true;
+            this.e60.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b60
             // 
@@ -4748,6 +5688,7 @@
             0,
             0,
             0});
+            this.b60.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a60
             // 
@@ -4770,6 +5711,7 @@
             0,
             0,
             0});
+            this.a60.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label58
             // 
@@ -4788,6 +5730,7 @@
             this.e58.Size = new System.Drawing.Size(15, 14);
             this.e58.TabIndex = 283;
             this.e58.UseVisualStyleBackColor = true;
+            this.e58.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b58
             // 
@@ -4810,6 +5753,7 @@
             0,
             0,
             0});
+            this.b58.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a58
             // 
@@ -4832,6 +5776,7 @@
             0,
             0,
             0});
+            this.a58.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e57
             // 
@@ -4841,6 +5786,7 @@
             this.e57.Size = new System.Drawing.Size(15, 14);
             this.e57.TabIndex = 280;
             this.e57.UseVisualStyleBackColor = true;
+            this.e57.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b57
             // 
@@ -4863,6 +5809,7 @@
             0,
             0,
             0});
+            this.b57.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a57
             // 
@@ -4885,6 +5832,7 @@
             0,
             0,
             0});
+            this.a57.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e56
             // 
@@ -4894,6 +5842,7 @@
             this.e56.Size = new System.Drawing.Size(15, 14);
             this.e56.TabIndex = 277;
             this.e56.UseVisualStyleBackColor = true;
+            this.e56.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b56
             // 
@@ -4916,6 +5865,7 @@
             0,
             0,
             0});
+            this.b56.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a56
             // 
@@ -4938,6 +5888,7 @@
             0,
             0,
             0});
+            this.a56.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e55
             // 
@@ -4947,6 +5898,7 @@
             this.e55.Size = new System.Drawing.Size(15, 14);
             this.e55.TabIndex = 274;
             this.e55.UseVisualStyleBackColor = true;
+            this.e55.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b55
             // 
@@ -4969,6 +5921,7 @@
             0,
             0,
             0});
+            this.b55.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a55
             // 
@@ -4991,6 +5944,7 @@
             0,
             0,
             0});
+            this.a55.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e54
             // 
@@ -5000,6 +5954,7 @@
             this.e54.Size = new System.Drawing.Size(15, 14);
             this.e54.TabIndex = 271;
             this.e54.UseVisualStyleBackColor = true;
+            this.e54.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b54
             // 
@@ -5022,6 +5977,7 @@
             0,
             0,
             0});
+            this.b54.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a54
             // 
@@ -5044,6 +6000,7 @@
             0,
             0,
             0});
+            this.a54.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e53
             // 
@@ -5053,6 +6010,7 @@
             this.e53.Size = new System.Drawing.Size(15, 14);
             this.e53.TabIndex = 268;
             this.e53.UseVisualStyleBackColor = true;
+            this.e53.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b53
             // 
@@ -5075,6 +6033,7 @@
             0,
             0,
             0});
+            this.b53.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a53
             // 
@@ -5097,6 +6056,7 @@
             0,
             0,
             0});
+            this.a53.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e52
             // 
@@ -5106,6 +6066,7 @@
             this.e52.Size = new System.Drawing.Size(15, 14);
             this.e52.TabIndex = 265;
             this.e52.UseVisualStyleBackColor = true;
+            this.e52.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b52
             // 
@@ -5128,6 +6089,7 @@
             0,
             0,
             0});
+            this.b52.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a52
             // 
@@ -5150,6 +6112,7 @@
             0,
             0,
             0});
+            this.a52.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e51
             // 
@@ -5159,6 +6122,7 @@
             this.e51.Size = new System.Drawing.Size(15, 14);
             this.e51.TabIndex = 262;
             this.e51.UseVisualStyleBackColor = true;
+            this.e51.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b51
             // 
@@ -5181,6 +6145,7 @@
             0,
             0,
             0});
+            this.b51.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a51
             // 
@@ -5203,6 +6168,7 @@
             0,
             0,
             0});
+            this.a51.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e50
             // 
@@ -5212,6 +6178,7 @@
             this.e50.Size = new System.Drawing.Size(15, 14);
             this.e50.TabIndex = 259;
             this.e50.UseVisualStyleBackColor = true;
+            this.e50.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b50
             // 
@@ -5234,6 +6201,7 @@
             0,
             0,
             0});
+            this.b50.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a50
             // 
@@ -5256,6 +6224,7 @@
             0,
             0,
             0});
+            this.a50.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label59
             // 
@@ -5274,6 +6243,7 @@
             this.e48.Size = new System.Drawing.Size(15, 14);
             this.e48.TabIndex = 255;
             this.e48.UseVisualStyleBackColor = true;
+            this.e48.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b48
             // 
@@ -5296,6 +6266,7 @@
             0,
             0,
             0});
+            this.b48.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a48
             // 
@@ -5318,6 +6289,7 @@
             0,
             0,
             0});
+            this.a48.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e47
             // 
@@ -5327,6 +6299,7 @@
             this.e47.Size = new System.Drawing.Size(15, 14);
             this.e47.TabIndex = 252;
             this.e47.UseVisualStyleBackColor = true;
+            this.e47.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b47
             // 
@@ -5349,6 +6322,7 @@
             0,
             0,
             0});
+            this.b47.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a47
             // 
@@ -5371,6 +6345,7 @@
             0,
             0,
             0});
+            this.a47.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e46
             // 
@@ -5380,6 +6355,7 @@
             this.e46.Size = new System.Drawing.Size(15, 14);
             this.e46.TabIndex = 249;
             this.e46.UseVisualStyleBackColor = true;
+            this.e46.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b46
             // 
@@ -5402,6 +6378,7 @@
             0,
             0,
             0});
+            this.b46.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a46
             // 
@@ -5424,6 +6401,7 @@
             0,
             0,
             0});
+            this.a46.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e45
             // 
@@ -5433,6 +6411,7 @@
             this.e45.Size = new System.Drawing.Size(15, 14);
             this.e45.TabIndex = 246;
             this.e45.UseVisualStyleBackColor = true;
+            this.e45.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b45
             // 
@@ -5455,6 +6434,7 @@
             0,
             0,
             0});
+            this.b45.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a45
             // 
@@ -5477,6 +6457,7 @@
             0,
             0,
             0});
+            this.a45.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e44
             // 
@@ -5486,6 +6467,7 @@
             this.e44.Size = new System.Drawing.Size(15, 14);
             this.e44.TabIndex = 243;
             this.e44.UseVisualStyleBackColor = true;
+            this.e44.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b44
             // 
@@ -5508,6 +6490,7 @@
             0,
             0,
             0});
+            this.b44.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a44
             // 
@@ -5530,6 +6513,7 @@
             0,
             0,
             0});
+            this.a44.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e43
             // 
@@ -5539,6 +6523,7 @@
             this.e43.Size = new System.Drawing.Size(15, 14);
             this.e43.TabIndex = 240;
             this.e43.UseVisualStyleBackColor = true;
+            this.e43.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b43
             // 
@@ -5561,6 +6546,7 @@
             0,
             0,
             0});
+            this.b43.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a43
             // 
@@ -5583,6 +6569,7 @@
             0,
             0,
             0});
+            this.a43.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e42
             // 
@@ -5592,6 +6579,7 @@
             this.e42.Size = new System.Drawing.Size(15, 14);
             this.e42.TabIndex = 237;
             this.e42.UseVisualStyleBackColor = true;
+            this.e42.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b42
             // 
@@ -5614,6 +6602,7 @@
             0,
             0,
             0});
+            this.b42.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a42
             // 
@@ -5636,6 +6625,7 @@
             0,
             0,
             0});
+            this.a42.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e41
             // 
@@ -5645,6 +6635,7 @@
             this.e41.Size = new System.Drawing.Size(15, 14);
             this.e41.TabIndex = 234;
             this.e41.UseVisualStyleBackColor = true;
+            this.e41.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b41
             // 
@@ -5667,6 +6658,7 @@
             0,
             0,
             0});
+            this.b41.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a41
             // 
@@ -5689,6 +6681,7 @@
             0,
             0,
             0});
+            this.a41.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e40
             // 
@@ -5698,6 +6691,7 @@
             this.e40.Size = new System.Drawing.Size(15, 14);
             this.e40.TabIndex = 231;
             this.e40.UseVisualStyleBackColor = true;
+            this.e40.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b40
             // 
@@ -5720,6 +6714,7 @@
             0,
             0,
             0});
+            this.b40.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a40
             // 
@@ -5742,6 +6737,7 @@
             0,
             0,
             0});
+            this.a40.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label54
             // 
@@ -5760,6 +6756,7 @@
             this.e38.Size = new System.Drawing.Size(15, 14);
             this.e38.TabIndex = 227;
             this.e38.UseVisualStyleBackColor = true;
+            this.e38.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b38
             // 
@@ -5782,6 +6779,7 @@
             0,
             0,
             0});
+            this.b38.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a38
             // 
@@ -5804,6 +6802,7 @@
             0,
             0,
             0});
+            this.a38.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e37
             // 
@@ -5813,6 +6812,7 @@
             this.e37.Size = new System.Drawing.Size(15, 14);
             this.e37.TabIndex = 224;
             this.e37.UseVisualStyleBackColor = true;
+            this.e37.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b37
             // 
@@ -5835,6 +6835,7 @@
             0,
             0,
             0});
+            this.b37.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a37
             // 
@@ -5857,6 +6858,7 @@
             0,
             0,
             0});
+            this.a37.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e36
             // 
@@ -5866,6 +6868,7 @@
             this.e36.Size = new System.Drawing.Size(15, 14);
             this.e36.TabIndex = 221;
             this.e36.UseVisualStyleBackColor = true;
+            this.e36.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b36
             // 
@@ -5888,6 +6891,7 @@
             0,
             0,
             0});
+            this.b36.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a36
             // 
@@ -5910,6 +6914,7 @@
             0,
             0,
             0});
+            this.a36.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e35
             // 
@@ -5919,6 +6924,7 @@
             this.e35.Size = new System.Drawing.Size(15, 14);
             this.e35.TabIndex = 218;
             this.e35.UseVisualStyleBackColor = true;
+            this.e35.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b35
             // 
@@ -5941,6 +6947,7 @@
             0,
             0,
             0});
+            this.b35.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a35
             // 
@@ -5963,6 +6970,7 @@
             0,
             0,
             0});
+            this.a35.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e34
             // 
@@ -5972,6 +6980,7 @@
             this.e34.Size = new System.Drawing.Size(15, 14);
             this.e34.TabIndex = 215;
             this.e34.UseVisualStyleBackColor = true;
+            this.e34.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b34
             // 
@@ -5994,6 +7003,7 @@
             0,
             0,
             0});
+            this.b34.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a34
             // 
@@ -6016,6 +7026,7 @@
             0,
             0,
             0});
+            this.a34.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e33
             // 
@@ -6025,6 +7036,7 @@
             this.e33.Size = new System.Drawing.Size(15, 14);
             this.e33.TabIndex = 212;
             this.e33.UseVisualStyleBackColor = true;
+            this.e33.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b33
             // 
@@ -6047,6 +7059,7 @@
             0,
             0,
             0});
+            this.b33.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a33
             // 
@@ -6069,6 +7082,7 @@
             0,
             0,
             0});
+            this.a33.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e32
             // 
@@ -6078,6 +7092,7 @@
             this.e32.Size = new System.Drawing.Size(15, 14);
             this.e32.TabIndex = 209;
             this.e32.UseVisualStyleBackColor = true;
+            this.e32.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b32
             // 
@@ -6100,6 +7115,7 @@
             0,
             0,
             0});
+            this.b32.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a32
             // 
@@ -6122,6 +7138,7 @@
             0,
             0,
             0});
+            this.a32.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e31
             // 
@@ -6131,6 +7148,7 @@
             this.e31.Size = new System.Drawing.Size(15, 14);
             this.e31.TabIndex = 206;
             this.e31.UseVisualStyleBackColor = true;
+            this.e31.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b31
             // 
@@ -6153,6 +7171,7 @@
             0,
             0,
             0});
+            this.b31.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a31
             // 
@@ -6175,6 +7194,7 @@
             0,
             0,
             0});
+            this.a31.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e30
             // 
@@ -6184,6 +7204,7 @@
             this.e30.Size = new System.Drawing.Size(15, 14);
             this.e30.TabIndex = 203;
             this.e30.UseVisualStyleBackColor = true;
+            this.e30.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b30
             // 
@@ -6206,6 +7227,7 @@
             0,
             0,
             0});
+            this.b30.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a30
             // 
@@ -6228,6 +7250,7 @@
             0,
             0,
             0});
+            this.a30.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label55
             // 
@@ -6246,6 +7269,7 @@
             this.e28.Size = new System.Drawing.Size(15, 14);
             this.e28.TabIndex = 199;
             this.e28.UseVisualStyleBackColor = true;
+            this.e28.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b28
             // 
@@ -6268,6 +7292,7 @@
             0,
             0,
             0});
+            this.b28.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a28
             // 
@@ -6290,6 +7315,7 @@
             0,
             0,
             0});
+            this.a28.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e27
             // 
@@ -6299,6 +7325,7 @@
             this.e27.Size = new System.Drawing.Size(15, 14);
             this.e27.TabIndex = 196;
             this.e27.UseVisualStyleBackColor = true;
+            this.e27.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b27
             // 
@@ -6321,6 +7348,7 @@
             0,
             0,
             0});
+            this.b27.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a27
             // 
@@ -6343,6 +7371,7 @@
             0,
             0,
             0});
+            this.a27.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e26
             // 
@@ -6352,6 +7381,7 @@
             this.e26.Size = new System.Drawing.Size(15, 14);
             this.e26.TabIndex = 193;
             this.e26.UseVisualStyleBackColor = true;
+            this.e26.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b26
             // 
@@ -6374,6 +7404,7 @@
             0,
             0,
             0});
+            this.b26.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a26
             // 
@@ -6396,6 +7427,7 @@
             0,
             0,
             0});
+            this.a26.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e25
             // 
@@ -6405,6 +7437,7 @@
             this.e25.Size = new System.Drawing.Size(15, 14);
             this.e25.TabIndex = 190;
             this.e25.UseVisualStyleBackColor = true;
+            this.e25.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b25
             // 
@@ -6427,6 +7460,7 @@
             0,
             0,
             0});
+            this.b25.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a25
             // 
@@ -6449,6 +7483,7 @@
             0,
             0,
             0});
+            this.a25.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e24
             // 
@@ -6458,6 +7493,7 @@
             this.e24.Size = new System.Drawing.Size(15, 14);
             this.e24.TabIndex = 187;
             this.e24.UseVisualStyleBackColor = true;
+            this.e24.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b24
             // 
@@ -6480,6 +7516,7 @@
             0,
             0,
             0});
+            this.b24.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a24
             // 
@@ -6502,6 +7539,7 @@
             0,
             0,
             0});
+            this.a24.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e23
             // 
@@ -6511,6 +7549,7 @@
             this.e23.Size = new System.Drawing.Size(15, 14);
             this.e23.TabIndex = 184;
             this.e23.UseVisualStyleBackColor = true;
+            this.e23.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b23
             // 
@@ -6533,6 +7572,7 @@
             0,
             0,
             0});
+            this.b23.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a23
             // 
@@ -6555,6 +7595,7 @@
             0,
             0,
             0});
+            this.a23.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e22
             // 
@@ -6564,6 +7605,7 @@
             this.e22.Size = new System.Drawing.Size(15, 14);
             this.e22.TabIndex = 181;
             this.e22.UseVisualStyleBackColor = true;
+            this.e22.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b22
             // 
@@ -6586,6 +7628,7 @@
             0,
             0,
             0});
+            this.b22.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a22
             // 
@@ -6608,6 +7651,7 @@
             0,
             0,
             0});
+            this.a22.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e21
             // 
@@ -6617,6 +7661,7 @@
             this.e21.Size = new System.Drawing.Size(15, 14);
             this.e21.TabIndex = 178;
             this.e21.UseVisualStyleBackColor = true;
+            this.e21.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b21
             // 
@@ -6639,6 +7684,7 @@
             0,
             0,
             0});
+            this.b21.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a21
             // 
@@ -6661,6 +7707,7 @@
             0,
             0,
             0});
+            this.a21.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e20
             // 
@@ -6670,6 +7717,7 @@
             this.e20.Size = new System.Drawing.Size(15, 14);
             this.e20.TabIndex = 175;
             this.e20.UseVisualStyleBackColor = true;
+            this.e20.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b20
             // 
@@ -6692,6 +7740,7 @@
             0,
             0,
             0});
+            this.b20.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a20
             // 
@@ -6714,6 +7763,7 @@
             0,
             0,
             0});
+            this.a20.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label53
             // 
@@ -6732,6 +7782,7 @@
             this.e18.Size = new System.Drawing.Size(15, 14);
             this.e18.TabIndex = 171;
             this.e18.UseVisualStyleBackColor = true;
+            this.e18.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b18
             // 
@@ -6754,6 +7805,7 @@
             0,
             0,
             0});
+            this.b18.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a18
             // 
@@ -6776,6 +7828,7 @@
             0,
             0,
             0});
+            this.a18.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e17
             // 
@@ -6785,6 +7838,7 @@
             this.e17.Size = new System.Drawing.Size(15, 14);
             this.e17.TabIndex = 168;
             this.e17.UseVisualStyleBackColor = true;
+            this.e17.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b17
             // 
@@ -6807,6 +7861,7 @@
             0,
             0,
             0});
+            this.b17.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a17
             // 
@@ -6829,6 +7884,7 @@
             0,
             0,
             0});
+            this.a17.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e16
             // 
@@ -6838,6 +7894,7 @@
             this.e16.Size = new System.Drawing.Size(15, 14);
             this.e16.TabIndex = 165;
             this.e16.UseVisualStyleBackColor = true;
+            this.e16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b16
             // 
@@ -6860,6 +7917,7 @@
             0,
             0,
             0});
+            this.b16.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a16
             // 
@@ -6882,6 +7940,7 @@
             0,
             0,
             0});
+            this.a16.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e15
             // 
@@ -6891,6 +7950,7 @@
             this.e15.Size = new System.Drawing.Size(15, 14);
             this.e15.TabIndex = 162;
             this.e15.UseVisualStyleBackColor = true;
+            this.e15.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b15
             // 
@@ -6913,6 +7973,7 @@
             0,
             0,
             0});
+            this.b15.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a15
             // 
@@ -6935,6 +7996,7 @@
             0,
             0,
             0});
+            this.a15.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e14
             // 
@@ -6944,6 +8006,7 @@
             this.e14.Size = new System.Drawing.Size(15, 14);
             this.e14.TabIndex = 159;
             this.e14.UseVisualStyleBackColor = true;
+            this.e14.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b14
             // 
@@ -6966,6 +8029,7 @@
             0,
             0,
             0});
+            this.b14.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a14
             // 
@@ -6988,6 +8052,7 @@
             0,
             0,
             0});
+            this.a14.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e13
             // 
@@ -6997,6 +8062,7 @@
             this.e13.Size = new System.Drawing.Size(15, 14);
             this.e13.TabIndex = 156;
             this.e13.UseVisualStyleBackColor = true;
+            this.e13.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b13
             // 
@@ -7019,6 +8085,7 @@
             0,
             0,
             0});
+            this.b13.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a13
             // 
@@ -7041,6 +8108,7 @@
             0,
             0,
             0});
+            this.a13.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e12
             // 
@@ -7050,6 +8118,7 @@
             this.e12.Size = new System.Drawing.Size(15, 14);
             this.e12.TabIndex = 153;
             this.e12.UseVisualStyleBackColor = true;
+            this.e12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b12
             // 
@@ -7072,6 +8141,7 @@
             0,
             0,
             0});
+            this.b12.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a12
             // 
@@ -7094,6 +8164,7 @@
             0,
             0,
             0});
+            this.a12.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e11
             // 
@@ -7103,6 +8174,7 @@
             this.e11.Size = new System.Drawing.Size(15, 14);
             this.e11.TabIndex = 150;
             this.e11.UseVisualStyleBackColor = true;
+            this.e11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b11
             // 
@@ -7125,6 +8197,7 @@
             0,
             0,
             0});
+            this.b11.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a11
             // 
@@ -7147,6 +8220,7 @@
             0,
             0,
             0});
+            this.a11.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // e10
             // 
@@ -7156,6 +8230,7 @@
             this.e10.Size = new System.Drawing.Size(15, 14);
             this.e10.TabIndex = 147;
             this.e10.UseVisualStyleBackColor = true;
+            this.e10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.stat1_MouseUp_1);
             // 
             // b10
             // 
@@ -7178,6 +8253,7 @@
             0,
             0,
             0});
+            this.b10.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // a10
             // 
@@ -7200,6 +8276,7 @@
             0,
             0,
             0});
+            this.a10.ValueChanged += new System.EventHandler(this.b8prw_ValueChanged);
             // 
             // label60
             // 
@@ -7291,292 +8368,510 @@
             this.labelPTZsetupSpeaker1.TabIndex = 0;
             this.labelPTZsetupSpeaker1.Text = "Speaker 1";
             // 
-            // tabPage4
+            // tabPage5
             // 
-            this.tabPage4.Controls.Add(this.labelCameraPos8);
-            this.tabPage4.Controls.Add(this.labelCameraPos7);
-            this.tabPage4.Controls.Add(this.labelCameraPos6);
-            this.tabPage4.Controls.Add(this.labelCameraPos5);
-            this.tabPage4.Controls.Add(this.labelCameraPos4);
-            this.tabPage4.Controls.Add(this.labelCameraPos3);
-            this.tabPage4.Controls.Add(this.labelCameraPos2);
-            this.tabPage4.Controls.Add(this.labelCameraPos1);
-            this.tabPage4.Controls.Add(this.labelSpeakerOnPGM);
-            this.tabPage4.Controls.Add(this.label83);
-            this.tabPage4.Controls.Add(this.labelBusy8);
-            this.tabPage4.Controls.Add(this.labelBusy7);
-            this.tabPage4.Controls.Add(this.labelBusy6);
-            this.tabPage4.Controls.Add(this.labelBusy5);
-            this.tabPage4.Controls.Add(this.labelBusy4);
-            this.tabPage4.Controls.Add(this.labelBusy3);
-            this.tabPage4.Controls.Add(this.labelBusy2);
-            this.tabPage4.Controls.Add(this.labelBusy1);
-            this.tabPage4.Controls.Add(this.liveStatusLabel);
-            this.tabPage4.Controls.Add(this.shottimeLabel);
-            this.tabPage4.Controls.Add(this.label74);
-            this.tabPage4.Controls.Add(this.nextSpeakerPercentLabel);
-            this.tabPage4.Controls.Add(this.labelPRW);
-            this.tabPage4.Controls.Add(this.labelPGM);
-            this.tabPage4.Controls.Add(this.labelNextSpeaker);
-            this.tabPage4.Controls.Add(this.labelCurrentSpeaker);
-            this.tabPage4.Controls.Add(this.label68);
-            this.tabPage4.Controls.Add(this.label69);
-            this.tabPage4.Controls.Add(this.label67);
-            this.tabPage4.Controls.Add(this.label66);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(989, 570);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "4 - Live Monitor";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage5.BackgroundImage = global::Vision_Automix.Properties.Resources._4_Live_Monitor_Bg_003;
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus8);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus7);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus6);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus5);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus4);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus3);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus2);
+            this.tabPage5.Controls.Add(this.labelCameraBoxStatus1);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition8);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition7);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition6);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition5);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition4);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition3);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition2);
+            this.tabPage5.Controls.Add(this.labelCameraBoxPosition1);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam8);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam7);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam6);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam5);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam4);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam3);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam2);
+            this.tabPage5.Controls.Add(this.camBoxLabelCam1);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker8);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker7);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker6);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker5);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker4);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker3);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker2);
+            this.tabPage5.Controls.Add(this.labelSpeakerBoxSpeaker1);
+            this.tabPage5.Controls.Add(this.label108);
+            this.tabPage5.Controls.Add(this.label107);
+            this.tabPage5.Controls.Add(this.labelPreviewSpeaker);
+            this.tabPage5.Controls.Add(this.labelPreviewCamera);
+            this.tabPage5.Controls.Add(this.labelProgramSpeaker);
+            this.tabPage5.Controls.Add(this.labelProgramCamera);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(989, 570);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "4 - Live Monitor";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // labelSpeakerOnPGM
+            // labelCameraBoxStatus8
             // 
-            this.labelSpeakerOnPGM.AutoSize = true;
-            this.labelSpeakerOnPGM.BackColor = System.Drawing.Color.Snow;
-            this.labelSpeakerOnPGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSpeakerOnPGM.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelSpeakerOnPGM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelSpeakerOnPGM.Location = new System.Drawing.Point(316, 293);
-            this.labelSpeakerOnPGM.Name = "labelSpeakerOnPGM";
-            this.labelSpeakerOnPGM.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelSpeakerOnPGM.Size = new System.Drawing.Size(28, 24);
-            this.labelSpeakerOnPGM.TabIndex = 21;
-            this.labelSpeakerOnPGM.Text = "---";
+            this.labelCameraBoxStatus8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus8.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus8.Location = new System.Drawing.Point(641, 516);
+            this.labelCameraBoxStatus8.Name = "labelCameraBoxStatus8";
+            this.labelCameraBoxStatus8.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus8.TabIndex = 37;
+            this.labelCameraBoxStatus8.Text = "STATUS";
+            this.labelCameraBoxStatus8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label83
+            // labelCameraBoxStatus7
             // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(8, 485);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(200, 31);
-            this.label83.TabIndex = 20;
-            this.label83.Text = "Cameras Busy:";
+            this.labelCameraBoxStatus7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus7.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus7.Location = new System.Drawing.Point(641, 491);
+            this.labelCameraBoxStatus7.Name = "labelCameraBoxStatus7";
+            this.labelCameraBoxStatus7.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus7.TabIndex = 36;
+            this.labelCameraBoxStatus7.Text = "STATUS";
+            this.labelCameraBoxStatus7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy8
+            // labelCameraBoxStatus6
             // 
-            this.labelBusy8.AutoSize = true;
-            this.labelBusy8.BackColor = System.Drawing.Color.Red;
-            this.labelBusy8.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy8.Location = new System.Drawing.Point(645, 479);
-            this.labelBusy8.Name = "labelBusy8";
-            this.labelBusy8.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy8.TabIndex = 19;
-            this.labelBusy8.Text = "8";
+            this.labelCameraBoxStatus6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus6.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus6.Location = new System.Drawing.Point(641, 466);
+            this.labelCameraBoxStatus6.Name = "labelCameraBoxStatus6";
+            this.labelCameraBoxStatus6.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus6.TabIndex = 35;
+            this.labelCameraBoxStatus6.Text = "STATUS";
+            this.labelCameraBoxStatus6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy7
+            // labelCameraBoxStatus5
             // 
-            this.labelBusy7.AutoSize = true;
-            this.labelBusy7.BackColor = System.Drawing.Color.Red;
-            this.labelBusy7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy7.Location = new System.Drawing.Point(597, 479);
-            this.labelBusy7.Name = "labelBusy7";
-            this.labelBusy7.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy7.TabIndex = 18;
-            this.labelBusy7.Text = "7";
+            this.labelCameraBoxStatus5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus5.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus5.Location = new System.Drawing.Point(641, 441);
+            this.labelCameraBoxStatus5.Name = "labelCameraBoxStatus5";
+            this.labelCameraBoxStatus5.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus5.TabIndex = 34;
+            this.labelCameraBoxStatus5.Text = "STATUS";
+            this.labelCameraBoxStatus5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy6
+            // labelCameraBoxStatus4
             // 
-            this.labelBusy6.AutoSize = true;
-            this.labelBusy6.BackColor = System.Drawing.Color.Red;
-            this.labelBusy6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy6.Location = new System.Drawing.Point(550, 479);
-            this.labelBusy6.Name = "labelBusy6";
-            this.labelBusy6.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy6.TabIndex = 17;
-            this.labelBusy6.Text = "6";
+            this.labelCameraBoxStatus4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus4.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus4.Location = new System.Drawing.Point(641, 416);
+            this.labelCameraBoxStatus4.Name = "labelCameraBoxStatus4";
+            this.labelCameraBoxStatus4.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus4.TabIndex = 33;
+            this.labelCameraBoxStatus4.Text = "STATUS";
+            this.labelCameraBoxStatus4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy5
+            // labelCameraBoxStatus3
             // 
-            this.labelBusy5.AutoSize = true;
-            this.labelBusy5.BackColor = System.Drawing.Color.Red;
-            this.labelBusy5.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy5.Location = new System.Drawing.Point(502, 479);
-            this.labelBusy5.Name = "labelBusy5";
-            this.labelBusy5.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy5.TabIndex = 16;
-            this.labelBusy5.Text = "5";
+            this.labelCameraBoxStatus3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus3.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus3.Location = new System.Drawing.Point(641, 391);
+            this.labelCameraBoxStatus3.Name = "labelCameraBoxStatus3";
+            this.labelCameraBoxStatus3.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus3.TabIndex = 32;
+            this.labelCameraBoxStatus3.Text = "STATUS";
+            this.labelCameraBoxStatus3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy4
+            // labelCameraBoxStatus2
             // 
-            this.labelBusy4.AutoSize = true;
-            this.labelBusy4.BackColor = System.Drawing.Color.Red;
-            this.labelBusy4.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy4.Location = new System.Drawing.Point(456, 479);
-            this.labelBusy4.Name = "labelBusy4";
-            this.labelBusy4.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy4.TabIndex = 15;
-            this.labelBusy4.Text = "4";
+            this.labelCameraBoxStatus2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus2.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus2.Location = new System.Drawing.Point(641, 366);
+            this.labelCameraBoxStatus2.Name = "labelCameraBoxStatus2";
+            this.labelCameraBoxStatus2.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus2.TabIndex = 31;
+            this.labelCameraBoxStatus2.Text = "STATUS";
+            this.labelCameraBoxStatus2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy3
+            // labelCameraBoxStatus1
             // 
-            this.labelBusy3.AutoSize = true;
-            this.labelBusy3.BackColor = System.Drawing.Color.Red;
-            this.labelBusy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy3.Location = new System.Drawing.Point(408, 479);
-            this.labelBusy3.Name = "labelBusy3";
-            this.labelBusy3.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy3.TabIndex = 14;
-            this.labelBusy3.Text = "3";
+            this.labelCameraBoxStatus1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxStatus1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxStatus1.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxStatus1.Location = new System.Drawing.Point(641, 341);
+            this.labelCameraBoxStatus1.Name = "labelCameraBoxStatus1";
+            this.labelCameraBoxStatus1.Size = new System.Drawing.Size(74, 25);
+            this.labelCameraBoxStatus1.TabIndex = 30;
+            this.labelCameraBoxStatus1.Text = "STATUS";
+            this.labelCameraBoxStatus1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelBusy2
+            // labelCameraBoxPosition8
             // 
-            this.labelBusy2.AutoSize = true;
-            this.labelBusy2.BackColor = System.Drawing.Color.Red;
-            this.labelBusy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy2.Location = new System.Drawing.Point(361, 479);
-            this.labelBusy2.Name = "labelBusy2";
-            this.labelBusy2.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy2.TabIndex = 13;
-            this.labelBusy2.Text = "2";
+            this.labelCameraBoxPosition8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition8.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition8.Location = new System.Drawing.Point(733, 516);
+            this.labelCameraBoxPosition8.Name = "labelCameraBoxPosition8";
+            this.labelCameraBoxPosition8.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition8.TabIndex = 29;
+            this.labelCameraBoxPosition8.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelBusy1
+            // labelCameraBoxPosition7
             // 
-            this.labelBusy1.AutoSize = true;
-            this.labelBusy1.BackColor = System.Drawing.Color.Red;
-            this.labelBusy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBusy1.Location = new System.Drawing.Point(313, 479);
-            this.labelBusy1.Name = "labelBusy1";
-            this.labelBusy1.Size = new System.Drawing.Size(37, 39);
-            this.labelBusy1.TabIndex = 12;
-            this.labelBusy1.Text = "1";
+            this.labelCameraBoxPosition7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition7.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition7.Location = new System.Drawing.Point(733, 491);
+            this.labelCameraBoxPosition7.Name = "labelCameraBoxPosition7";
+            this.labelCameraBoxPosition7.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition7.TabIndex = 28;
+            this.labelCameraBoxPosition7.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // liveStatusLabel
+            // labelCameraBoxPosition6
             // 
-            this.liveStatusLabel.AutoSize = true;
-            this.liveStatusLabel.BackColor = System.Drawing.Color.Snow;
-            this.liveStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.liveStatusLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.liveStatusLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.liveStatusLabel.Location = new System.Drawing.Point(568, 94);
-            this.liveStatusLabel.Name = "liveStatusLabel";
-            this.liveStatusLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.liveStatusLabel.Size = new System.Drawing.Size(28, 24);
-            this.liveStatusLabel.TabIndex = 11;
-            this.liveStatusLabel.Text = "---";
+            this.labelCameraBoxPosition6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition6.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition6.Location = new System.Drawing.Point(733, 466);
+            this.labelCameraBoxPosition6.Name = "labelCameraBoxPosition6";
+            this.labelCameraBoxPosition6.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition6.TabIndex = 27;
+            this.labelCameraBoxPosition6.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // shottimeLabel
+            // labelCameraBoxPosition5
             // 
-            this.shottimeLabel.AutoSize = true;
-            this.shottimeLabel.BackColor = System.Drawing.Color.Maroon;
-            this.shottimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shottimeLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.shottimeLabel.Location = new System.Drawing.Point(460, 262);
-            this.shottimeLabel.Name = "shottimeLabel";
-            this.shottimeLabel.Size = new System.Drawing.Size(45, 31);
-            this.shottimeLabel.TabIndex = 10;
-            this.shottimeLabel.Text = "0s";
+            this.labelCameraBoxPosition5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition5.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition5.Location = new System.Drawing.Point(733, 441);
+            this.labelCameraBoxPosition5.Name = "labelCameraBoxPosition5";
+            this.labelCameraBoxPosition5.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition5.TabIndex = 26;
+            this.labelCameraBoxPosition5.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label74
+            // labelCameraBoxPosition4
             // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(8, 133);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(245, 31);
-            this.label74.TabIndex = 9;
-            this.label74.Text = "Next speaker Vote:";
+            this.labelCameraBoxPosition4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition4.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition4.Location = new System.Drawing.Point(733, 416);
+            this.labelCameraBoxPosition4.Name = "labelCameraBoxPosition4";
+            this.labelCameraBoxPosition4.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition4.TabIndex = 25;
+            this.labelCameraBoxPosition4.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // nextSpeakerPercentLabel
+            // labelCameraBoxPosition3
             // 
-            this.nextSpeakerPercentLabel.AutoSize = true;
-            this.nextSpeakerPercentLabel.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.nextSpeakerPercentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextSpeakerPercentLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.nextSpeakerPercentLabel.Location = new System.Drawing.Point(314, 133);
-            this.nextSpeakerPercentLabel.Name = "nextSpeakerPercentLabel";
-            this.nextSpeakerPercentLabel.Size = new System.Drawing.Size(55, 31);
-            this.nextSpeakerPercentLabel.TabIndex = 8;
-            this.nextSpeakerPercentLabel.Text = "0%";
+            this.labelCameraBoxPosition3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition3.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition3.Location = new System.Drawing.Point(733, 391);
+            this.labelCameraBoxPosition3.Name = "labelCameraBoxPosition3";
+            this.labelCameraBoxPosition3.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition3.TabIndex = 24;
+            this.labelCameraBoxPosition3.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelPRW
+            // labelCameraBoxPosition2
             // 
-            this.labelPRW.AutoSize = true;
-            this.labelPRW.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.labelPRW.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPRW.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelPRW.Location = new System.Drawing.Point(314, 330);
-            this.labelPRW.Name = "labelPRW";
-            this.labelPRW.Size = new System.Drawing.Size(89, 31);
-            this.labelPRW.TabIndex = 7;
-            this.labelPRW.Text = "PRW:";
+            this.labelCameraBoxPosition2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition2.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition2.Location = new System.Drawing.Point(733, 366);
+            this.labelCameraBoxPosition2.Name = "labelCameraBoxPosition2";
+            this.labelCameraBoxPosition2.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition2.TabIndex = 23;
+            this.labelCameraBoxPosition2.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelPGM
+            // labelCameraBoxPosition1
             // 
-            this.labelPGM.AutoSize = true;
-            this.labelPGM.BackColor = System.Drawing.Color.Maroon;
-            this.labelPGM.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPGM.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelPGM.Location = new System.Drawing.Point(314, 262);
-            this.labelPGM.Name = "labelPGM";
-            this.labelPGM.Size = new System.Drawing.Size(87, 31);
-            this.labelPGM.TabIndex = 6;
-            this.labelPGM.Text = "PGM:";
+            this.labelCameraBoxPosition1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCameraBoxPosition1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCameraBoxPosition1.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCameraBoxPosition1.Location = new System.Drawing.Point(733, 341);
+            this.labelCameraBoxPosition1.Name = "labelCameraBoxPosition1";
+            this.labelCameraBoxPosition1.Size = new System.Drawing.Size(222, 25);
+            this.labelCameraBoxPosition1.TabIndex = 22;
+            this.labelCameraBoxPosition1.Text = "SPEAKERNAME123456789";
+            this.labelCameraBoxPosition1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // labelNextSpeaker
+            // camBoxLabelCam8
             // 
-            this.labelNextSpeaker.AutoSize = true;
-            this.labelNextSpeaker.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.labelNextSpeaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNextSpeaker.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelNextSpeaker.Location = new System.Drawing.Point(314, 87);
-            this.labelNextSpeaker.Name = "labelNextSpeaker";
-            this.labelNextSpeaker.Size = new System.Drawing.Size(195, 31);
-            this.labelNextSpeaker.TabIndex = 5;
-            this.labelNextSpeaker.Text = "Next speaker:";
+            this.camBoxLabelCam8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam8.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam8.Location = new System.Drawing.Point(531, 516);
+            this.camBoxLabelCam8.Name = "camBoxLabelCam8";
+            this.camBoxLabelCam8.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam8.TabIndex = 21;
+            this.camBoxLabelCam8.Text = "CAM 8";
+            this.camBoxLabelCam8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelCurrentSpeaker
+            // camBoxLabelCam7
             // 
-            this.labelCurrentSpeaker.AutoSize = true;
-            this.labelCurrentSpeaker.BackColor = System.Drawing.Color.Maroon;
-            this.labelCurrentSpeaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentSpeaker.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelCurrentSpeaker.Location = new System.Drawing.Point(314, 19);
-            this.labelCurrentSpeaker.Name = "labelCurrentSpeaker";
-            this.labelCurrentSpeaker.Size = new System.Drawing.Size(233, 31);
-            this.labelCurrentSpeaker.TabIndex = 4;
-            this.labelCurrentSpeaker.Text = "Current speaker:";
+            this.camBoxLabelCam7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam7.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam7.Location = new System.Drawing.Point(531, 491);
+            this.camBoxLabelCam7.Name = "camBoxLabelCam7";
+            this.camBoxLabelCam7.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam7.TabIndex = 20;
+            this.camBoxLabelCam7.Text = "CAM 7";
+            this.camBoxLabelCam7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label68
+            // camBoxLabelCam6
             // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(8, 330);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(85, 31);
-            this.label68.TabIndex = 3;
-            this.label68.Text = "PRW:";
+            this.camBoxLabelCam6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam6.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam6.Location = new System.Drawing.Point(531, 466);
+            this.camBoxLabelCam6.Name = "camBoxLabelCam6";
+            this.camBoxLabelCam6.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam6.TabIndex = 19;
+            this.camBoxLabelCam6.Text = "CAM 6";
+            this.camBoxLabelCam6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label69
+            // camBoxLabelCam5
             // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(8, 262);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(83, 31);
-            this.label69.TabIndex = 2;
-            this.label69.Text = "PGM:";
+            this.camBoxLabelCam5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam5.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam5.Location = new System.Drawing.Point(531, 441);
+            this.camBoxLabelCam5.Name = "camBoxLabelCam5";
+            this.camBoxLabelCam5.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam5.TabIndex = 18;
+            this.camBoxLabelCam5.Text = "CAM 5";
+            this.camBoxLabelCam5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label67
+            // camBoxLabelCam4
             // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label67.Location = new System.Drawing.Point(8, 87);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(182, 31);
-            this.label67.TabIndex = 1;
-            this.label67.Text = "Next speaker:";
+            this.camBoxLabelCam4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam4.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam4.Location = new System.Drawing.Point(531, 416);
+            this.camBoxLabelCam4.Name = "camBoxLabelCam4";
+            this.camBoxLabelCam4.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam4.TabIndex = 17;
+            this.camBoxLabelCam4.Text = "CAM 4";
+            this.camBoxLabelCam4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label66
+            // camBoxLabelCam3
             // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(8, 19);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(217, 31);
-            this.label66.TabIndex = 0;
-            this.label66.Text = "Current speaker:";
+            this.camBoxLabelCam3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam3.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam3.Location = new System.Drawing.Point(531, 391);
+            this.camBoxLabelCam3.Name = "camBoxLabelCam3";
+            this.camBoxLabelCam3.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam3.TabIndex = 16;
+            this.camBoxLabelCam3.Text = "CAM 3";
+            this.camBoxLabelCam3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // camBoxLabelCam2
+            // 
+            this.camBoxLabelCam2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam2.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam2.Location = new System.Drawing.Point(531, 366);
+            this.camBoxLabelCam2.Name = "camBoxLabelCam2";
+            this.camBoxLabelCam2.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam2.TabIndex = 15;
+            this.camBoxLabelCam2.Text = "CAM 2";
+            this.camBoxLabelCam2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // camBoxLabelCam1
+            // 
+            this.camBoxLabelCam1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.camBoxLabelCam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.camBoxLabelCam1.ForeColor = System.Drawing.SystemColors.Control;
+            this.camBoxLabelCam1.Location = new System.Drawing.Point(531, 341);
+            this.camBoxLabelCam1.Name = "camBoxLabelCam1";
+            this.camBoxLabelCam1.Size = new System.Drawing.Size(74, 25);
+            this.camBoxLabelCam1.TabIndex = 14;
+            this.camBoxLabelCam1.Text = "CAM 1";
+            this.camBoxLabelCam1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelSpeakerBoxSpeaker8
+            // 
+            this.labelSpeakerBoxSpeaker8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker8.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker8.Location = new System.Drawing.Point(34, 516);
+            this.labelSpeakerBoxSpeaker8.Name = "labelSpeakerBoxSpeaker8";
+            this.labelSpeakerBoxSpeaker8.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker8.TabIndex = 13;
+            this.labelSpeakerBoxSpeaker8.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker7
+            // 
+            this.labelSpeakerBoxSpeaker7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker7.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker7.Location = new System.Drawing.Point(34, 491);
+            this.labelSpeakerBoxSpeaker7.Name = "labelSpeakerBoxSpeaker7";
+            this.labelSpeakerBoxSpeaker7.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker7.TabIndex = 12;
+            this.labelSpeakerBoxSpeaker7.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker6
+            // 
+            this.labelSpeakerBoxSpeaker6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker6.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker6.Location = new System.Drawing.Point(34, 466);
+            this.labelSpeakerBoxSpeaker6.Name = "labelSpeakerBoxSpeaker6";
+            this.labelSpeakerBoxSpeaker6.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker6.TabIndex = 11;
+            this.labelSpeakerBoxSpeaker6.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker5
+            // 
+            this.labelSpeakerBoxSpeaker5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker5.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker5.Location = new System.Drawing.Point(34, 441);
+            this.labelSpeakerBoxSpeaker5.Name = "labelSpeakerBoxSpeaker5";
+            this.labelSpeakerBoxSpeaker5.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker5.TabIndex = 10;
+            this.labelSpeakerBoxSpeaker5.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker4
+            // 
+            this.labelSpeakerBoxSpeaker4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker4.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker4.Location = new System.Drawing.Point(34, 416);
+            this.labelSpeakerBoxSpeaker4.Name = "labelSpeakerBoxSpeaker4";
+            this.labelSpeakerBoxSpeaker4.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker4.TabIndex = 9;
+            this.labelSpeakerBoxSpeaker4.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker3
+            // 
+            this.labelSpeakerBoxSpeaker3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker3.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker3.Location = new System.Drawing.Point(34, 391);
+            this.labelSpeakerBoxSpeaker3.Name = "labelSpeakerBoxSpeaker3";
+            this.labelSpeakerBoxSpeaker3.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker3.TabIndex = 8;
+            this.labelSpeakerBoxSpeaker3.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker2
+            // 
+            this.labelSpeakerBoxSpeaker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker2.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker2.Location = new System.Drawing.Point(34, 366);
+            this.labelSpeakerBoxSpeaker2.Name = "labelSpeakerBoxSpeaker2";
+            this.labelSpeakerBoxSpeaker2.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker2.TabIndex = 7;
+            this.labelSpeakerBoxSpeaker2.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSpeakerBoxSpeaker1
+            // 
+            this.labelSpeakerBoxSpeaker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelSpeakerBoxSpeaker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeakerBoxSpeaker1.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelSpeakerBoxSpeaker1.Location = new System.Drawing.Point(34, 341);
+            this.labelSpeakerBoxSpeaker1.Name = "labelSpeakerBoxSpeaker1";
+            this.labelSpeakerBoxSpeaker1.Size = new System.Drawing.Size(445, 25);
+            this.labelSpeakerBoxSpeaker1.TabIndex = 6;
+            this.labelSpeakerBoxSpeaker1.Text = "SPEAKERNAME123456789";
+            this.labelSpeakerBoxSpeaker1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label108
+            // 
+            this.label108.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label108.ForeColor = System.Drawing.SystemColors.Control;
+            this.label108.Location = new System.Drawing.Point(520, 297);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(445, 42);
+            this.label108.TabIndex = 5;
+            this.label108.Text = "Cameras";
+            this.label108.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label107
+            // 
+            this.label107.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label107.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label107.ForeColor = System.Drawing.SystemColors.Control;
+            this.label107.Location = new System.Drawing.Point(34, 297);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(445, 42);
+            this.label107.TabIndex = 4;
+            this.label107.Text = "Speakers";
+            this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPreviewSpeaker
+            // 
+            this.labelPreviewSpeaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelPreviewSpeaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPreviewSpeaker.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelPreviewSpeaker.Location = new System.Drawing.Point(34, 155);
+            this.labelPreviewSpeaker.Name = "labelPreviewSpeaker";
+            this.labelPreviewSpeaker.Size = new System.Drawing.Size(445, 42);
+            this.labelPreviewSpeaker.TabIndex = 3;
+            this.labelPreviewSpeaker.Text = "SPEAKERNAME123456789";
+            this.labelPreviewSpeaker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelPreviewCamera
+            // 
+            this.labelPreviewCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelPreviewCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPreviewCamera.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelPreviewCamera.Location = new System.Drawing.Point(34, 94);
+            this.labelPreviewCamera.Name = "labelPreviewCamera";
+            this.labelPreviewCamera.Size = new System.Drawing.Size(445, 42);
+            this.labelPreviewCamera.TabIndex = 2;
+            this.labelPreviewCamera.Text = "CAMERA 0";
+            this.labelPreviewCamera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelProgramSpeaker
+            // 
+            this.labelProgramSpeaker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelProgramSpeaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProgramSpeaker.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelProgramSpeaker.Location = new System.Drawing.Point(519, 155);
+            this.labelProgramSpeaker.Name = "labelProgramSpeaker";
+            this.labelProgramSpeaker.Size = new System.Drawing.Size(445, 42);
+            this.labelProgramSpeaker.TabIndex = 1;
+            this.labelProgramSpeaker.Text = "SPEAKERNAME123456789";
+            this.labelProgramSpeaker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelProgramCamera
+            // 
+            this.labelProgramCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelProgramCamera.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProgramCamera.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelProgramCamera.Location = new System.Drawing.Point(519, 94);
+            this.labelProgramCamera.Name = "labelProgramCamera";
+            this.labelProgramCamera.Size = new System.Drawing.Size(445, 42);
+            this.labelProgramCamera.TabIndex = 0;
+            this.labelProgramCamera.Text = "CAMERA 0";
+            this.labelProgramCamera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // statusStrip1
             // 
@@ -7714,6 +9009,7 @@
             // 
             this.applyButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.applyButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.applyButton.Enabled = false;
             this.applyButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applyButton.Image = ((System.Drawing.Image)(resources.GetObject("applyButton.Image")));
             this.applyButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -7741,627 +9037,10 @@
             this.tickDirector.Interval = 50;
             this.tickDirector.Tick += new System.EventHandler(this.TickDirector_Tick);
             // 
-            // checkBoxEnablePRWbus
+            // unchangedSettingsTimer
             // 
-            this.checkBoxEnablePRWbus.AutoSize = true;
-            this.checkBoxEnablePRWbus.Location = new System.Drawing.Point(9, 123);
-            this.checkBoxEnablePRWbus.Name = "checkBoxEnablePRWbus";
-            this.checkBoxEnablePRWbus.Size = new System.Drawing.Size(155, 17);
-            this.checkBoxEnablePRWbus.TabIndex = 42;
-            this.checkBoxEnablePRWbus.Text = "Enable Preview bus control";
-            this.checkBoxEnablePRWbus.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label87);
-            this.groupBox1.Controls.Add(this.numUpDownCameras);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.numUpDownSpeakers);
-            this.groupBox1.Controls.Add(this.label65);
-            this.groupBox1.Controls.Add(this.numUpDownCameraMoveTime);
-            this.groupBox1.Location = new System.Drawing.Point(8, 19);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(233, 186);
-            this.groupBox1.TabIndex = 44;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Studio Setup";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label91);
-            this.groupBox2.Controls.Add(this.label90);
-            this.groupBox2.Controls.Add(this.label89);
-            this.groupBox2.Controls.Add(this.label88);
-            this.groupBox2.Controls.Add(this.label85);
-            this.groupBox2.Controls.Add(this.label84);
-            this.groupBox2.Controls.Add(this.numUpDwnMinShotTime);
-            this.groupBox2.Controls.Add(this.label86);
-            this.groupBox2.Controls.Add(this.checkBoxUseQuiet);
-            this.groupBox2.Controls.Add(this.label73);
-            this.groupBox2.Controls.Add(this.numUpDwnQuietTime);
-            this.groupBox2.Controls.Add(this.votelengthLabel);
-            this.groupBox2.Controls.Add(this.votelengthTrackBar);
-            this.groupBox2.Controls.Add(this.label72);
-            this.groupBox2.Controls.Add(this.label70);
-            this.groupBox2.Controls.Add(this.label71);
-            this.groupBox2.Location = new System.Drawing.Point(8, 211);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(233, 290);
-            this.groupBox2.TabIndex = 45;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Director Preferences";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.compIP3);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.compIP1);
-            this.groupBox3.Controls.Add(this.checkBoxEnablePRWbus);
-            this.groupBox3.Controls.Add(this.compIP2);
-            this.groupBox3.Controls.Add(this.compIP4);
-            this.groupBox3.Controls.Add(this.label63);
-            this.groupBox3.Controls.Add(this.compPort);
-            this.groupBox3.Location = new System.Drawing.Point(247, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(233, 186);
-            this.groupBox3.TabIndex = 46;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Companion Connection";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label87.Location = new System.Drawing.Point(6, 137);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(179, 12);
-            this.label87.TabIndex = 30;
-            this.label87.Text = "Maximum movement time for PTZ camera";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label88.Location = new System.Drawing.Point(6, 89);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(172, 12);
-            this.label88.TabIndex = 31;
-            this.label88.Text = "Time with no speakers before cut to wide";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label89.Location = new System.Drawing.Point(6, 245);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(66, 12);
-            this.label89.TabIndex = 42;
-            this.label89.Text = "20 votes / sec.";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label90.Location = new System.Drawing.Point(6, 257);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(203, 12);
-            this.label90.TabIndex = 43;
-            this.label90.Text = "Higher number = Less receptive for short sounds";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label91.Location = new System.Drawing.Point(6, 269);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(204, 12);
-            this.label91.TabIndex = 44;
-            this.label91.Text = "Lower number = More receptive for short sounds";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.resetNamesToDefaultBtn);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker8);
-            this.groupBox4.Controls.Add(this.label96);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker7);
-            this.groupBox4.Controls.Add(this.label97);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker6);
-            this.groupBox4.Controls.Add(this.label98);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker5);
-            this.groupBox4.Controls.Add(this.label99);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker4);
-            this.groupBox4.Controls.Add(this.label94);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker3);
-            this.groupBox4.Controls.Add(this.label95);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker2);
-            this.groupBox4.Controls.Add(this.label93);
-            this.groupBox4.Controls.Add(this.txtBoxNameSpeaker1);
-            this.groupBox4.Controls.Add(this.label92);
-            this.groupBox4.Location = new System.Drawing.Point(486, 19);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(233, 395);
-            this.groupBox4.TabIndex = 45;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Speaker Names";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(6, 28);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(59, 13);
-            this.label92.TabIndex = 0;
-            this.label92.Text = "Speaker 1:";
-            // 
-            // txtBoxNameSpeaker1
-            // 
-            this.txtBoxNameSpeaker1.Location = new System.Drawing.Point(9, 44);
-            this.txtBoxNameSpeaker1.MaxLength = 20;
-            this.txtBoxNameSpeaker1.Name = "txtBoxNameSpeaker1";
-            this.txtBoxNameSpeaker1.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker1.TabIndex = 1;
-            // 
-            // txtBoxNameSpeaker2
-            // 
-            this.txtBoxNameSpeaker2.Location = new System.Drawing.Point(9, 85);
-            this.txtBoxNameSpeaker2.MaxLength = 20;
-            this.txtBoxNameSpeaker2.Name = "txtBoxNameSpeaker2";
-            this.txtBoxNameSpeaker2.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker2.TabIndex = 3;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(6, 69);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(59, 13);
-            this.label93.TabIndex = 2;
-            this.label93.Text = "Speaker 2:";
-            // 
-            // txtBoxNameSpeaker4
-            // 
-            this.txtBoxNameSpeaker4.Location = new System.Drawing.Point(9, 166);
-            this.txtBoxNameSpeaker4.MaxLength = 20;
-            this.txtBoxNameSpeaker4.Name = "txtBoxNameSpeaker4";
-            this.txtBoxNameSpeaker4.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker4.TabIndex = 7;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(6, 150);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(59, 13);
-            this.label94.TabIndex = 6;
-            this.label94.Text = "Speaker 4:";
-            // 
-            // txtBoxNameSpeaker3
-            // 
-            this.txtBoxNameSpeaker3.Location = new System.Drawing.Point(9, 125);
-            this.txtBoxNameSpeaker3.MaxLength = 20;
-            this.txtBoxNameSpeaker3.Name = "txtBoxNameSpeaker3";
-            this.txtBoxNameSpeaker3.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker3.TabIndex = 5;
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(6, 109);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(59, 13);
-            this.label95.TabIndex = 4;
-            this.label95.Text = "Speaker 3:";
-            // 
-            // txtBoxNameSpeaker8
-            // 
-            this.txtBoxNameSpeaker8.Location = new System.Drawing.Point(9, 330);
-            this.txtBoxNameSpeaker8.MaxLength = 20;
-            this.txtBoxNameSpeaker8.Name = "txtBoxNameSpeaker8";
-            this.txtBoxNameSpeaker8.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker8.TabIndex = 15;
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(6, 314);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(59, 13);
-            this.label96.TabIndex = 14;
-            this.label96.Text = "Speaker 8:";
-            // 
-            // txtBoxNameSpeaker7
-            // 
-            this.txtBoxNameSpeaker7.Location = new System.Drawing.Point(9, 289);
-            this.txtBoxNameSpeaker7.MaxLength = 20;
-            this.txtBoxNameSpeaker7.Name = "txtBoxNameSpeaker7";
-            this.txtBoxNameSpeaker7.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker7.TabIndex = 13;
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(6, 273);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(59, 13);
-            this.label97.TabIndex = 12;
-            this.label97.Text = "Speaker 7:";
-            // 
-            // txtBoxNameSpeaker6
-            // 
-            this.txtBoxNameSpeaker6.Location = new System.Drawing.Point(9, 249);
-            this.txtBoxNameSpeaker6.MaxLength = 20;
-            this.txtBoxNameSpeaker6.Name = "txtBoxNameSpeaker6";
-            this.txtBoxNameSpeaker6.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker6.TabIndex = 11;
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(6, 233);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(59, 13);
-            this.label98.TabIndex = 10;
-            this.label98.Text = "Speaker 6:";
-            // 
-            // txtBoxNameSpeaker5
-            // 
-            this.txtBoxNameSpeaker5.Location = new System.Drawing.Point(9, 208);
-            this.txtBoxNameSpeaker5.MaxLength = 20;
-            this.txtBoxNameSpeaker5.Name = "txtBoxNameSpeaker5";
-            this.txtBoxNameSpeaker5.Size = new System.Drawing.Size(210, 20);
-            this.txtBoxNameSpeaker5.TabIndex = 9;
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(6, 192);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(59, 13);
-            this.label99.TabIndex = 8;
-            this.label99.Text = "Speaker 5:";
-            // 
-            // resetNamesToDefaultBtn
-            // 
-            this.resetNamesToDefaultBtn.Location = new System.Drawing.Point(9, 358);
-            this.resetNamesToDefaultBtn.Name = "resetNamesToDefaultBtn";
-            this.resetNamesToDefaultBtn.Size = new System.Drawing.Size(210, 23);
-            this.resetNamesToDefaultBtn.TabIndex = 47;
-            this.resetNamesToDefaultBtn.Text = "Reset names to default";
-            this.resetNamesToDefaultBtn.UseVisualStyleBackColor = true;
-            this.resetNamesToDefaultBtn.Click += new System.EventHandler(this.ResetNamesToDefaultBtn_Click);
-            // 
-            // stat8
-            // 
-            this.stat8.AutoSize = true;
-            this.stat8.Location = new System.Drawing.Point(886, 117);
-            this.stat8.Name = "stat8";
-            this.stat8.Size = new System.Drawing.Size(15, 14);
-            this.stat8.TabIndex = 443;
-            this.stat8.UseVisualStyleBackColor = true;
-            // 
-            // statPos8
-            // 
-            this.statPos8.Location = new System.Drawing.Point(903, 114);
-            this.statPos8.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos8.Name = "statPos8";
-            this.statPos8.Size = new System.Drawing.Size(63, 20);
-            this.statPos8.TabIndex = 442;
-            this.statPos8.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat7
-            // 
-            this.stat7.AutoSize = true;
-            this.stat7.Location = new System.Drawing.Point(789, 117);
-            this.stat7.Name = "stat7";
-            this.stat7.Size = new System.Drawing.Size(15, 14);
-            this.stat7.TabIndex = 441;
-            this.stat7.UseVisualStyleBackColor = true;
-            // 
-            // statPos7
-            // 
-            this.statPos7.Location = new System.Drawing.Point(806, 114);
-            this.statPos7.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos7.Name = "statPos7";
-            this.statPos7.Size = new System.Drawing.Size(63, 20);
-            this.statPos7.TabIndex = 440;
-            this.statPos7.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat6
-            // 
-            this.stat6.AutoSize = true;
-            this.stat6.Location = new System.Drawing.Point(689, 117);
-            this.stat6.Name = "stat6";
-            this.stat6.Size = new System.Drawing.Size(15, 14);
-            this.stat6.TabIndex = 439;
-            this.stat6.UseVisualStyleBackColor = true;
-            // 
-            // statPos6
-            // 
-            this.statPos6.Location = new System.Drawing.Point(706, 114);
-            this.statPos6.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos6.Name = "statPos6";
-            this.statPos6.Size = new System.Drawing.Size(63, 20);
-            this.statPos6.TabIndex = 438;
-            this.statPos6.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat5
-            // 
-            this.stat5.AutoSize = true;
-            this.stat5.Location = new System.Drawing.Point(592, 117);
-            this.stat5.Name = "stat5";
-            this.stat5.Size = new System.Drawing.Size(15, 14);
-            this.stat5.TabIndex = 437;
-            this.stat5.UseVisualStyleBackColor = true;
-            // 
-            // statPos5
-            // 
-            this.statPos5.Location = new System.Drawing.Point(609, 114);
-            this.statPos5.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos5.Name = "statPos5";
-            this.statPos5.Size = new System.Drawing.Size(63, 20);
-            this.statPos5.TabIndex = 436;
-            this.statPos5.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat4
-            // 
-            this.stat4.AutoSize = true;
-            this.stat4.Location = new System.Drawing.Point(494, 117);
-            this.stat4.Name = "stat4";
-            this.stat4.Size = new System.Drawing.Size(15, 14);
-            this.stat4.TabIndex = 435;
-            this.stat4.UseVisualStyleBackColor = true;
-            // 
-            // statPos4
-            // 
-            this.statPos4.Location = new System.Drawing.Point(511, 114);
-            this.statPos4.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos4.Name = "statPos4";
-            this.statPos4.Size = new System.Drawing.Size(63, 20);
-            this.statPos4.TabIndex = 434;
-            this.statPos4.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat3
-            // 
-            this.stat3.AutoSize = true;
-            this.stat3.Location = new System.Drawing.Point(397, 117);
-            this.stat3.Name = "stat3";
-            this.stat3.Size = new System.Drawing.Size(15, 14);
-            this.stat3.TabIndex = 433;
-            this.stat3.UseVisualStyleBackColor = true;
-            // 
-            // statPos3
-            // 
-            this.statPos3.Location = new System.Drawing.Point(414, 114);
-            this.statPos3.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos3.Name = "statPos3";
-            this.statPos3.Size = new System.Drawing.Size(63, 20);
-            this.statPos3.TabIndex = 432;
-            this.statPos3.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat2
-            // 
-            this.stat2.AutoSize = true;
-            this.stat2.Location = new System.Drawing.Point(297, 117);
-            this.stat2.Name = "stat2";
-            this.stat2.Size = new System.Drawing.Size(15, 14);
-            this.stat2.TabIndex = 431;
-            this.stat2.UseVisualStyleBackColor = true;
-            // 
-            // statPos2
-            // 
-            this.statPos2.Location = new System.Drawing.Point(314, 114);
-            this.statPos2.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos2.Name = "statPos2";
-            this.statPos2.Size = new System.Drawing.Size(63, 20);
-            this.statPos2.TabIndex = 430;
-            this.statPos2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // stat1
-            // 
-            this.stat1.AutoSize = true;
-            this.stat1.Location = new System.Drawing.Point(200, 117);
-            this.stat1.Name = "stat1";
-            this.stat1.Size = new System.Drawing.Size(15, 14);
-            this.stat1.TabIndex = 429;
-            this.stat1.UseVisualStyleBackColor = true;
-            // 
-            // statPos1
-            // 
-            this.statPos1.Location = new System.Drawing.Point(217, 114);
-            this.statPos1.Maximum = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            this.statPos1.Name = "statPos1";
-            this.statPos1.Size = new System.Drawing.Size(63, 20);
-            this.statPos1.TabIndex = 428;
-            this.statPos1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 113);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 427;
-            this.label2.Text = "Camera is static";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(12, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 12);
-            this.label5.TabIndex = 444;
-            this.label5.Text = "Check box for static camera";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(12, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(150, 12);
-            this.label14.TabIndex = 445;
-            this.label14.Text = "Value: 0 = Group Shot,  1-8 Speaker";
-            // 
-            // labelCameraPos8
-            // 
-            this.labelCameraPos8.AutoSize = true;
-            this.labelCameraPos8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos8.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos8.Location = new System.Drawing.Point(648, 521);
-            this.labelCameraPos8.Name = "labelCameraPos8";
-            this.labelCameraPos8.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos8.TabIndex = 29;
-            this.labelCameraPos8.Text = "8";
-            // 
-            // labelCameraPos7
-            // 
-            this.labelCameraPos7.AutoSize = true;
-            this.labelCameraPos7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos7.Location = new System.Drawing.Point(600, 521);
-            this.labelCameraPos7.Name = "labelCameraPos7";
-            this.labelCameraPos7.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos7.TabIndex = 28;
-            this.labelCameraPos7.Text = "7";
-            // 
-            // labelCameraPos6
-            // 
-            this.labelCameraPos6.AutoSize = true;
-            this.labelCameraPos6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos6.Location = new System.Drawing.Point(553, 521);
-            this.labelCameraPos6.Name = "labelCameraPos6";
-            this.labelCameraPos6.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos6.TabIndex = 27;
-            this.labelCameraPos6.Text = "6";
-            // 
-            // labelCameraPos5
-            // 
-            this.labelCameraPos5.AutoSize = true;
-            this.labelCameraPos5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos5.Location = new System.Drawing.Point(505, 521);
-            this.labelCameraPos5.Name = "labelCameraPos5";
-            this.labelCameraPos5.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos5.TabIndex = 26;
-            this.labelCameraPos5.Text = "5";
-            // 
-            // labelCameraPos4
-            // 
-            this.labelCameraPos4.AutoSize = true;
-            this.labelCameraPos4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos4.Location = new System.Drawing.Point(459, 521);
-            this.labelCameraPos4.Name = "labelCameraPos4";
-            this.labelCameraPos4.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos4.TabIndex = 25;
-            this.labelCameraPos4.Text = "4";
-            // 
-            // labelCameraPos3
-            // 
-            this.labelCameraPos3.AutoSize = true;
-            this.labelCameraPos3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos3.Location = new System.Drawing.Point(411, 521);
-            this.labelCameraPos3.Name = "labelCameraPos3";
-            this.labelCameraPos3.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos3.TabIndex = 24;
-            this.labelCameraPos3.Text = "3";
-            // 
-            // labelCameraPos2
-            // 
-            this.labelCameraPos2.AutoSize = true;
-            this.labelCameraPos2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos2.Location = new System.Drawing.Point(364, 521);
-            this.labelCameraPos2.Name = "labelCameraPos2";
-            this.labelCameraPos2.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos2.TabIndex = 23;
-            this.labelCameraPos2.Text = "2";
-            // 
-            // labelCameraPos1
-            // 
-            this.labelCameraPos1.AutoSize = true;
-            this.labelCameraPos1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelCameraPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCameraPos1.Location = new System.Drawing.Point(316, 521);
-            this.labelCameraPos1.Name = "labelCameraPos1";
-            this.labelCameraPos1.Size = new System.Drawing.Size(31, 33);
-            this.labelCameraPos1.TabIndex = 22;
-            this.labelCameraPos1.Text = "1";
+            this.unchangedSettingsTimer.Interval = 800;
+            this.unchangedSettingsTimer.Tick += new System.EventHandler(this.unchangedSettingsTimer_Tick);
             // 
             // Form1
             // 
@@ -8373,17 +9052,26 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Vision AutoMix";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnMinShotTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDwnQuietTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.votelengthTrackBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCameraMoveTime)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownCameras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownSpeakers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownCameraMoveTime)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnGain8)).EndInit();
@@ -8412,6 +9100,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.numUpDwnChannelSpeaker1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statPos1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b8prw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.a8prw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b8pgm)).EndInit();
@@ -8597,28 +9293,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.a11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.b10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.a10)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statPos1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -8632,7 +9311,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -9004,22 +9682,12 @@
         private System.Windows.Forms.NumericUpDown numUpDownCameraMoveTime;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Timer tickDirector;
-        private System.Windows.Forms.Label labelPRW;
-        private System.Windows.Forms.Label labelPGM;
-        private System.Windows.Forms.Label labelNextSpeaker;
-        private System.Windows.Forms.Label labelCurrentSpeaker;
-        private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.TrackBar votelengthTrackBar;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label votelengthLabel;
-        private System.Windows.Forms.Label nextSpeakerPercentLabel;
         private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label74;
         private System.Windows.Forms.NumericUpDown numUpDwnGain8;
         private System.Windows.Forms.Label label79;
         private System.Windows.Forms.NumericUpDown numUpDwnGain6;
@@ -9036,17 +9704,6 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.NumericUpDown numUpDwnGain1;
         private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.Label shottimeLabel;
-        private System.Windows.Forms.Label liveStatusLabel;
-        private System.Windows.Forms.Label labelBusy8;
-        private System.Windows.Forms.Label labelBusy7;
-        private System.Windows.Forms.Label labelBusy6;
-        private System.Windows.Forms.Label labelBusy5;
-        private System.Windows.Forms.Label labelBusy4;
-        private System.Windows.Forms.Label labelBusy3;
-        private System.Windows.Forms.Label labelBusy2;
-        private System.Windows.Forms.Label labelBusy1;
-        private System.Windows.Forms.Label label83;
         private System.Windows.Forms.NumericUpDown numUpDwnQuietTime;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.NumericUpDown numUpDwnMinShotTime;
@@ -9061,7 +9718,6 @@
         private System.Windows.Forms.ToolStripMenuItem slowToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton companionToggleButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.Label labelSpeakerOnPGM;
         private System.Windows.Forms.CheckBox checkBoxEnablePRWbus;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -9108,14 +9764,62 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labelCameraPos8;
-        private System.Windows.Forms.Label labelCameraPos7;
-        private System.Windows.Forms.Label labelCameraPos6;
-        private System.Windows.Forms.Label labelCameraPos5;
-        private System.Windows.Forms.Label labelCameraPos4;
-        private System.Windows.Forms.Label labelCameraPos3;
-        private System.Windows.Forms.Label labelCameraPos2;
-        private System.Windows.Forms.Label labelCameraPos1;
+        private System.Windows.Forms.Timer unchangedSettingsTimer;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Label labelPreviewSpeaker;
+        private System.Windows.Forms.Label labelPreviewCamera;
+        private System.Windows.Forms.Label labelProgramSpeaker;
+        private System.Windows.Forms.Label labelProgramCamera;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label labelCameraBoxStatus8;
+        private System.Windows.Forms.Label labelCameraBoxStatus7;
+        private System.Windows.Forms.Label labelCameraBoxStatus6;
+        private System.Windows.Forms.Label labelCameraBoxStatus5;
+        private System.Windows.Forms.Label labelCameraBoxStatus4;
+        private System.Windows.Forms.Label labelCameraBoxStatus3;
+        private System.Windows.Forms.Label labelCameraBoxStatus2;
+        private System.Windows.Forms.Label labelCameraBoxStatus1;
+        private System.Windows.Forms.Label labelCameraBoxPosition8;
+        private System.Windows.Forms.Label labelCameraBoxPosition7;
+        private System.Windows.Forms.Label labelCameraBoxPosition6;
+        private System.Windows.Forms.Label labelCameraBoxPosition5;
+        private System.Windows.Forms.Label labelCameraBoxPosition4;
+        private System.Windows.Forms.Label labelCameraBoxPosition3;
+        private System.Windows.Forms.Label labelCameraBoxPosition2;
+        private System.Windows.Forms.Label labelCameraBoxPosition1;
+        private System.Windows.Forms.Label camBoxLabelCam8;
+        private System.Windows.Forms.Label camBoxLabelCam7;
+        private System.Windows.Forms.Label camBoxLabelCam6;
+        private System.Windows.Forms.Label camBoxLabelCam5;
+        private System.Windows.Forms.Label camBoxLabelCam4;
+        private System.Windows.Forms.Label camBoxLabelCam3;
+        private System.Windows.Forms.Label camBoxLabelCam2;
+        private System.Windows.Forms.Label camBoxLabelCam1;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker8;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker7;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker6;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker5;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker4;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker3;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker2;
+        private System.Windows.Forms.Label labelSpeakerBoxSpeaker1;
     }
 }
 

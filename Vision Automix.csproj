@@ -11,6 +11,24 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://github.com/emanueltilly/Vision-Automix</SupportUrl>
+    <ErrorReportUrl>https://github.com/emanueltilly/Vision-Automix</ErrorReportUrl>
+    <ProductName>Vision Automix</ProductName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -30,6 +48,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VisionAutomixerIconICO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Vision_Automix.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -62,6 +86,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="InputValidation.cs" />
     <Compile Include="Presets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectData.cs" />
@@ -82,6 +107,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Graphics\4 Live Monitor Bg 003.psd" />
+    <None Include="Graphics\PTZSetupBackground v2.psd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -99,9 +126,38 @@
   <ItemGroup>
     <None Include="Resources\PTZSetupBackground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\PTZSetupBackground v2.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Graphics\PTZSetupBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 Live Monitor Bg 001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 Live Monitor SpeakerButton off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 Live Monitor SpeakerButton on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 Live Monitor Bg 002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 Live Monitor Bg 003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Graphics\VisionAutomixerIcon.png" />
+    <Content Include="Graphics\VisionAutomixerIconICO.ico" />
+    <Content Include="VisionAutomixerIconICO.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
