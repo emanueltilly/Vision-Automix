@@ -47,20 +47,21 @@ namespace Vision_Automix
                 int switchType;
                 bool currentPgmShowsSpeakerTalkning = (runData.cameraPosition[(runData.cameraPGM - 1)] == runData.currentSpeaker);
 
-
+                
                 // Wide is live, but only one speaker is talking
-                if (wideShotIsLive == true && runData.currentSpeaker != 0) { switchType = 1; runData.forceResetSpeakerHistory = true; }
+                if (wideShotIsLive == true && runData.currentSpeaker != 0) { switchType = 1; /*runData.forceResetSpeakerHistory = true; Console.WriteLine(" Wide is live, but only one speaker is talking");*/}
                 // Closeup is live, but on the incorrect speaker
                 else if (wideShotIsLive != true && currentPgmShowsSpeakerTalkning != true) {
                     if(GetCamera(data, runData, false, runData.currentSpeaker) != runData.cameraPGM)
                     {
                         switchType = 4;
                         
+                        
                     } else
                     {
                         switchType = 2;
                         runData.forceResetSpeakerHistory = true;
-
+                        
                     }
                 }
                 // Multple speakers are talking and wide camera is not live
@@ -88,10 +89,11 @@ namespace Vision_Automix
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             localCurrentSpeaker = runData.currentSpeaker;
-                            TellMixer(data, runData, true, cameraID);
-                            runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
-                            wideShotIsLive = false;                                         //Set wideshot flag
                             
+                            TellMixer(data, runData, true, cameraID);
+                            runData.lastCutTime = TimeManager.GetTimestamp();
+                            wideShotIsLive = false;                                         //Set wideshot flag
+                            Console.WriteLine("---CASE 1");
                         }
                         break;
                     case 2:
@@ -99,28 +101,33 @@ namespace Vision_Automix
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
                             localCurrentSpeaker = runData.currentSpeaker;
-                            TellMixer(data, runData, true, cameraID);
-                            runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
-                            wideShotIsLive = true;                                         //Set wideshot flag
                             
+                            TellMixer(data, runData, true, cameraID);
+                            runData.lastCutTime = TimeManager.GetTimestamp();
+                            wideShotIsLive = true;                                         //Set wideshot flag
+                            Console.WriteLine("---CASE 2");
                         }
                         break;
                     case 3:
                         cameraID = GetCamera(data, runData, true, 0);
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
+                            
                             TellMixer(data, runData, true, cameraID);
-                            runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
+                            runData.lastCutTime = TimeManager.GetTimestamp();
                             wideShotIsLive = true;                                         //Set wideshot flag
+                            Console.WriteLine("---CASE 3");
                         }
                         break;
                     case 4:
-                        cameraID = GetCamera(data, runData, true, 0);
+                        cameraID = GetCamera(data, runData, true, runData.currentSpeaker);
                         if (cameraID != 0)                                                  //Catch no camera is available
                         {
+                            
                             TellMixer(data, runData, true, cameraID);
-                            runData.lastCutTime = TimeManager.GetTimestamp();               //Set last cut
-                            wideShotIsLive = true;                                         //Set wideshot flag
+                            runData.lastCutTime = TimeManager.GetTimestamp();
+                            wideShotIsLive = ((runData.cameraPosition[(cameraID-1)] == 0)?true:false);                                         //Set wideshot flag
+                            Console.WriteLine("---CASE 4");
                         }
                         break;
 
@@ -140,6 +147,7 @@ namespace Vision_Automix
             {
                 TellMixer(data, runData, false, runData.changePRWcam);
                 runData.changePRW = false;
+                runData.changedNextSpeaker = false;
             }
 
 

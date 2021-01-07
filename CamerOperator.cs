@@ -13,6 +13,8 @@ namespace Vision_Automix
 
         private int speakerHistory = 99; //99 only to trigger change on init
 
+
+
         public void Initialize()
         {
             speakerHistory = 99;
@@ -32,7 +34,7 @@ namespace Vision_Automix
                 }
             }
 
-            if (runData.nextSpeaker != speakerHistory)
+            if (runData.nextSpeaker != speakerHistory && (runData.cameraPosition.Contains(runData.nextSpeaker)!= true))
             {
                 speakerHistory = runData.nextSpeaker;       //Update local history
                 int prefCam = data.prefPos[runData.nextSpeaker];       //Get preferred camera for next speaker 
@@ -41,7 +43,7 @@ namespace Vision_Automix
                 if (data.staticCameraPositions.Contains(runData.nextSpeaker))
                 {
                     int cameraIndex = 1;
-                    
+
                     //Search for index of first static camera with correct position
                     int loop = 0;
                     bool breakLoop = false;
@@ -58,47 +60,54 @@ namespace Vision_Automix
                     //Flag for switcher to load camera on Preview bus
                     runData.changePRWcam = cameraIndex;
                     runData.changePRW = true;
+
                     
+
                 }
 
+                bool wideIsAvailableStatic = (data.staticCameraPositions.Contains(0));
                 
-
-                //Check if preferred camera is available
-                bool prefCAMposEnabled = GetCameraPositionEnabled(runData, prefCam, runData.nextSpeaker);
-                if (runData.cameraBusy[(prefCam-1)] != true && runData.cameraPGM != prefCam && GetCameraEnabled(data, prefCam) == true && prefCAMposEnabled == true)
+                if (runData.changedPRW != true && ((runData.nextSpeaker == 0) ? (wideIsAvailableStatic != true) : true))
                 {
-                    CallPosition(data, runData, prefCam, runData.nextSpeaker);      //Move preferred camera to new position
-                    //Flag for switcher to load camera on Preview bus
-                    runData.changePRWcam = prefCam;
-                    runData.changePRW = true;
                     
-                }
-                else //If preferred camera is unavailable
-                {
-                    //Gather available cameras for speaker
-                    bool[] availableCameras;
-                    availableCameras = GetCamerasWithPresetForPosition(data, runData.nextSpeaker);
-
-                    //Check if available cameras are busy, if not call position
-                    int loopcounter = 0;
-                    bool breakLoop = false;
-                    while (loopcounter < 8 && breakLoop == false)
+                    //Check if preferred camera is available
+                    bool prefCAMposEnabled = GetCameraPositionEnabled(runData, prefCam, runData.nextSpeaker);
+                    if (runData.cameraBusy[(prefCam-1)] != true && runData.cameraPGM != prefCam && GetCameraEnabled(data, prefCam) == true && prefCAMposEnabled == true)
                     {
-                        if (availableCameras[loopcounter] == true && runData.cameraBusy[loopcounter] == false && GetCameraEnabled(data, (loopcounter + 1)) == true)
-                        {
-                            if((loopcounter + 1) != runData.cameraPGM) { CallPosition(data, runData, (loopcounter + 1), runData.nextSpeaker); }
-                            //Flag for switcher to load camera on Preview bus
-                            runData.changePRWcam = (loopcounter + 1);
-                            runData.changePRW = true;
-                            breakLoop = true;
-                        }
-                        
-                        loopcounter++;
+                        CallPosition(data, runData, prefCam, runData.nextSpeaker);      //Move preferred camera to new position
+                                                                                        //Flag for switcher to load camera on Preview bus
+                        runData.changePRWcam = prefCam;
+                        runData.changePRW = true;
+
                     }
-                    
+                    else //If preferred camera is unavailable
+                    {
+                        //Gather available cameras for speaker
+                        bool[] availableCameras;
+                        availableCameras = GetCamerasWithPresetForPosition(data, runData.nextSpeaker);
+
+                        //Check if available cameras are busy, if not call position
+                        int loopcounter = 0;
+                        bool breakLoop = false;
+                        while (loopcounter < 8 && breakLoop == false)
+                        {
+                            if (availableCameras[loopcounter] == true && runData.cameraBusy[loopcounter] == false && GetCameraEnabled(data, (loopcounter + 1)) == true)
+                            {
+                                if ((loopcounter + 1) != runData.cameraPGM) { CallPosition(data, runData, (loopcounter + 1), runData.nextSpeaker); }
+                                //Flag for switcher to load camera on Preview bus
+                                runData.changePRWcam = (loopcounter + 1);
+                                runData.changePRW = true;
+                                breakLoop = true;
+                            }
+
+                            loopcounter++;
+                        }
 
 
+
+                    }
                 }
+                
             }
         }
 

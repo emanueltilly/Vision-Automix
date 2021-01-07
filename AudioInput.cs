@@ -41,7 +41,7 @@ namespace Vision_Automix
             try { recorder.StartRecording(); }
             catch { MessageBox.Show("No audio devices found. Application may not run correctly.", "AUDIO DEVICE ERROR"); }
 
-            var devices = masterEnumerator.EnumerateAudioEndPoints(DataFlow.All, DeviceState.Active);
+            var devices = masterEnumerator.EnumerateAudioEndPoints(DataFlow.Capture, DeviceState.Active);
 
 
             //Return list of devices to add to GUI list

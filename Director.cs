@@ -21,6 +21,8 @@ namespace Vision_Automix
 
         private int[] voteArray;
 
+        
+
 
     public void Initialize()
         {
@@ -48,6 +50,8 @@ namespace Vision_Automix
             voteLength = data.voteLength;
             if (voteLength != voteLengthPrev) { voteArray = new int[voteLength]; voteArray = FillArray(voteArray); Console.WriteLine("Votelength changed from " + voteLengthPrev + " to " + voteLength); voteLengthPrev = voteLength;  }   //Fix crash when updating votelength on the fly
 
+            
+
             ///*
             ///DIRECTOR
             ///
@@ -61,6 +65,7 @@ namespace Vision_Automix
             //3-If only one speaker, decide who it is
             int m = historyWeighted.Max();
             runData.longestSpeaker = (Array.IndexOf(historyWeighted, m))+1;  //This returns index of one talking speaker. +1 to compensate for array starting at 0
+            
 
             //4-Take action
             switch (switchStatement)
@@ -100,6 +105,8 @@ namespace Vision_Automix
 
             //5-Get Next Speakers vote status for GUI
             runData.nextSpeakerVotePercent = GetNextSpeakerVoteStatus(data, runData);
+
+            
             
             
 
@@ -200,6 +207,7 @@ namespace Vision_Automix
             {
                 runData.nextSpeaker = speakerNumber;                    //Cue this speaker as next speaker
                 runData.changedNextSpeaker = true;
+                Console.WriteLine("Changed next speaker to " + speakerNumber);
                 
 
             }
@@ -227,7 +235,7 @@ namespace Vision_Automix
             voteArray[voteCounter-1] = speakerNumber;
 
             //Check if all votes match
-            if (GetNextSpeakerVoteStatus(data, runData) == 100) { return true; }
+            if (GetNextSpeakerVoteStatus(data, runData) > 50) { return true; }
             else { return false; }
             
             //if (voteArray[0] == speakerNumber && voteArray[1] == speakerNumber && voteArray[2] == speakerNumber && voteArray[3] == speakerNumber) { return true; }

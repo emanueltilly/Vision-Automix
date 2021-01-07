@@ -1042,6 +1042,7 @@ namespace Vision_Automix
                     labelProgramCamera.Text = "N/A";
                     labelProgramSpeaker.Text = "---";
                 }
+                labelCurrentShotTime.Text = runData.currentShotTime.ToString();
 
                 //SPEAKER BOX
                 labelSpeakerBoxSpeaker1.ForeColor = ((runData.speaker1Volume >= data.audioThreshold1) ? Color.FromArgb(255, 255, 214, 5) : Color.FromArgb(255, 45, 45, 45));
@@ -1968,6 +1969,21 @@ namespace Vision_Automix
             unsavedChanges(true);
         }
 
+       
 
+        private void Form1_Move(object sender, EventArgs e)
+        {
+            //Pause drawing gui
+            tickGUIupdate.Enabled = false;
+            formMovingTimer.Enabled = true;
+            
+        }
+
+        private void formMovingTimer_Tick(object sender, EventArgs e)
+        {
+            //Start drawing gui again
+            tickGUIupdate.Enabled = true;
+            formMovingTimer.Enabled = false;
+        }
     }
 }

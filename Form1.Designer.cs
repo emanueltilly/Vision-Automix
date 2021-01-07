@@ -545,6 +545,8 @@
             this.tickAudio = new System.Windows.Forms.Timer(this.components);
             this.tickDirector = new System.Windows.Forms.Timer(this.components);
             this.unchangedSettingsTimer = new System.Windows.Forms.Timer(this.components);
+            this.formMovingTimer = new System.Windows.Forms.Timer(this.components);
+            this.labelCurrentShotTime = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -8371,6 +8373,7 @@
             // tabPage5
             // 
             this.tabPage5.BackgroundImage = global::Vision_Automix.Properties.Resources._4_Live_Monitor_Bg_003;
+            this.tabPage5.Controls.Add(this.labelCurrentShotTime);
             this.tabPage5.Controls.Add(this.labelCameraBoxStatus8);
             this.tabPage5.Controls.Add(this.labelCameraBoxStatus7);
             this.tabPage5.Controls.Add(this.labelCameraBoxStatus6);
@@ -9042,6 +9045,23 @@
             this.unchangedSettingsTimer.Interval = 800;
             this.unchangedSettingsTimer.Tick += new System.EventHandler(this.unchangedSettingsTimer_Tick);
             // 
+            // formMovingTimer
+            // 
+            this.formMovingTimer.Interval = 500;
+            this.formMovingTimer.Tick += new System.EventHandler(this.formMovingTimer_Tick);
+            // 
+            // labelCurrentShotTime
+            // 
+            this.labelCurrentShotTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCurrentShotTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentShotTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCurrentShotTime.Location = new System.Drawing.Point(518, 226);
+            this.labelCurrentShotTime.Name = "labelCurrentShotTime";
+            this.labelCurrentShotTime.Size = new System.Drawing.Size(445, 42);
+            this.labelCurrentShotTime.TabIndex = 38;
+            this.labelCurrentShotTime.Text = "10";
+            this.labelCurrentShotTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9058,6 +9078,7 @@
             this.Name = "Form1";
             this.Text = "Vision AutoMix";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Move += new System.EventHandler(this.Form1_Move);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -9822,6 +9843,8 @@
         private System.Windows.Forms.Label labelSpeakerBoxSpeaker3;
         private System.Windows.Forms.Label labelSpeakerBoxSpeaker2;
         private System.Windows.Forms.Label labelSpeakerBoxSpeaker1;
+        private System.Windows.Forms.Timer formMovingTimer;
+        private System.Windows.Forms.Label labelCurrentShotTime;
     }
 }
 
