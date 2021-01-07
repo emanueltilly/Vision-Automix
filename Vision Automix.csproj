@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayTools.cs" />
     <Compile Include="AudioInput.cs" />
     <Compile Include="CamerOperator.cs" />
     <Compile Include="Companion.cs" />

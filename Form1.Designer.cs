@@ -487,6 +487,7 @@
             this.labelPTZsetupSpeaker2 = new System.Windows.Forms.Label();
             this.labelPTZsetupSpeaker1 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.labelCurrentShotTime = new System.Windows.Forms.Label();
             this.labelCameraBoxStatus8 = new System.Windows.Forms.Label();
             this.labelCameraBoxStatus7 = new System.Windows.Forms.Label();
             this.labelCameraBoxStatus6 = new System.Windows.Forms.Label();
@@ -543,10 +544,9 @@
             this.applyButton = new System.Windows.Forms.ToolStripButton();
             this.tickGUIupdate = new System.Windows.Forms.Timer(this.components);
             this.tickAudio = new System.Windows.Forms.Timer(this.components);
-            this.tickDirector = new System.Windows.Forms.Timer(this.components);
             this.unchangedSettingsTimer = new System.Windows.Forms.Timer(this.components);
             this.formMovingTimer = new System.Windows.Forms.Timer(this.components);
-            this.labelCurrentShotTime = new System.Windows.Forms.Label();
+            this.mixonePushData = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -8420,6 +8420,18 @@
             this.tabPage5.Text = "4 - Live Monitor";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // labelCurrentShotTime
+            // 
+            this.labelCurrentShotTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelCurrentShotTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentShotTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelCurrentShotTime.Location = new System.Drawing.Point(518, 226);
+            this.labelCurrentShotTime.Name = "labelCurrentShotTime";
+            this.labelCurrentShotTime.Size = new System.Drawing.Size(445, 42);
+            this.labelCurrentShotTime.TabIndex = 38;
+            this.labelCurrentShotTime.Text = "10";
+            this.labelCurrentShotTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelCameraBoxStatus8
             // 
             this.labelCameraBoxStatus8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -9034,12 +9046,6 @@
             this.tickAudio.Interval = 50;
             this.tickAudio.Tick += new System.EventHandler(this.TickAudio_Tick);
             // 
-            // tickDirector
-            // 
-            this.tickDirector.Enabled = true;
-            this.tickDirector.Interval = 50;
-            this.tickDirector.Tick += new System.EventHandler(this.TickDirector_Tick);
-            // 
             // unchangedSettingsTimer
             // 
             this.unchangedSettingsTimer.Interval = 800;
@@ -9050,17 +9056,11 @@
             this.formMovingTimer.Interval = 500;
             this.formMovingTimer.Tick += new System.EventHandler(this.formMovingTimer_Tick);
             // 
-            // labelCurrentShotTime
+            // mixonePushData
             // 
-            this.labelCurrentShotTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.labelCurrentShotTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentShotTime.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelCurrentShotTime.Location = new System.Drawing.Point(518, 226);
-            this.labelCurrentShotTime.Name = "labelCurrentShotTime";
-            this.labelCurrentShotTime.Size = new System.Drawing.Size(445, 42);
-            this.labelCurrentShotTime.TabIndex = 38;
-            this.labelCurrentShotTime.Text = "10";
-            this.labelCurrentShotTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mixonePushData.Enabled = true;
+            this.mixonePushData.Interval = 50;
+            this.mixonePushData.Tick += new System.EventHandler(this.mixonePushData_Tick);
             // 
             // Form1
             // 
@@ -9704,7 +9704,6 @@
         private System.Windows.Forms.Timer tickAudio;
         private System.Windows.Forms.NumericUpDown numUpDownCameraMoveTime;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Timer tickDirector;
         private System.Windows.Forms.Label label72;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.TrackBar votelengthTrackBar;
@@ -9845,6 +9844,7 @@
         private System.Windows.Forms.Label labelSpeakerBoxSpeaker1;
         private System.Windows.Forms.Timer formMovingTimer;
         private System.Windows.Forms.Label labelCurrentShotTime;
+        private System.Windows.Forms.Timer mixonePushData;
     }
 }
 

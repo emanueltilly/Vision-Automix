@@ -34,7 +34,7 @@ namespace Vision_Automix
                 }
             }
 
-            if (runData.nextSpeaker != speakerHistory && (runData.cameraPosition.Contains(runData.nextSpeaker)!= true))
+            if (runData.nextSpeaker != speakerHistory && (runData.cameraPosition.Contains(runData.nextSpeaker) != true))
             {
                 speakerHistory = runData.nextSpeaker;       //Update local history
                 int prefCam = data.prefPos[runData.nextSpeaker];       //Get preferred camera for next speaker 
@@ -61,18 +61,18 @@ namespace Vision_Automix
                     runData.changePRWcam = cameraIndex;
                     runData.changePRW = true;
 
-                    
+
 
                 }
 
                 bool wideIsAvailableStatic = (data.staticCameraPositions.Contains(0));
-                
+
                 if (runData.changedPRW != true && ((runData.nextSpeaker == 0) ? (wideIsAvailableStatic != true) : true))
                 {
-                    
+
                     //Check if preferred camera is available
                     bool prefCAMposEnabled = GetCameraPositionEnabled(runData, prefCam, runData.nextSpeaker);
-                    if (runData.cameraBusy[(prefCam-1)] != true && runData.cameraPGM != prefCam && GetCameraEnabled(data, prefCam) == true && prefCAMposEnabled == true)
+                    if (runData.cameraBusy[(prefCam - 1)] != true && runData.cameraPGM != prefCam && GetCameraEnabled(data, prefCam) == true && prefCAMposEnabled == true)
                     {
                         CallPosition(data, runData, prefCam, runData.nextSpeaker);      //Move preferred camera to new position
                                                                                         //Flag for switcher to load camera on Preview bus
@@ -107,19 +107,19 @@ namespace Vision_Automix
 
                     }
                 }
-                
+
             }
         }
 
 
- 
+
 
 
         //Full sequence for moving a camera to a new position
         private void CallPosition(ProjectData data, RuntimeData runData, int cam, int pos)
         {
             int cameraCurrentPosition = runData.cameraPosition[(cam - 1)];      //Get the current position of the camera
-           
+
 
             if (cameraCurrentPosition != pos && data.staticCameras[(cam - 1)] != true)
             {
@@ -471,18 +471,18 @@ namespace Vision_Automix
                 //Tell Companion to push the button
                 companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
 
-                
+
             }
-            
+
         }
 
         private void SetCameraBusy(RuntimeData runData, int cameraID)
         {
             runData.cameraBusy[(cameraID - 1)] = true;                  //Set camera to busy
             runData.camerBusyTime[(cameraID - 1)] = TimeManager.GetTimestamp();     //Set timestamp of operation start
-            
+
         }
-        
+
         public void UpdateAllCamerasBusyStatus(ProjectData data, RuntimeData runData)
         {
             Int64 currentTime = TimeManager.GetTimestamp();
@@ -496,7 +496,7 @@ namespace Vision_Automix
                     if (currentTime >= (runData.camerBusyTime[loopcounter] + (Int64)moveTime))
                     {
                         runData.cameraBusy[loopcounter] = false;
-                        
+
 
                     }
                 }
@@ -511,7 +511,7 @@ namespace Vision_Automix
             return Math.Floor(diff.TotalSeconds);
         }
 
-        
+
 
         private bool[] GetCamerasWithPresetForPosition(ProjectData data, int position)
         {
@@ -621,28 +621,28 @@ namespace Vision_Automix
             switch (camera)
             {
                 case 1:
-                    returnValue = data.enabledCamera1;
+                    returnValue = data.enabledCamera[0];
                     break;
                 case 2:
-                    returnValue = data.enabledCamera2;
+                    returnValue = data.enabledCamera[1];
                     break;
                 case 3:
-                    returnValue = data.enabledCamera3;
+                    returnValue = data.enabledCamera[2];
                     break;
                 case 4:
-                    returnValue = data.enabledCamera4;
+                    returnValue = data.enabledCamera[3];
                     break;
                 case 5:
-                    returnValue = data.enabledCamera5;
+                    returnValue = data.enabledCamera[4];
                     break;
                 case 6:
-                    returnValue = data.enabledCamera6;
+                    returnValue = data.enabledCamera[5];
                     break;
                 case 7:
-                    returnValue = data.enabledCamera7;
+                    returnValue = data.enabledCamera[6];
                     break;
                 case 8:
-                    returnValue = data.enabledCamera8;
+                    returnValue = data.enabledCamera[7];
                     break;
             }
 
@@ -661,10 +661,10 @@ namespace Vision_Automix
                 Console.WriteLine("ERROR fetching from CamPosMatrix from CameraOperator / getCameraPositionEnabled");
                 return false;
             }
-            
+
         }
 
-        
+
 
     }
 }

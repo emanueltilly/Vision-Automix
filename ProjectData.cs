@@ -15,23 +15,9 @@ namespace Vision_Automix
     {
 
         //ENABLED SPEAKERS AND CAMERAS
-        public bool enabledSpeaker1 = true;
-        public bool enabledSpeaker2 = true;
-        public bool enabledSpeaker3 = true;
-        public bool enabledSpeaker4 = true;
-        public bool enabledSpeaker5 = true;
-        public bool enabledSpeaker6 = true;
-        public bool enabledSpeaker7 = true;
-        public bool enabledSpeaker8 = true;
 
-        public bool enabledCamera1 = true;
-        public bool enabledCamera2 = true;
-        public bool enabledCamera3 = true;
-        public bool enabledCamera4 = true;
-        public bool enabledCamera5 = true;
-        public bool enabledCamera6 = true;
-        public bool enabledCamera7 = true;
-        public bool enabledCamera8 = true;
+        public bool[] enabledSpeaker = new bool[8] { true, true, true, true, true, true, true, true };
+        public bool[] enabledCamera = new bool[8] { true, true, true, true, true, true, true, true };
 
         //SPEAKER NAMES
         public string[] speakerNames = new string[8] { "Speaker 1", "Speaker 2", "Speaker 3", "Speaker 4", "Speaker 5", "Speaker 6", "Speaker 7", "Speaker 8" };
@@ -220,24 +206,24 @@ namespace Vision_Automix
         public void UpdateEnabledDevices()
         {
             //Set enabled speakers
-            enabledSpeaker1 = (speakers >= 1);
-            enabledSpeaker2 = (speakers >= 2);
-            enabledSpeaker3 = (speakers >= 3);
-            enabledSpeaker4 = (speakers >= 4);
-            enabledSpeaker5 = (speakers >= 5);
-            enabledSpeaker6 = (speakers >= 6);
-            enabledSpeaker7 = (speakers >= 7);
-            enabledSpeaker8 = (speakers >= 8);
+            enabledSpeaker[0] = (speakers >= 1);
+            enabledSpeaker[1] = (speakers >= 2);
+            enabledSpeaker[2] = (speakers >= 3);
+            enabledSpeaker[3] = (speakers >= 4);
+            enabledSpeaker[4] = (speakers >= 5);
+            enabledSpeaker[5] = (speakers >= 6);
+            enabledSpeaker[6] = (speakers >= 7);
+            enabledSpeaker[7] = (speakers >= 8);
             
             //Set enabled cameras
-            enabledCamera1 = (cameras >= 1);
-            enabledCamera2 = (cameras >= 2);
-            enabledCamera3 = (cameras >= 3);
-            enabledCamera4 = (cameras >= 4);
-            enabledCamera5 = (cameras >= 5);
-            enabledCamera6 = (cameras >= 6);
-            enabledCamera7 = (cameras >= 7);
-            enabledCamera8 = (cameras >= 8);
+            enabledCamera[0] = (cameras >= 1);
+            enabledCamera[1] = (cameras >= 2);
+            enabledCamera[2] = (cameras >= 3);
+            enabledCamera[3] = (cameras >= 4);
+            enabledCamera[4] = (cameras >= 5);
+            enabledCamera[5] = (cameras >= 6);
+            enabledCamera[6] = (cameras >= 7);
+            enabledCamera[7] = (cameras >= 8);
         }
 
         public void SaveToFile(string fileName)

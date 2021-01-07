@@ -16,18 +16,22 @@ namespace Vision_Automix
 {
     public partial class Form1 : Form
     {
-        
+
         ProjectData data = new ProjectData();       //Data-object for static project-settings
         RuntimeData runData = new RuntimeData();    //Data-object for realtime data
 
-        Director director = new Director();             //Director
+        MixOne mixone = new MixOne();
+
+        
+
+        /*Director director = new Director();             //Director
         CamerOperator cameraOp = new CamerOperator();   //Camera Operator
-        Switcher switcher = new Switcher();             //Camera switcher
+        Switcher switcher = new Switcher();             //Camera switcher*/
 
         string lastProjectFilePath = null;          //Filepath to current projectfile
 
         //Audio input devices
-        private AudioInput audio1 = new AudioInput();  
+        private AudioInput audio1 = new AudioInput();
         private AudioInput audio2 = new AudioInput();
         private AudioInput audio3 = new AudioInput();
         private AudioInput audio4 = new AudioInput();
@@ -41,12 +45,16 @@ namespace Vision_Automix
         {
             InitializeComponent();
             data.Initialize();      //Initialize data object with default values
-            director.Initialize();
+            //director.Initialize();
             UpdateAudioInterfacesList();       //Load available audio interfaces
             LoadGUIfromData();        //Load stored data into the GUI
             UpdateFormText();           //Set form text
             UpdateEnabledDevicesGUI();
-            
+
+            mixone.PushProjectdata(data);
+            mixone.PushRuntimeData(runData);
+            mixone.initialize();
+
 
 
         }
@@ -94,14 +102,14 @@ namespace Vision_Automix
             labelAudioSetupSpeakerName7.Text = ("7 - " + data.speakerNames[6]);
             labelAudioSetupSpeakerName8.Text = ("8 - " + data.speakerNames[7]);
 
-            try {comboBoxSpeaker1.SelectedIndex = data.audioDevice1; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 1."); }
-            try{comboBoxSpeaker2.SelectedIndex = data.audioDevice2; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 2."); }
-            try{comboBoxSpeaker3.SelectedIndex = data.audioDevice3; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 3."); }
-            try{comboBoxSpeaker4.SelectedIndex = data.audioDevice4; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 4."); }
-            try{comboBoxSpeaker5.SelectedIndex = data.audioDevice5; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 5."); }
-            try{comboBoxSpeaker6.SelectedIndex = data.audioDevice6; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 6."); }
-            try{comboBoxSpeaker7.SelectedIndex = data.audioDevice7; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 7."); }
-            try{comboBoxSpeaker8.SelectedIndex = data.audioDevice8; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 8."); }
+            try { comboBoxSpeaker1.SelectedIndex = data.audioDevice1; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 1."); }
+            try { comboBoxSpeaker2.SelectedIndex = data.audioDevice2; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 2."); }
+            try { comboBoxSpeaker3.SelectedIndex = data.audioDevice3; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 3."); }
+            try { comboBoxSpeaker4.SelectedIndex = data.audioDevice4; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 4."); }
+            try { comboBoxSpeaker5.SelectedIndex = data.audioDevice5; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 5."); }
+            try { comboBoxSpeaker6.SelectedIndex = data.audioDevice6; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 6."); }
+            try { comboBoxSpeaker7.SelectedIndex = data.audioDevice7; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 7."); }
+            try { comboBoxSpeaker8.SelectedIndex = data.audioDevice8; } catch { ErrorMessage("A problem occured trying to select audiointerfaces for Speaker 8."); }
 
             numUpDwnChannelSpeaker1.Value = data.audioChannel1;
             numUpDwnChannelSpeaker2.Value = data.audioChannel2;
@@ -335,7 +343,7 @@ namespace Vision_Automix
             a47.Value = data.c4p7[0];
             b47.Value = data.c4p7[1];
             e47.Checked = Convert.ToBoolean(data.c4p7[2]);
-            
+
             a48.Value = data.c4p8[0];
             b48.Value = data.c4p8[1];
             e48.Checked = Convert.ToBoolean(data.c4p8[2]);
@@ -539,10 +547,10 @@ namespace Vision_Automix
                 data.companionCon[3] = int.Parse(compIP4.Text);
                 data.companionCon[4] = int.Parse(compPort.Text);
             }
-            
+
 
             data.voteLength = votelengthTrackBar.Value;
-            
+
 
 
             //2 Audio Setup
@@ -666,7 +674,7 @@ namespace Vision_Automix
             data.c1p0[0] = (int)a10.Value;
             data.c1p0[1] = (int)b10.Value;
             data.c1p0[2] = Convert.ToInt32(e10.Checked);
-        
+
             data.c1p1[0] = (int)a11.Value;
             data.c1p1[1] = (int)b11.Value;
             data.c1p1[2] = Convert.ToInt32(e11.Checked);
@@ -963,12 +971,12 @@ namespace Vision_Automix
 
 
         }
-        
+
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -998,7 +1006,7 @@ namespace Vision_Automix
                 //PTZ SETUP PAGE
             }
 
-            
+
 
             if (tabControl1.SelectedIndex == 3)
             {
@@ -1015,7 +1023,8 @@ namespace Vision_Automix
                         labelPreviewSpeaker.Text = ((previewSpeakerId == 0) ? "Group shot" : data.speakerNames[(previewSpeakerId - 1)]);
                     }
                     else { labelPreviewSpeaker.Text = "Unknown position"; }
-                } else
+                }
+                else
                 {
                     labelPreviewCamera.Text = "N/A";
                     labelPreviewSpeaker.Text = "---";
@@ -1074,9 +1083,9 @@ namespace Vision_Automix
                 labelCameraBoxPosition7.Text = ((runData.cameraPosition[6] == 0) ? "Group shot" : ((runData.cameraPosition[6] > 0 && runData.cameraPosition[6] < 9) ? (data.speakerNames[(runData.cameraPosition[6] - 1)]) : ""));
                 labelCameraBoxPosition8.Text = ((runData.cameraPosition[7] == 0) ? "Group shot" : ((runData.cameraPosition[7] > 0 && runData.cameraPosition[7] < 9) ? (data.speakerNames[(runData.cameraPosition[7] - 1)]) : ""));
                 //Colors
-                 Color colorNORMAL = Color.WhiteSmoke;
-                 Color colorPGM = Color.FromArgb(255, 233, 69, 69);
-                 Color colorPRW = Color.FromArgb(255, 69, 233, 69);
+                Color colorNORMAL = Color.WhiteSmoke;
+                Color colorPGM = Color.FromArgb(255, 233, 69, 69);
+                Color colorPRW = Color.FromArgb(255, 69, 233, 69);
                 if (runData.cameraPGM == 1) { camBoxLabelCam1.ForeColor = colorPGM; labelCameraBoxPosition1.ForeColor = colorPGM; labelCameraBoxStatus1.ForeColor = colorPGM; }
                 else if (runData.cameraPRW == 1) { camBoxLabelCam1.ForeColor = colorPRW; labelCameraBoxPosition1.ForeColor = colorPRW; labelCameraBoxStatus1.ForeColor = colorPRW; }
                 else { camBoxLabelCam1.ForeColor = colorNORMAL; labelCameraBoxPosition1.ForeColor = colorNORMAL; labelCameraBoxStatus1.ForeColor = colorNORMAL; }
@@ -1110,8 +1119,8 @@ namespace Vision_Automix
                 else { camBoxLabelCam8.ForeColor = colorNORMAL; labelCameraBoxPosition8.ForeColor = colorNORMAL; labelCameraBoxStatus8.ForeColor = colorNORMAL; }
             }
         }
-            //CamPos Matrix is used to identify what cameras are enabled for what positions
-            private void GenerateCamPosMatrix()
+        //CamPos Matrix is used to identify what cameras are enabled for what positions
+        private void GenerateCamPosMatrix()
         {
             Console.WriteLine("CamPos Matrix update has started...");
 
@@ -1283,7 +1292,7 @@ namespace Vision_Automix
             }
 
 
-            
+
         }
 
         private void SaveNewProject()
@@ -1324,7 +1333,7 @@ namespace Vision_Automix
             {
                 SaveNewProject();
             }
-            
+
         }
 
         private void UpdateFormText()
@@ -1344,85 +1353,85 @@ namespace Vision_Automix
             data.UpdateEnabledDevices(); //Sync the data-object first
 
             //1 Device setup
-            txtBoxNameSpeaker1.Enabled = (data.enabledSpeaker1);
-            txtBoxNameSpeaker2.Enabled = (data.enabledSpeaker2);
-            txtBoxNameSpeaker3.Enabled = (data.enabledSpeaker3);
-            txtBoxNameSpeaker4.Enabled = (data.enabledSpeaker4);
-            txtBoxNameSpeaker5.Enabled = (data.enabledSpeaker5);
-            txtBoxNameSpeaker6.Enabled = (data.enabledSpeaker6);
-            txtBoxNameSpeaker7.Enabled = (data.enabledSpeaker7);
-            txtBoxNameSpeaker8.Enabled = (data.enabledSpeaker8);
+            txtBoxNameSpeaker1.Enabled = (data.enabledSpeaker[0]);
+            txtBoxNameSpeaker2.Enabled = (data.enabledSpeaker[1]);
+            txtBoxNameSpeaker3.Enabled = (data.enabledSpeaker[2]);
+            txtBoxNameSpeaker4.Enabled = (data.enabledSpeaker[3]);
+            txtBoxNameSpeaker5.Enabled = (data.enabledSpeaker[4]);
+            txtBoxNameSpeaker6.Enabled = (data.enabledSpeaker[5]);
+            txtBoxNameSpeaker7.Enabled = (data.enabledSpeaker[6]);
+            txtBoxNameSpeaker8.Enabled = (data.enabledSpeaker[7]);
 
             //2 Audio Setup
-            comboBoxSpeaker1.Enabled = (data.enabledSpeaker1);
-            numUpDwnChannelSpeaker1.Enabled = (data.enabledSpeaker1);
-            volumeBar1.Enabled = (data.enabledSpeaker1);
-            thresholdBar1.Enabled = (data.enabledSpeaker1);
-            numUpDwnGain1.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker1.Enabled = (data.enabledSpeaker[0]);
+            numUpDwnChannelSpeaker1.Enabled = (data.enabledSpeaker[0]);
+            volumeBar1.Enabled = (data.enabledSpeaker[0]);
+            thresholdBar1.Enabled = (data.enabledSpeaker[0]);
+            numUpDwnGain1.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker2.Enabled = (data.enabledSpeaker2);
-            numUpDwnChannelSpeaker2.Enabled = (data.enabledSpeaker2);
-            volumeBar2.Enabled = (data.enabledSpeaker2);
-            thresholdBar2.Enabled = (data.enabledSpeaker2);
-            numUpDwnGain2.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker2.Enabled = (data.enabledSpeaker[1]);
+            numUpDwnChannelSpeaker2.Enabled = (data.enabledSpeaker[1]);
+            volumeBar2.Enabled = (data.enabledSpeaker[1]);
+            thresholdBar2.Enabled = (data.enabledSpeaker[1]);
+            numUpDwnGain2.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker3.Enabled = (data.enabledSpeaker3);
-            numUpDwnChannelSpeaker3.Enabled = (data.enabledSpeaker3);
-            volumeBar3.Enabled = (data.enabledSpeaker3);
-            thresholdBar3.Enabled = (data.enabledSpeaker3);
-            numUpDwnGain3.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker3.Enabled = (data.enabledSpeaker[2]);
+            numUpDwnChannelSpeaker3.Enabled = (data.enabledSpeaker[2]);
+            volumeBar3.Enabled = (data.enabledSpeaker[2]);
+            thresholdBar3.Enabled = (data.enabledSpeaker[2]);
+            numUpDwnGain3.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker4.Enabled = (data.enabledSpeaker4);
-            numUpDwnChannelSpeaker4.Enabled = (data.enabledSpeaker4);
-            volumeBar4.Enabled = (data.enabledSpeaker4);
-            thresholdBar4.Enabled = (data.enabledSpeaker4);
-            numUpDwnGain4.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker4.Enabled = (data.enabledSpeaker[3]);
+            numUpDwnChannelSpeaker4.Enabled = (data.enabledSpeaker[3]);
+            volumeBar4.Enabled = (data.enabledSpeaker[3]);
+            thresholdBar4.Enabled = (data.enabledSpeaker[3]);
+            numUpDwnGain4.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker5.Enabled = (data.enabledSpeaker5);
-            numUpDwnChannelSpeaker5.Enabled = (data.enabledSpeaker5);
-            volumeBar5.Enabled = (data.enabledSpeaker5);
-            thresholdBar5.Enabled = (data.enabledSpeaker5);
-            numUpDwnGain5.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker5.Enabled = (data.enabledSpeaker[4]);
+            numUpDwnChannelSpeaker5.Enabled = (data.enabledSpeaker[4]);
+            volumeBar5.Enabled = (data.enabledSpeaker[4]);
+            thresholdBar5.Enabled = (data.enabledSpeaker[4]);
+            numUpDwnGain5.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker6.Enabled = (data.enabledSpeaker6);
-            numUpDwnChannelSpeaker6.Enabled = (data.enabledSpeaker6);
-            volumeBar6.Enabled = (data.enabledSpeaker6);
-            thresholdBar6.Enabled = (data.enabledSpeaker6);
-            numUpDwnGain6.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker6.Enabled = (data.enabledSpeaker[5]);
+            numUpDwnChannelSpeaker6.Enabled = (data.enabledSpeaker[5]);
+            volumeBar6.Enabled = (data.enabledSpeaker[5]);
+            thresholdBar6.Enabled = (data.enabledSpeaker[5]);
+            numUpDwnGain6.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker7.Enabled = (data.enabledSpeaker7);
-            numUpDwnChannelSpeaker7.Enabled = (data.enabledSpeaker7);
-            volumeBar7.Enabled = (data.enabledSpeaker7);
-            thresholdBar7.Enabled = (data.enabledSpeaker7);
-            numUpDwnGain7.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker7.Enabled = (data.enabledSpeaker[6]);
+            numUpDwnChannelSpeaker7.Enabled = (data.enabledSpeaker[6]);
+            volumeBar7.Enabled = (data.enabledSpeaker[6]);
+            thresholdBar7.Enabled = (data.enabledSpeaker[6]);
+            numUpDwnGain7.Enabled = (data.enabledSpeaker[0]);
 
-            comboBoxSpeaker8.Enabled = (data.enabledSpeaker8);
-            numUpDwnChannelSpeaker8.Enabled = (data.enabledSpeaker8);
-            volumeBar8.Enabled = (data.enabledSpeaker8);
-            thresholdBar8.Enabled = (data.enabledSpeaker8);
-            numUpDwnGain8.Enabled = (data.enabledSpeaker1);
+            comboBoxSpeaker8.Enabled = (data.enabledSpeaker[7]);
+            numUpDwnChannelSpeaker8.Enabled = (data.enabledSpeaker[7]);
+            volumeBar8.Enabled = (data.enabledSpeaker[7]);
+            thresholdBar8.Enabled = (data.enabledSpeaker[7]);
+            numUpDwnGain8.Enabled = (data.enabledSpeaker[0]);
 
             //Audio values reset
-            if (data.enabledSpeaker1 != true) { runData.speaker1Volume = 0; runData.speakersOpen[0] = 0; }
-            if (data.enabledSpeaker2 != true) { runData.speaker2Volume = 0; runData.speakersOpen[1] = 0; }
-            if (data.enabledSpeaker3 != true) { runData.speaker3Volume = 0; runData.speakersOpen[2] = 0; }
-            if (data.enabledSpeaker4 != true) { runData.speaker4Volume = 0; runData.speakersOpen[3] = 0; }
-            if (data.enabledSpeaker5 != true) { runData.speaker5Volume = 0; runData.speakersOpen[4] = 0; }
-            if (data.enabledSpeaker6 != true) { runData.speaker6Volume = 0; runData.speakersOpen[5] = 0; }
-            if (data.enabledSpeaker7 != true) { runData.speaker7Volume = 0; runData.speakersOpen[6] = 0; }
-            if (data.enabledSpeaker8 != true) { runData.speaker8Volume = 0; runData.speakersOpen[7] = 0; }
+            if (data.enabledSpeaker[0] != true) { runData.speaker1Volume = 0; runData.speakersOpen[0] = 0; }
+            if (data.enabledSpeaker[1] != true) { runData.speaker2Volume = 0; runData.speakersOpen[1] = 0; }
+            if (data.enabledSpeaker[2] != true) { runData.speaker3Volume = 0; runData.speakersOpen[2] = 0; }
+            if (data.enabledSpeaker[3] != true) { runData.speaker4Volume = 0; runData.speakersOpen[3] = 0; }
+            if (data.enabledSpeaker[4] != true) { runData.speaker5Volume = 0; runData.speakersOpen[4] = 0; }
+            if (data.enabledSpeaker[5] != true) { runData.speaker6Volume = 0; runData.speakersOpen[5] = 0; }
+            if (data.enabledSpeaker[6] != true) { runData.speaker7Volume = 0; runData.speakersOpen[6] = 0; }
+            if (data.enabledSpeaker[7] != true) { runData.speaker8Volume = 0; runData.speakersOpen[7] = 0; }
 
 
             //2 PTZ Setup
 
-            prfCam1.Enabled = data.enabledSpeaker1;
-            prfCam2.Enabled = data.enabledSpeaker2;
-            prfCam3.Enabled = data.enabledSpeaker3;
-            prfCam4.Enabled = data.enabledSpeaker4;
-            prfCam5.Enabled = data.enabledSpeaker5;
-            prfCam6.Enabled = data.enabledSpeaker6;
-            prfCam7.Enabled = data.enabledSpeaker7;
-            prfCam8.Enabled = data.enabledSpeaker8;
+            prfCam1.Enabled = data.enabledSpeaker[0];
+            prfCam2.Enabled = data.enabledSpeaker[1];
+            prfCam3.Enabled = data.enabledSpeaker[2];
+            prfCam4.Enabled = data.enabledSpeaker[3];
+            prfCam5.Enabled = data.enabledSpeaker[4];
+            prfCam6.Enabled = data.enabledSpeaker[5];
+            prfCam7.Enabled = data.enabledSpeaker[6];
+            prfCam8.Enabled = data.enabledSpeaker[7];
 
             //Static Pos fields
             statPos1.Enabled = data.staticCameras[0];
@@ -1435,380 +1444,380 @@ namespace Vision_Automix
             statPos8.Enabled = data.staticCameras[7];
 
             //CAMERA1
-            a1pgm.Enabled = data.enabledCamera1;
-            b1pgm.Enabled = data.enabledCamera1;
-            a1prw.Enabled = data.enabledCamera1;
-            b1prw.Enabled = data.enabledCamera1;
+            a1pgm.Enabled = data.enabledCamera[0];
+            b1pgm.Enabled = data.enabledCamera[0];
+            a1prw.Enabled = data.enabledCamera[0];
+            b1prw.Enabled = data.enabledCamera[0];
 
-            a10.Enabled = (data.enabledCamera1 && (data.staticCameras[0] != true));
-            b10.Enabled = (data.enabledCamera1 && (data.staticCameras[0] != true));
-            e10.Enabled = (data.enabledCamera1 && (data.staticCameras[0] != true));
+            a10.Enabled = (data.enabledCamera[0] && (data.staticCameras[0] != true));
+            b10.Enabled = (data.enabledCamera[0] && (data.staticCameras[0] != true));
+            e10.Enabled = (data.enabledCamera[0] && (data.staticCameras[0] != true));
 
-            a11.Enabled = (data.enabledCamera1 && data.enabledSpeaker1 && (data.staticCameras[0] != true));
-            b11.Enabled = (data.enabledCamera1 && data.enabledSpeaker1 && (data.staticCameras[0] != true));
-            e11.Enabled = (data.enabledCamera1 && data.enabledSpeaker1 && (data.staticCameras[0] != true));
+            a11.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[0] && (data.staticCameras[0] != true));
+            b11.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[0] && (data.staticCameras[0] != true));
+            e11.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[0] && (data.staticCameras[0] != true));
 
-            a12.Enabled = (data.enabledCamera1 && data.enabledSpeaker2 && (data.staticCameras[0] != true));
-            b12.Enabled = (data.enabledCamera1 && data.enabledSpeaker2 && (data.staticCameras[0] != true));
-            e12.Enabled = (data.enabledCamera1 && data.enabledSpeaker2 && (data.staticCameras[0] != true));
-        
-            a13.Enabled = (data.enabledCamera1 && data.enabledSpeaker3 && (data.staticCameras[0] != true));
-            b13.Enabled = (data.enabledCamera1 && data.enabledSpeaker3 && (data.staticCameras[0] != true));
-            e13.Enabled = (data.enabledCamera1 && data.enabledSpeaker3 && (data.staticCameras[0] != true));
+            a12.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[1] && (data.staticCameras[0] != true));
+            b12.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[1] && (data.staticCameras[0] != true));
+            e12.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[1] && (data.staticCameras[0] != true));
 
-            a14.Enabled = (data.enabledCamera1 && data.enabledSpeaker4 && (data.staticCameras[0] != true));
-            b14.Enabled = (data.enabledCamera1 && data.enabledSpeaker4 && (data.staticCameras[0] != true));
-            e14.Enabled = (data.enabledCamera1 && data.enabledSpeaker4 && (data.staticCameras[0] != true));
+            a13.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[2] && (data.staticCameras[0] != true));
+            b13.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[2] && (data.staticCameras[0] != true));
+            e13.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[2] && (data.staticCameras[0] != true));
 
-            a15.Enabled = (data.enabledCamera1 && data.enabledSpeaker5 && (data.staticCameras[0] != true));
-            b15.Enabled = (data.enabledCamera1 && data.enabledSpeaker5 && (data.staticCameras[0] != true));
-            e15.Enabled = (data.enabledCamera1 && data.enabledSpeaker5 && (data.staticCameras[0] != true));
+            a14.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[3] && (data.staticCameras[0] != true));
+            b14.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[3] && (data.staticCameras[0] != true));
+            e14.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[3] && (data.staticCameras[0] != true));
 
-            a16.Enabled = (data.enabledCamera1 && data.enabledSpeaker6 && (data.staticCameras[0] != true));
-            b16.Enabled = (data.enabledCamera1 && data.enabledSpeaker6 && (data.staticCameras[0] != true));
-            e16.Enabled = (data.enabledCamera1 && data.enabledSpeaker6 && (data.staticCameras[0] != true));
+            a15.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[4] && (data.staticCameras[0] != true));
+            b15.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[4] && (data.staticCameras[0] != true));
+            e15.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[4] && (data.staticCameras[0] != true));
 
-            a17.Enabled = (data.enabledCamera1 && data.enabledSpeaker7 && (data.staticCameras[0] != true));
-            b17.Enabled = (data.enabledCamera1 && data.enabledSpeaker7 && (data.staticCameras[0] != true));
-            e17.Enabled = (data.enabledCamera1 && data.enabledSpeaker7 && (data.staticCameras[0] != true));
+            a16.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[5] && (data.staticCameras[0] != true));
+            b16.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[5] && (data.staticCameras[0] != true));
+            e16.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[5] && (data.staticCameras[0] != true));
 
-            a18.Enabled = (data.enabledCamera1 && data.enabledSpeaker8 && (data.staticCameras[0] != true));
-            b18.Enabled = (data.enabledCamera1 && data.enabledSpeaker8 && (data.staticCameras[0] != true));
-            e18.Enabled = (data.enabledCamera1 && data.enabledSpeaker8 && (data.staticCameras[0] != true));
+            a17.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[6] && (data.staticCameras[0] != true));
+            b17.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[6] && (data.staticCameras[0] != true));
+            e17.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[6] && (data.staticCameras[0] != true));
+
+            a18.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[7] && (data.staticCameras[0] != true));
+            b18.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[7] && (data.staticCameras[0] != true));
+            e18.Enabled = (data.enabledCamera[0] && data.enabledSpeaker[7] && (data.staticCameras[0] != true));
 
             //CAMERa2
-            a2pgm.Enabled = data.enabledCamera2;
-            b2pgm.Enabled = data.enabledCamera2;
-            a2prw.Enabled = data.enabledCamera2;
-            b2prw.Enabled = data.enabledCamera2;
+            a2pgm.Enabled = data.enabledCamera[1];
+            b2pgm.Enabled = data.enabledCamera[1];
+            a2prw.Enabled = data.enabledCamera[1];
+            b2prw.Enabled = data.enabledCamera[1];
 
-            prfCam1.Enabled = data.enabledSpeaker1;
+            prfCam1.Enabled = data.enabledSpeaker[0];
 
-            a20.Enabled = (data.enabledCamera2 && (data.staticCameras[1] != true));
-            b20.Enabled = (data.enabledCamera2 && (data.staticCameras[1] != true));
-            e20.Enabled = (data.enabledCamera2 && (data.staticCameras[1] != true));
+            a20.Enabled = (data.enabledCamera[1] && (data.staticCameras[1] != true));
+            b20.Enabled = (data.enabledCamera[1] && (data.staticCameras[1] != true));
+            e20.Enabled = (data.enabledCamera[1] && (data.staticCameras[1] != true));
 
-            a21.Enabled = (data.enabledCamera2 && data.enabledSpeaker1 && (data.staticCameras[1] != true));
-            b21.Enabled = (data.enabledCamera2 && data.enabledSpeaker1 && (data.staticCameras[1] != true));
-            e21.Enabled = (data.enabledCamera2 && data.enabledSpeaker1 && (data.staticCameras[1] != true));
+            a21.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[0] && (data.staticCameras[1] != true));
+            b21.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[0] && (data.staticCameras[1] != true));
+            e21.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[0] && (data.staticCameras[1] != true));
 
-            a22.Enabled = (data.enabledCamera2 && data.enabledSpeaker2 && (data.staticCameras[1] != true));
-            b22.Enabled = (data.enabledCamera2 && data.enabledSpeaker2 && (data.staticCameras[1] != true));
-            e22.Enabled = (data.enabledCamera2 && data.enabledSpeaker2 && (data.staticCameras[1] != true));
+            a22.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[1] && (data.staticCameras[1] != true));
+            b22.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[1] && (data.staticCameras[1] != true));
+            e22.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[1] && (data.staticCameras[1] != true));
 
-            a23.Enabled = (data.enabledCamera2 && data.enabledSpeaker3 && (data.staticCameras[1] != true));
-            b23.Enabled = (data.enabledCamera2 && data.enabledSpeaker3 && (data.staticCameras[1] != true));
-            e23.Enabled = (data.enabledCamera2 && data.enabledSpeaker3 && (data.staticCameras[1] != true));
+            a23.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[2] && (data.staticCameras[1] != true));
+            b23.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[2] && (data.staticCameras[1] != true));
+            e23.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[2] && (data.staticCameras[1] != true));
 
-            a24.Enabled = (data.enabledCamera2 && data.enabledSpeaker4 && (data.staticCameras[1] != true));
-            b24.Enabled = (data.enabledCamera2 && data.enabledSpeaker4 && (data.staticCameras[1] != true));
-            e24.Enabled = (data.enabledCamera2 && data.enabledSpeaker4 && (data.staticCameras[1] != true));
+            a24.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[3] && (data.staticCameras[1] != true));
+            b24.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[3] && (data.staticCameras[1] != true));
+            e24.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[3] && (data.staticCameras[1] != true));
 
-            a25.Enabled = (data.enabledCamera2 && data.enabledSpeaker5 && (data.staticCameras[1] != true));
-            b25.Enabled = (data.enabledCamera2 && data.enabledSpeaker5 && (data.staticCameras[1] != true));
-            e25.Enabled = (data.enabledCamera2 && data.enabledSpeaker5 && (data.staticCameras[1] != true));
+            a25.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[4] && (data.staticCameras[1] != true));
+            b25.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[4] && (data.staticCameras[1] != true));
+            e25.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[4] && (data.staticCameras[1] != true));
 
-            a26.Enabled = (data.enabledCamera2 && data.enabledSpeaker6 && (data.staticCameras[1] != true));
-            b26.Enabled = (data.enabledCamera2 && data.enabledSpeaker6 && (data.staticCameras[1] != true));
-            e26.Enabled = (data.enabledCamera2 && data.enabledSpeaker6 && (data.staticCameras[1] != true));
+            a26.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[5] && (data.staticCameras[1] != true));
+            b26.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[5] && (data.staticCameras[1] != true));
+            e26.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[5] && (data.staticCameras[1] != true));
 
-            a27.Enabled = (data.enabledCamera2 && data.enabledSpeaker7 && (data.staticCameras[1] != true));
-            b27.Enabled = (data.enabledCamera2 && data.enabledSpeaker7 && (data.staticCameras[1] != true));
-            e27.Enabled = (data.enabledCamera2 && data.enabledSpeaker7 && (data.staticCameras[1] != true));
+            a27.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[6] && (data.staticCameras[1] != true));
+            b27.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[6] && (data.staticCameras[1] != true));
+            e27.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[6] && (data.staticCameras[1] != true));
 
-            a28.Enabled = (data.enabledCamera2 && data.enabledSpeaker8 && (data.staticCameras[1] != true));
-            b28.Enabled = (data.enabledCamera2 && data.enabledSpeaker8 && (data.staticCameras[1] != true));
-            e28.Enabled = (data.enabledCamera2 && data.enabledSpeaker8 && (data.staticCameras[1] != true));
+            a28.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[7] && (data.staticCameras[1] != true));
+            b28.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[7] && (data.staticCameras[1] != true));
+            e28.Enabled = (data.enabledCamera[1] && data.enabledSpeaker[7] && (data.staticCameras[1] != true));
 
             //CAMERa3
-            a3pgm.Enabled = data.enabledCamera3;
-            b3pgm.Enabled = data.enabledCamera3;
-            a3prw.Enabled = data.enabledCamera3;
-            b3prw.Enabled = data.enabledCamera3;
+            a3pgm.Enabled = data.enabledCamera[2];
+            b3pgm.Enabled = data.enabledCamera[2];
+            a3prw.Enabled = data.enabledCamera[2];
+            b3prw.Enabled = data.enabledCamera[2];
 
-            a30.Enabled = (data.enabledCamera3 && (data.staticCameras[2] != true));
-            b30.Enabled = (data.enabledCamera3 && (data.staticCameras[2] != true));
-            e30.Enabled = (data.enabledCamera3 && (data.staticCameras[2] != true));
+            a30.Enabled = (data.enabledCamera[2] && (data.staticCameras[2] != true));
+            b30.Enabled = (data.enabledCamera[2] && (data.staticCameras[2] != true));
+            e30.Enabled = (data.enabledCamera[2] && (data.staticCameras[2] != true));
 
-            a31.Enabled = (data.enabledCamera3 && data.enabledSpeaker1 && (data.staticCameras[2] != true));
-            b31.Enabled = (data.enabledCamera3 && data.enabledSpeaker1 && (data.staticCameras[2] != true));
-            e31.Enabled = (data.enabledCamera3 && data.enabledSpeaker1 && (data.staticCameras[2] != true));
+            a31.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[0] && (data.staticCameras[2] != true));
+            b31.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[0] && (data.staticCameras[2] != true));
+            e31.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[0] && (data.staticCameras[2] != true));
 
-            a32.Enabled = (data.enabledCamera3 && data.enabledSpeaker2 && (data.staticCameras[2] != true));
-            b32.Enabled = (data.enabledCamera3 && data.enabledSpeaker2 && (data.staticCameras[2] != true));
-            e32.Enabled = (data.enabledCamera3 && data.enabledSpeaker2 && (data.staticCameras[2] != true));
+            a32.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[1] && (data.staticCameras[2] != true));
+            b32.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[1] && (data.staticCameras[2] != true));
+            e32.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[1] && (data.staticCameras[2] != true));
 
-            a33.Enabled = (data.enabledCamera3 && data.enabledSpeaker3 && (data.staticCameras[2] != true));
-            b33.Enabled = (data.enabledCamera3 && data.enabledSpeaker3 && (data.staticCameras[2] != true));
-            e33.Enabled = (data.enabledCamera3 && data.enabledSpeaker3 && (data.staticCameras[2] != true));
+            a33.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[2] && (data.staticCameras[2] != true));
+            b33.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[2] && (data.staticCameras[2] != true));
+            e33.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[2] && (data.staticCameras[2] != true));
 
-            a34.Enabled = (data.enabledCamera3 && data.enabledSpeaker4 && (data.staticCameras[2] != true));
-            b34.Enabled = (data.enabledCamera3 && data.enabledSpeaker4 && (data.staticCameras[2] != true));
-            e34.Enabled = (data.enabledCamera3 && data.enabledSpeaker4 && (data.staticCameras[2] != true));
+            a34.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[3] && (data.staticCameras[2] != true));
+            b34.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[3] && (data.staticCameras[2] != true));
+            e34.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[3] && (data.staticCameras[2] != true));
 
-            a35.Enabled = (data.enabledCamera3 && data.enabledSpeaker5 && (data.staticCameras[2] != true));
-            b35.Enabled = (data.enabledCamera3 && data.enabledSpeaker5 && (data.staticCameras[2] != true));
-            e35.Enabled = (data.enabledCamera3 && data.enabledSpeaker5 && (data.staticCameras[2] != true));
+            a35.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[4] && (data.staticCameras[2] != true));
+            b35.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[4] && (data.staticCameras[2] != true));
+            e35.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[4] && (data.staticCameras[2] != true));
 
-            a36.Enabled = (data.enabledCamera3 && data.enabledSpeaker6 && (data.staticCameras[2] != true));
-            b36.Enabled = (data.enabledCamera3 && data.enabledSpeaker6 && (data.staticCameras[2] != true));
-            e36.Enabled = (data.enabledCamera3 && data.enabledSpeaker6 && (data.staticCameras[2] != true));
+            a36.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[5] && (data.staticCameras[2] != true));
+            b36.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[5] && (data.staticCameras[2] != true));
+            e36.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[5] && (data.staticCameras[2] != true));
 
-            a37.Enabled = (data.enabledCamera3 && data.enabledSpeaker7 && (data.staticCameras[2] != true));
-            b37.Enabled = (data.enabledCamera3 && data.enabledSpeaker7 && (data.staticCameras[2] != true));
-            e37.Enabled = (data.enabledCamera3 && data.enabledSpeaker7 && (data.staticCameras[2] != true));
+            a37.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[6] && (data.staticCameras[2] != true));
+            b37.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[6] && (data.staticCameras[2] != true));
+            e37.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[6] && (data.staticCameras[2] != true));
 
-            a38.Enabled = (data.enabledCamera3 && data.enabledSpeaker8 && (data.staticCameras[2] != true));
-            b38.Enabled = (data.enabledCamera3 && data.enabledSpeaker8 && (data.staticCameras[2] != true));
-            e38.Enabled = (data.enabledCamera3 && data.enabledSpeaker8 && (data.staticCameras[2] != true));
+            a38.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[7] && (data.staticCameras[2] != true));
+            b38.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[7] && (data.staticCameras[2] != true));
+            e38.Enabled = (data.enabledCamera[2] && data.enabledSpeaker[7] && (data.staticCameras[2] != true));
 
             //CAMERa4
-            a4pgm.Enabled = data.enabledCamera4;
-            b4pgm.Enabled = data.enabledCamera4;
-            a4prw.Enabled = data.enabledCamera4;
-            b4prw.Enabled = data.enabledCamera4;
+            a4pgm.Enabled = data.enabledCamera[3];
+            b4pgm.Enabled = data.enabledCamera[3];
+            a4prw.Enabled = data.enabledCamera[3];
+            b4prw.Enabled = data.enabledCamera[3];
 
-            a40.Enabled = (data.enabledCamera4 && (data.staticCameras[3] != true));
-            b40.Enabled = (data.enabledCamera4 && (data.staticCameras[3] != true));
-            e40.Enabled = (data.enabledCamera4 && (data.staticCameras[3] != true));
+            a40.Enabled = (data.enabledCamera[3] && (data.staticCameras[3] != true));
+            b40.Enabled = (data.enabledCamera[3] && (data.staticCameras[3] != true));
+            e40.Enabled = (data.enabledCamera[3] && (data.staticCameras[3] != true));
 
-            a41.Enabled = (data.enabledCamera4 && data.enabledSpeaker1 && (data.staticCameras[3] != true));
-            b41.Enabled = (data.enabledCamera4 && data.enabledSpeaker1 && (data.staticCameras[3] != true));
-            e41.Enabled = (data.enabledCamera4 && data.enabledSpeaker1 && (data.staticCameras[3] != true));
+            a41.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[0] && (data.staticCameras[3] != true));
+            b41.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[0] && (data.staticCameras[3] != true));
+            e41.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[0] && (data.staticCameras[3] != true));
 
-            a42.Enabled = (data.enabledCamera4 && data.enabledSpeaker2 && (data.staticCameras[3] != true));
-            b42.Enabled = (data.enabledCamera4 && data.enabledSpeaker2 && (data.staticCameras[3] != true));
-            e42.Enabled = (data.enabledCamera4 && data.enabledSpeaker2 && (data.staticCameras[3] != true));
+            a42.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[1] && (data.staticCameras[3] != true));
+            b42.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[1] && (data.staticCameras[3] != true));
+            e42.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[1] && (data.staticCameras[3] != true));
 
-            a43.Enabled = (data.enabledCamera4 && data.enabledSpeaker3 && (data.staticCameras[3] != true));
-            b43.Enabled = (data.enabledCamera4 && data.enabledSpeaker3 && (data.staticCameras[3] != true));
-            e43.Enabled = (data.enabledCamera4 && data.enabledSpeaker3 && (data.staticCameras[3] != true));
+            a43.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[2] && (data.staticCameras[3] != true));
+            b43.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[2] && (data.staticCameras[3] != true));
+            e43.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[2] && (data.staticCameras[3] != true));
 
-            a44.Enabled = (data.enabledCamera4 && data.enabledSpeaker4 && (data.staticCameras[3] != true));
-            b44.Enabled = (data.enabledCamera4 && data.enabledSpeaker4 && (data.staticCameras[3] != true));
-            e44.Enabled = (data.enabledCamera4 && data.enabledSpeaker4 && (data.staticCameras[3] != true));
+            a44.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[3] && (data.staticCameras[3] != true));
+            b44.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[3] && (data.staticCameras[3] != true));
+            e44.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[3] && (data.staticCameras[3] != true));
 
-            a45.Enabled = (data.enabledCamera4 && data.enabledSpeaker5 && (data.staticCameras[3] != true));
-            b45.Enabled = (data.enabledCamera4 && data.enabledSpeaker5 && (data.staticCameras[3] != true));
-            e45.Enabled = (data.enabledCamera4 && data.enabledSpeaker5 && (data.staticCameras[3] != true));
+            a45.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[4] && (data.staticCameras[3] != true));
+            b45.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[4] && (data.staticCameras[3] != true));
+            e45.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[4] && (data.staticCameras[3] != true));
 
-            a46.Enabled = (data.enabledCamera4 && data.enabledSpeaker6 && (data.staticCameras[3] != true));
-            b46.Enabled = (data.enabledCamera4 && data.enabledSpeaker6 && (data.staticCameras[3] != true));
-            e46.Enabled = (data.enabledCamera4 && data.enabledSpeaker6 && (data.staticCameras[3] != true));
+            a46.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[5] && (data.staticCameras[3] != true));
+            b46.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[5] && (data.staticCameras[3] != true));
+            e46.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[5] && (data.staticCameras[3] != true));
 
-            a47.Enabled = (data.enabledCamera4 && data.enabledSpeaker7 && (data.staticCameras[3] != true));
-            b47.Enabled = (data.enabledCamera4 && data.enabledSpeaker7 && (data.staticCameras[3] != true));
-            e47.Enabled = (data.enabledCamera4 && data.enabledSpeaker7 && (data.staticCameras[3] != true));
+            a47.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[6] && (data.staticCameras[3] != true));
+            b47.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[6] && (data.staticCameras[3] != true));
+            e47.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[6] && (data.staticCameras[3] != true));
 
-            a48.Enabled = (data.enabledCamera4 && data.enabledSpeaker8 && (data.staticCameras[3] != true));
-            b48.Enabled = (data.enabledCamera4 && data.enabledSpeaker8 && (data.staticCameras[3] != true));
-            e48.Enabled = (data.enabledCamera4 && data.enabledSpeaker8 && (data.staticCameras[3] != true));
+            a48.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[7] && (data.staticCameras[3] != true));
+            b48.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[7] && (data.staticCameras[3] != true));
+            e48.Enabled = (data.enabledCamera[3] && data.enabledSpeaker[7] && (data.staticCameras[3] != true));
 
             //CAMERa5
-            a5pgm.Enabled = data.enabledCamera5;
-            b5pgm.Enabled = data.enabledCamera5;
-            a5prw.Enabled = data.enabledCamera5;
-            b5prw.Enabled = data.enabledCamera5;
+            a5pgm.Enabled = data.enabledCamera[4];
+            b5pgm.Enabled = data.enabledCamera[4];
+            a5prw.Enabled = data.enabledCamera[4];
+            b5prw.Enabled = data.enabledCamera[4];
 
-            a50.Enabled = (data.enabledCamera5 && (data.staticCameras[4] != true));
-            b50.Enabled = (data.enabledCamera5 && (data.staticCameras[4] != true));
-            e50.Enabled = (data.enabledCamera5 && (data.staticCameras[4] != true));
+            a50.Enabled = (data.enabledCamera[4] && (data.staticCameras[4] != true));
+            b50.Enabled = (data.enabledCamera[4] && (data.staticCameras[4] != true));
+            e50.Enabled = (data.enabledCamera[4] && (data.staticCameras[4] != true));
 
-            a51.Enabled = (data.enabledCamera5 && data.enabledSpeaker1 && (data.staticCameras[4] != true));
-            b51.Enabled = (data.enabledCamera5 && data.enabledSpeaker1 && (data.staticCameras[4] != true));
-            e51.Enabled = (data.enabledCamera5 && data.enabledSpeaker1 && (data.staticCameras[4] != true));
+            a51.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[0] && (data.staticCameras[4] != true));
+            b51.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[0] && (data.staticCameras[4] != true));
+            e51.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[0] && (data.staticCameras[4] != true));
 
-            a52.Enabled = (data.enabledCamera5 && data.enabledSpeaker2 && (data.staticCameras[4] != true));
-            b52.Enabled = (data.enabledCamera5 && data.enabledSpeaker2 && (data.staticCameras[4] != true));
-            e52.Enabled = (data.enabledCamera5 && data.enabledSpeaker2 && (data.staticCameras[4] != true));
+            a52.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[1] && (data.staticCameras[4] != true));
+            b52.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[1] && (data.staticCameras[4] != true));
+            e52.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[1] && (data.staticCameras[4] != true));
 
-            a53.Enabled = (data.enabledCamera5 && data.enabledSpeaker3 && (data.staticCameras[4] != true));
-            b53.Enabled = (data.enabledCamera5 && data.enabledSpeaker3 && (data.staticCameras[4] != true));
-            e53.Enabled = (data.enabledCamera5 && data.enabledSpeaker3 && (data.staticCameras[4] != true));
+            a53.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[2] && (data.staticCameras[4] != true));
+            b53.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[2] && (data.staticCameras[4] != true));
+            e53.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[2] && (data.staticCameras[4] != true));
 
-            a54.Enabled = (data.enabledCamera5 && data.enabledSpeaker4 && (data.staticCameras[4] != true));
-            b54.Enabled = (data.enabledCamera5 && data.enabledSpeaker4 && (data.staticCameras[4] != true));
-            e54.Enabled = (data.enabledCamera5 && data.enabledSpeaker4 && (data.staticCameras[4] != true));
+            a54.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[3] && (data.staticCameras[4] != true));
+            b54.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[3] && (data.staticCameras[4] != true));
+            e54.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[3] && (data.staticCameras[4] != true));
 
-            a55.Enabled = (data.enabledCamera5 && data.enabledSpeaker5 && (data.staticCameras[4] != true));
-            b55.Enabled = (data.enabledCamera5 && data.enabledSpeaker5 && (data.staticCameras[4] != true));
-            e55.Enabled = (data.enabledCamera5 && data.enabledSpeaker5 && (data.staticCameras[4] != true));
+            a55.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[4] && (data.staticCameras[4] != true));
+            b55.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[4] && (data.staticCameras[4] != true));
+            e55.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[4] && (data.staticCameras[4] != true));
 
-            a56.Enabled = (data.enabledCamera5 && data.enabledSpeaker6 && (data.staticCameras[4] != true));
-            b56.Enabled = (data.enabledCamera5 && data.enabledSpeaker6 && (data.staticCameras[4] != true));
-            e56.Enabled = (data.enabledCamera5 && data.enabledSpeaker6 && (data.staticCameras[4] != true));
+            a56.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[5] && (data.staticCameras[4] != true));
+            b56.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[5] && (data.staticCameras[4] != true));
+            e56.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[5] && (data.staticCameras[4] != true));
 
-            a57.Enabled = (data.enabledCamera5 && data.enabledSpeaker7 && (data.staticCameras[4] != true));
-            b57.Enabled = (data.enabledCamera5 && data.enabledSpeaker7 && (data.staticCameras[4] != true));
-            e57.Enabled = (data.enabledCamera5 && data.enabledSpeaker7 && (data.staticCameras[4] != true));
+            a57.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[6] && (data.staticCameras[4] != true));
+            b57.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[6] && (data.staticCameras[4] != true));
+            e57.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[6] && (data.staticCameras[4] != true));
 
-            a58.Enabled = (data.enabledCamera5 && data.enabledSpeaker8 && (data.staticCameras[4] != true));
-            b58.Enabled = (data.enabledCamera5 && data.enabledSpeaker8 && (data.staticCameras[4] != true));
-            e58.Enabled = (data.enabledCamera5 && data.enabledSpeaker8 && (data.staticCameras[4] != true));
+            a58.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[7] && (data.staticCameras[4] != true));
+            b58.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[7] && (data.staticCameras[4] != true));
+            e58.Enabled = (data.enabledCamera[4] && data.enabledSpeaker[7] && (data.staticCameras[4] != true));
 
             //CAMERa6
-            a6pgm.Enabled = data.enabledCamera6;
-            b6pgm.Enabled = data.enabledCamera6;
-            a6prw.Enabled = data.enabledCamera6;
-            b6prw.Enabled = data.enabledCamera6;
+            a6pgm.Enabled = data.enabledCamera[5];
+            b6pgm.Enabled = data.enabledCamera[5];
+            a6prw.Enabled = data.enabledCamera[5];
+            b6prw.Enabled = data.enabledCamera[5];
 
-            a60.Enabled = (data.enabledCamera6 && (data.staticCameras[5] != true));
-            b60.Enabled = (data.enabledCamera6 && (data.staticCameras[5] != true));
-            e60.Enabled = (data.enabledCamera6 && (data.staticCameras[5] != true));
+            a60.Enabled = (data.enabledCamera[5] && (data.staticCameras[5] != true));
+            b60.Enabled = (data.enabledCamera[5] && (data.staticCameras[5] != true));
+            e60.Enabled = (data.enabledCamera[5] && (data.staticCameras[5] != true));
 
-            a61.Enabled = (data.enabledCamera6 && data.enabledSpeaker1 && (data.staticCameras[5] != true));
-            b61.Enabled = (data.enabledCamera6 && data.enabledSpeaker1 && (data.staticCameras[5] != true));
-            e61.Enabled = (data.enabledCamera6 && data.enabledSpeaker1 && (data.staticCameras[5] != true));
+            a61.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[0] && (data.staticCameras[5] != true));
+            b61.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[0] && (data.staticCameras[5] != true));
+            e61.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[0] && (data.staticCameras[5] != true));
 
-            a62.Enabled = (data.enabledCamera6 && data.enabledSpeaker2 && (data.staticCameras[5] != true));
-            b62.Enabled = (data.enabledCamera6 && data.enabledSpeaker2 && (data.staticCameras[5] != true));
-            e62.Enabled = (data.enabledCamera6 && data.enabledSpeaker2 && (data.staticCameras[5] != true));
+            a62.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[1] && (data.staticCameras[5] != true));
+            b62.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[1] && (data.staticCameras[5] != true));
+            e62.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[1] && (data.staticCameras[5] != true));
 
-            a63.Enabled = (data.enabledCamera6 && data.enabledSpeaker3 && (data.staticCameras[5] != true));
-            b63.Enabled = (data.enabledCamera6 && data.enabledSpeaker3 && (data.staticCameras[5] != true));
-            e63.Enabled = (data.enabledCamera6 && data.enabledSpeaker3 && (data.staticCameras[5] != true));
+            a63.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[2] && (data.staticCameras[5] != true));
+            b63.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[2] && (data.staticCameras[5] != true));
+            e63.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[2] && (data.staticCameras[5] != true));
 
-            a64.Enabled = (data.enabledCamera6 && data.enabledSpeaker4 && (data.staticCameras[5] != true));
-            b64.Enabled = (data.enabledCamera6 && data.enabledSpeaker4 && (data.staticCameras[5] != true));
-            e64.Enabled = (data.enabledCamera6 && data.enabledSpeaker4 && (data.staticCameras[5] != true));
+            a64.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[3] && (data.staticCameras[5] != true));
+            b64.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[3] && (data.staticCameras[5] != true));
+            e64.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[3] && (data.staticCameras[5] != true));
 
-            a65.Enabled = (data.enabledCamera6 && data.enabledSpeaker5 && (data.staticCameras[5] != true));
-            b65.Enabled = (data.enabledCamera6 && data.enabledSpeaker5 && (data.staticCameras[5] != true));
-            e65.Enabled = (data.enabledCamera6 && data.enabledSpeaker5 && (data.staticCameras[5] != true));
+            a65.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[4] && (data.staticCameras[5] != true));
+            b65.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[4] && (data.staticCameras[5] != true));
+            e65.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[4] && (data.staticCameras[5] != true));
 
-            a66.Enabled = (data.enabledCamera6 && data.enabledSpeaker6 && (data.staticCameras[5] != true));
-            b66.Enabled = (data.enabledCamera6 && data.enabledSpeaker6 && (data.staticCameras[5] != true));
-            e66.Enabled = (data.enabledCamera6 && data.enabledSpeaker6 && (data.staticCameras[5] != true));
+            a66.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[5] && (data.staticCameras[5] != true));
+            b66.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[5] && (data.staticCameras[5] != true));
+            e66.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[5] && (data.staticCameras[5] != true));
 
-            a67.Enabled = (data.enabledCamera6 && data.enabledSpeaker7 && (data.staticCameras[5] != true));
-            b67.Enabled = (data.enabledCamera6 && data.enabledSpeaker7 && (data.staticCameras[5] != true));
-            e67.Enabled = (data.enabledCamera6 && data.enabledSpeaker7 && (data.staticCameras[5] != true));
+            a67.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[6] && (data.staticCameras[5] != true));
+            b67.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[6] && (data.staticCameras[5] != true));
+            e67.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[6] && (data.staticCameras[5] != true));
 
-            a68.Enabled = (data.enabledCamera6 && data.enabledSpeaker8 && (data.staticCameras[5] != true));
-            b68.Enabled = (data.enabledCamera6 && data.enabledSpeaker8 && (data.staticCameras[5] != true));
-            e68.Enabled = (data.enabledCamera6 && data.enabledSpeaker8 && (data.staticCameras[5] != true));
+            a68.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[7] && (data.staticCameras[5] != true));
+            b68.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[7] && (data.staticCameras[5] != true));
+            e68.Enabled = (data.enabledCamera[5] && data.enabledSpeaker[7] && (data.staticCameras[5] != true));
 
             //CAMERa7
-            a7pgm.Enabled = data.enabledCamera7;
-            b7pgm.Enabled = data.enabledCamera7;
-            a7prw.Enabled = data.enabledCamera7;
-            b7prw.Enabled = data.enabledCamera7;
+            a7pgm.Enabled = data.enabledCamera[6];
+            b7pgm.Enabled = data.enabledCamera[6];
+            a7prw.Enabled = data.enabledCamera[6];
+            b7prw.Enabled = data.enabledCamera[6];
 
-            a70.Enabled = (data.enabledCamera7 && (data.staticCameras[6] != true));
-            b70.Enabled = (data.enabledCamera7 && (data.staticCameras[6] != true));
-            e70.Enabled = (data.enabledCamera7 && (data.staticCameras[6] != true));
+            a70.Enabled = (data.enabledCamera[6] && (data.staticCameras[6] != true));
+            b70.Enabled = (data.enabledCamera[6] && (data.staticCameras[6] != true));
+            e70.Enabled = (data.enabledCamera[6] && (data.staticCameras[6] != true));
 
-            a71.Enabled = (data.enabledCamera7 && data.enabledSpeaker1 && (data.staticCameras[6] != true));
-            b71.Enabled = (data.enabledCamera7 && data.enabledSpeaker1 && (data.staticCameras[6] != true));
-            e71.Enabled = (data.enabledCamera7 && data.enabledSpeaker1 && (data.staticCameras[6] != true));
+            a71.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[0] && (data.staticCameras[6] != true));
+            b71.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[0] && (data.staticCameras[6] != true));
+            e71.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[0] && (data.staticCameras[6] != true));
 
-            a72.Enabled = (data.enabledCamera7 && data.enabledSpeaker2 && (data.staticCameras[6] != true));
-            b72.Enabled = (data.enabledCamera7 && data.enabledSpeaker2 && (data.staticCameras[6] != true));
-            e72.Enabled = (data.enabledCamera7 && data.enabledSpeaker2 && (data.staticCameras[6] != true));
+            a72.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[1] && (data.staticCameras[6] != true));
+            b72.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[1] && (data.staticCameras[6] != true));
+            e72.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[1] && (data.staticCameras[6] != true));
 
-            a73.Enabled = (data.enabledCamera7 && data.enabledSpeaker3 && (data.staticCameras[6] != true));
-            b73.Enabled = (data.enabledCamera7 && data.enabledSpeaker3 && (data.staticCameras[6] != true));
-            e73.Enabled = (data.enabledCamera7 && data.enabledSpeaker3 && (data.staticCameras[6] != true));
+            a73.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[2] && (data.staticCameras[6] != true));
+            b73.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[2] && (data.staticCameras[6] != true));
+            e73.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[2] && (data.staticCameras[6] != true));
 
-            a74.Enabled = (data.enabledCamera7 && data.enabledSpeaker4 && (data.staticCameras[6] != true));
-            b74.Enabled = (data.enabledCamera7 && data.enabledSpeaker4 && (data.staticCameras[6] != true));
-            e74.Enabled = (data.enabledCamera7 && data.enabledSpeaker4 && (data.staticCameras[6] != true));
+            a74.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[3] && (data.staticCameras[6] != true));
+            b74.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[3] && (data.staticCameras[6] != true));
+            e74.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[3] && (data.staticCameras[6] != true));
 
-            a75.Enabled = (data.enabledCamera7 && data.enabledSpeaker5 && (data.staticCameras[6] != true));
-            b75.Enabled = (data.enabledCamera7 && data.enabledSpeaker5 && (data.staticCameras[6] != true));
-            e75.Enabled = (data.enabledCamera7 && data.enabledSpeaker5 && (data.staticCameras[6] != true));
+            a75.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[4] && (data.staticCameras[6] != true));
+            b75.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[4] && (data.staticCameras[6] != true));
+            e75.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[4] && (data.staticCameras[6] != true));
 
-            a76.Enabled = (data.enabledCamera7 && data.enabledSpeaker6 && (data.staticCameras[6] != true));
-            b76.Enabled = (data.enabledCamera7 && data.enabledSpeaker6 && (data.staticCameras[6] != true));
-            e76.Enabled = (data.enabledCamera7 && data.enabledSpeaker6 && (data.staticCameras[6] != true));
+            a76.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[5] && (data.staticCameras[6] != true));
+            b76.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[5] && (data.staticCameras[6] != true));
+            e76.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[5] && (data.staticCameras[6] != true));
 
-            a77.Enabled = (data.enabledCamera7 && data.enabledSpeaker7 && (data.staticCameras[6] != true));
-            b77.Enabled = (data.enabledCamera7 && data.enabledSpeaker7 && (data.staticCameras[6] != true));
-            e77.Enabled = (data.enabledCamera7 && data.enabledSpeaker7 && (data.staticCameras[6] != true));
+            a77.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[6] && (data.staticCameras[6] != true));
+            b77.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[6] && (data.staticCameras[6] != true));
+            e77.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[6] && (data.staticCameras[6] != true));
 
-            a78.Enabled = (data.enabledCamera7 && data.enabledSpeaker8 && (data.staticCameras[6] != true));
-            b78.Enabled = (data.enabledCamera7 && data.enabledSpeaker8 && (data.staticCameras[6] != true));
-            e78.Enabled = (data.enabledCamera7 && data.enabledSpeaker8 && (data.staticCameras[6] != true));
+            a78.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[7] && (data.staticCameras[6] != true));
+            b78.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[7] && (data.staticCameras[6] != true));
+            e78.Enabled = (data.enabledCamera[6] && data.enabledSpeaker[7] && (data.staticCameras[6] != true));
 
             //CAMERa8
-            a8pgm.Enabled = data.enabledCamera8;
-            b8pgm.Enabled = data.enabledCamera8;
-            a8prw.Enabled = data.enabledCamera8;
-            b8prw.Enabled = data.enabledCamera8;
+            a8pgm.Enabled = data.enabledCamera[7];
+            b8pgm.Enabled = data.enabledCamera[7];
+            a8prw.Enabled = data.enabledCamera[7];
+            b8prw.Enabled = data.enabledCamera[7];
 
-            a80.Enabled = (data.enabledCamera8 && (data.staticCameras[7] != true));
-            b80.Enabled = (data.enabledCamera8 && (data.staticCameras[7] != true));
-            e80.Enabled = (data.enabledCamera8 && (data.staticCameras[7] != true));
+            a80.Enabled = (data.enabledCamera[7] && (data.staticCameras[7] != true));
+            b80.Enabled = (data.enabledCamera[7] && (data.staticCameras[7] != true));
+            e80.Enabled = (data.enabledCamera[7] && (data.staticCameras[7] != true));
 
-            a81.Enabled = (data.enabledCamera8 && data.enabledSpeaker1 && (data.staticCameras[7] != true));
-            b81.Enabled = (data.enabledCamera8 && data.enabledSpeaker1 && (data.staticCameras[7] != true));
-            e81.Enabled = (data.enabledCamera8 && data.enabledSpeaker1 && (data.staticCameras[7] != true));
+            a81.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[0] && (data.staticCameras[7] != true));
+            b81.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[0] && (data.staticCameras[7] != true));
+            e81.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[0] && (data.staticCameras[7] != true));
 
-            a82.Enabled = (data.enabledCamera8 && data.enabledSpeaker2 && (data.staticCameras[7] != true));
-            b82.Enabled = (data.enabledCamera8 && data.enabledSpeaker2 && (data.staticCameras[7] != true));
-            e82.Enabled = (data.enabledCamera8 && data.enabledSpeaker2 && (data.staticCameras[7] != true));
+            a82.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[1] && (data.staticCameras[7] != true));
+            b82.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[1] && (data.staticCameras[7] != true));
+            e82.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[1] && (data.staticCameras[7] != true));
 
-            a83.Enabled = (data.enabledCamera8 && data.enabledSpeaker3 && (data.staticCameras[7] != true));
-            b83.Enabled = (data.enabledCamera8 && data.enabledSpeaker3 && (data.staticCameras[7] != true));
-            e83.Enabled = (data.enabledCamera8 && data.enabledSpeaker3 && (data.staticCameras[7] != true));
+            a83.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[2] && (data.staticCameras[7] != true));
+            b83.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[2] && (data.staticCameras[7] != true));
+            e83.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[2] && (data.staticCameras[7] != true));
 
-            a84.Enabled = (data.enabledCamera8 && data.enabledSpeaker4 && (data.staticCameras[7] != true));
-            b84.Enabled = (data.enabledCamera8 && data.enabledSpeaker4 && (data.staticCameras[7] != true));
-            e84.Enabled = (data.enabledCamera8 && data.enabledSpeaker4 && (data.staticCameras[7] != true));
+            a84.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[3] && (data.staticCameras[7] != true));
+            b84.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[3] && (data.staticCameras[7] != true));
+            e84.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[3] && (data.staticCameras[7] != true));
 
-            a85.Enabled = (data.enabledCamera8 && data.enabledSpeaker5 && (data.staticCameras[7] != true));
-            b85.Enabled = (data.enabledCamera8 && data.enabledSpeaker5 && (data.staticCameras[7] != true));
-            e85.Enabled = (data.enabledCamera8 && data.enabledSpeaker5 && (data.staticCameras[7] != true));
+            a85.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[4] && (data.staticCameras[7] != true));
+            b85.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[4] && (data.staticCameras[7] != true));
+            e85.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[4] && (data.staticCameras[7] != true));
 
-            a86.Enabled = (data.enabledCamera8 && data.enabledSpeaker6 && (data.staticCameras[7] != true));
-            b86.Enabled = (data.enabledCamera8 && data.enabledSpeaker6 && (data.staticCameras[7] != true));
-            e86.Enabled = (data.enabledCamera8 && data.enabledSpeaker6 && (data.staticCameras[7] != true));
+            a86.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[5] && (data.staticCameras[7] != true));
+            b86.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[5] && (data.staticCameras[7] != true));
+            e86.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[5] && (data.staticCameras[7] != true));
 
-            a87.Enabled = (data.enabledCamera8 && data.enabledSpeaker7 && (data.staticCameras[7] != true));
-            b87.Enabled = (data.enabledCamera8 && data.enabledSpeaker7 && (data.staticCameras[7] != true));
-            e87.Enabled = (data.enabledCamera8 && data.enabledSpeaker7 && (data.staticCameras[7] != true));
+            a87.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[6] && (data.staticCameras[7] != true));
+            b87.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[6] && (data.staticCameras[7] != true));
+            e87.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[6] && (data.staticCameras[7] != true));
 
-            a88.Enabled = (data.enabledCamera8 && data.enabledSpeaker8 && (data.staticCameras[7] != true));
-            b88.Enabled = (data.enabledCamera8 && data.enabledSpeaker8 && (data.staticCameras[7] != true));
-            e88.Enabled = (data.enabledCamera8 && data.enabledSpeaker8 && (data.staticCameras[7] != true));
+            a88.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[7] && (data.staticCameras[7] != true));
+            b88.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[7] && (data.staticCameras[7] != true));
+            e88.Enabled = (data.enabledCamera[7] && data.enabledSpeaker[7] && (data.staticCameras[7] != true));
 
 
             // 4 - Live monitor
-            labelSpeakerBoxSpeaker1.Visible = (data.enabledSpeaker1);
-            labelSpeakerBoxSpeaker2.Visible = (data.enabledSpeaker2);
-            labelSpeakerBoxSpeaker3.Visible = (data.enabledSpeaker3);
-            labelSpeakerBoxSpeaker4.Visible = (data.enabledSpeaker4);
-            labelSpeakerBoxSpeaker5.Visible = (data.enabledSpeaker5);
-            labelSpeakerBoxSpeaker6.Visible = (data.enabledSpeaker6);
-            labelSpeakerBoxSpeaker7.Visible = (data.enabledSpeaker7);
-            labelSpeakerBoxSpeaker8.Visible = (data.enabledSpeaker8);
+            labelSpeakerBoxSpeaker1.Visible = (data.enabledSpeaker[0]);
+            labelSpeakerBoxSpeaker2.Visible = (data.enabledSpeaker[1]);
+            labelSpeakerBoxSpeaker3.Visible = (data.enabledSpeaker[2]);
+            labelSpeakerBoxSpeaker4.Visible = (data.enabledSpeaker[3]);
+            labelSpeakerBoxSpeaker5.Visible = (data.enabledSpeaker[4]);
+            labelSpeakerBoxSpeaker6.Visible = (data.enabledSpeaker[5]);
+            labelSpeakerBoxSpeaker7.Visible = (data.enabledSpeaker[6]);
+            labelSpeakerBoxSpeaker8.Visible = (data.enabledSpeaker[7]);
 
-            camBoxLabelCam1.Visible = (data.enabledCamera1);
-            camBoxLabelCam2.Visible = (data.enabledCamera2);
-            camBoxLabelCam3.Visible = (data.enabledCamera3);
-            camBoxLabelCam4.Visible = (data.enabledCamera4);
-            camBoxLabelCam5.Visible = (data.enabledCamera5);
-            camBoxLabelCam6.Visible = (data.enabledCamera6);
-            camBoxLabelCam7.Visible = (data.enabledCamera7);
-            camBoxLabelCam8.Visible = (data.enabledCamera8);
+            camBoxLabelCam1.Visible = (data.enabledCamera[0]);
+            camBoxLabelCam2.Visible = (data.enabledCamera[1]);
+            camBoxLabelCam3.Visible = (data.enabledCamera[2]);
+            camBoxLabelCam4.Visible = (data.enabledCamera[3]);
+            camBoxLabelCam5.Visible = (data.enabledCamera[4]);
+            camBoxLabelCam6.Visible = (data.enabledCamera[5]);
+            camBoxLabelCam7.Visible = (data.enabledCamera[6]);
+            camBoxLabelCam8.Visible = (data.enabledCamera[7]);
 
-            labelCameraBoxStatus1.Visible = (data.enabledCamera1);
-            labelCameraBoxStatus2.Visible = (data.enabledCamera2);
-            labelCameraBoxStatus3.Visible = (data.enabledCamera3);
-            labelCameraBoxStatus4.Visible = (data.enabledCamera4);
-            labelCameraBoxStatus5.Visible = (data.enabledCamera5);
-            labelCameraBoxStatus6.Visible = (data.enabledCamera6);
-            labelCameraBoxStatus7.Visible = (data.enabledCamera7);
-            labelCameraBoxStatus8.Visible = (data.enabledCamera8);
+            labelCameraBoxStatus1.Visible = (data.enabledCamera[0]);
+            labelCameraBoxStatus2.Visible = (data.enabledCamera[1]);
+            labelCameraBoxStatus3.Visible = (data.enabledCamera[2]);
+            labelCameraBoxStatus4.Visible = (data.enabledCamera[3]);
+            labelCameraBoxStatus5.Visible = (data.enabledCamera[4]);
+            labelCameraBoxStatus6.Visible = (data.enabledCamera[5]);
+            labelCameraBoxStatus7.Visible = (data.enabledCamera[6]);
+            labelCameraBoxStatus8.Visible = (data.enabledCamera[7]);
 
-            labelCameraBoxPosition1.Visible = (data.enabledCamera1);
-            labelCameraBoxPosition2.Visible = (data.enabledCamera2);
-            labelCameraBoxPosition3.Visible = (data.enabledCamera3);
-            labelCameraBoxPosition4.Visible = (data.enabledCamera4);
-            labelCameraBoxPosition5.Visible = (data.enabledCamera5);
-            labelCameraBoxPosition6.Visible = (data.enabledCamera6);
-            labelCameraBoxPosition7.Visible = (data.enabledCamera7);
-            labelCameraBoxPosition8.Visible = (data.enabledCamera8);
+            labelCameraBoxPosition1.Visible = (data.enabledCamera[0]);
+            labelCameraBoxPosition2.Visible = (data.enabledCamera[1]);
+            labelCameraBoxPosition3.Visible = (data.enabledCamera[2]);
+            labelCameraBoxPosition4.Visible = (data.enabledCamera[3]);
+            labelCameraBoxPosition5.Visible = (data.enabledCamera[4]);
+            labelCameraBoxPosition6.Visible = (data.enabledCamera[5]);
+            labelCameraBoxPosition7.Visible = (data.enabledCamera[6]);
+            labelCameraBoxPosition8.Visible = (data.enabledCamera[7]);
         }
 
         private void SaveProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1827,57 +1836,38 @@ namespace Vision_Automix
         }
 
         private void ErrorMessage(string message)
-                                    {
-                                        Console.WriteLine(message);
-                                        MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    }
+        {
+            Console.WriteLine(message);
+            MessageBox.Show(message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
 
         private void TickAudio_Tick(object sender, EventArgs e)
         {
             //GET AUDIO
 
-            if (data.enabledSpeaker1) { runData.speaker1Volume = audio1.GetVolume(); }
-            if (data.enabledSpeaker2) { runData.speaker2Volume = audio2.GetVolume(); }
-            if (data.enabledSpeaker3) { runData.speaker3Volume = audio3.GetVolume(); }
-            if (data.enabledSpeaker4) { runData.speaker4Volume = audio4.GetVolume(); }
-            if (data.enabledSpeaker5) { runData.speaker5Volume = audio5.GetVolume(); }
-            if (data.enabledSpeaker6) { runData.speaker6Volume = audio6.GetVolume(); }
-            if (data.enabledSpeaker7) { runData.speaker7Volume = audio7.GetVolume(); }
-            if (data.enabledSpeaker8) { runData.speaker8Volume = audio8.GetVolume(); }
+            if (data.enabledSpeaker[0]) { runData.speaker1Volume = audio1.GetVolume(); }
+            if (data.enabledSpeaker[1]) { runData.speaker2Volume = audio2.GetVolume(); }
+            if (data.enabledSpeaker[2]) { runData.speaker3Volume = audio3.GetVolume(); }
+            if (data.enabledSpeaker[3]) { runData.speaker4Volume = audio4.GetVolume(); }
+            if (data.enabledSpeaker[4]) { runData.speaker5Volume = audio5.GetVolume(); }
+            if (data.enabledSpeaker[5]) { runData.speaker6Volume = audio6.GetVolume(); }
+            if (data.enabledSpeaker[6]) { runData.speaker7Volume = audio7.GetVolume(); }
+            if (data.enabledSpeaker[7]) { runData.speaker8Volume = audio8.GetVolume(); }
 
-            if (data.enabledSpeaker1) { runData.speakersOpen[0] = Convert.ToInt32(audio1.GetOpen()); } 
-            if (data.enabledSpeaker2) { runData.speakersOpen[1] = Convert.ToInt32(audio2.GetOpen()); }
-            if (data.enabledSpeaker3) { runData.speakersOpen[2] = Convert.ToInt32(audio3.GetOpen()); }
-            if (data.enabledSpeaker4) { runData.speakersOpen[3] = Convert.ToInt32(audio4.GetOpen()); }
-            if (data.enabledSpeaker5) { runData.speakersOpen[4] = Convert.ToInt32(audio5.GetOpen()); }
-            if (data.enabledSpeaker6) { runData.speakersOpen[5] = Convert.ToInt32(audio6.GetOpen()); }
-            if (data.enabledSpeaker7) { runData.speakersOpen[6] = Convert.ToInt32(audio7.GetOpen()); }
-            if (data.enabledSpeaker8) { runData.speakersOpen[7] = Convert.ToInt32(audio8.GetOpen()); }
+            if (data.enabledSpeaker[0]) { runData.speakersOpen[0] = Convert.ToInt32(audio1.GetOpen()); }
+            if (data.enabledSpeaker[1]) { runData.speakersOpen[1] = Convert.ToInt32(audio2.GetOpen()); }
+            if (data.enabledSpeaker[2]) { runData.speakersOpen[2] = Convert.ToInt32(audio3.GetOpen()); }
+            if (data.enabledSpeaker[3]) { runData.speakersOpen[3] = Convert.ToInt32(audio4.GetOpen()); }
+            if (data.enabledSpeaker[4]) { runData.speakersOpen[4] = Convert.ToInt32(audio5.GetOpen()); }
+            if (data.enabledSpeaker[5]) { runData.speakersOpen[5] = Convert.ToInt32(audio6.GetOpen()); }
+            if (data.enabledSpeaker[6]) { runData.speakersOpen[6] = Convert.ToInt32(audio7.GetOpen()); }
+            if (data.enabledSpeaker[7]) { runData.speakersOpen[7] = Convert.ToInt32(audio8.GetOpen()); }
 
             //Console.WriteLine(runData.speakersOpen[0] + " " + runData.speakersOpen[1] + " " + runData.speakersOpen[2] + " " + runData.speakersOpen[3] + " " + runData.speakersOpen[4] + " " + runData.speakersOpen[5] + " " + runData.speakersOpen[6] + " " + runData.speakersOpen[7]);
         }
 
-        private void RestartDirector()
-        {
-            director.Initialize();
-            cameraOp.Initialize();
-            switcher.Initialize();
-            runData.ResetToDefault();
-        }
-   
 
-        private void TickDirector_Tick(object sender, EventArgs e)
-        {
 
-            //1-Director decides who is currently speaking
-            director.Tick(data, runData);
-            //2-Camera Operator moves cameras accordingly
-            cameraOp.UpdateAllCamerasBusyStatus(data, runData);          //This checks if previous camera moves are finished and updates camera status
-            cameraOp.Tick(data, runData);                               //This checks for new speakers and aims cameras
-            //3-Switcher sets cameras
-            switcher.Tick(data, runData);
-
-        }
 
         private void VotelengthTrackBar_Scroll(object sender, EventArgs e)
         {
@@ -1889,7 +1879,7 @@ namespace Vision_Automix
             ///*
             ///This is used to call presets from the presets-class.
             ///This requires the GUI to do some functions aswell after calling the preset, wich this function handles
-            
+
             bool presetLoadedSucessfully = Presets.LoadPreset(data, presetName);
             if (presetLoadedSucessfully == true) { LoadGUIfromData(); }
 
@@ -1939,8 +1929,8 @@ namespace Vision_Automix
             unsavedChanges(true);
         }
 
- 
-        
+
+
 
         private void unsavedChanges(bool exists)
         {
@@ -1969,14 +1959,14 @@ namespace Vision_Automix
             unsavedChanges(true);
         }
 
-       
+
 
         private void Form1_Move(object sender, EventArgs e)
         {
             //Pause drawing gui
             tickGUIupdate.Enabled = false;
             formMovingTimer.Enabled = true;
-            
+
         }
 
         private void formMovingTimer_Tick(object sender, EventArgs e)
@@ -1984,6 +1974,12 @@ namespace Vision_Automix
             //Start drawing gui again
             tickGUIupdate.Enabled = true;
             formMovingTimer.Enabled = false;
+        }
+
+        private void mixonePushData_Tick(object sender, EventArgs e)
+        {
+            mixone.PushProjectdata(data);
+            mixone.PushRuntimeData(runData);
         }
     }
 }
