@@ -18,12 +18,12 @@ namespace Vision_Automix
 
         Companion companion = new Companion();
 
-        
+        int pgmSpeakerHistory = 99;
 
         int genericLoopCounter1 = 0;
         int genericLoopCounter2 = 0;
 
-        
+
         readonly static int historyLength = 50;
 
         int historyWriteLoopCounter = 0;
@@ -33,20 +33,22 @@ namespace Vision_Automix
         int currentSpeaker;
         bool currentSpeakerChanged = false;
         int peopleTalking = 0;
-        int[] peopleTalkingHistory = new int[historyLength];
-
+        int[] peopleTalkingHistory = new int[historyLength * 2];
 
 
 
         int[] cameraPositions = new int[8];
         Int64[] cameraLastMoveTime = new Int64[8];
-        
-        int switcherPGM;
-        int switcherPRW;
+
+
+        Int64 lastCutTime = 0;
+        int switcherPGM = 1;
+        int switcherPRW = 1;
 
 
         public void initialize()
         {
+            Console.WriteLine("Initializing MixOne...");
             //Fill variables with default data
             speakersOpenOverTime = ArrayTools.Fill2DArray(speakersOpenOverTime);
             speakersOpenOverTimeSum = ArrayTools.FillArray(speakersOpenOverTimeSum);
@@ -56,8 +58,8 @@ namespace Vision_Automix
             cameraPositions = new int[8] { 99, 99, 99, 99, 99, 99, 99, 99 };
             cameraLastMoveTime = new Int64[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
 
-            int switcherPGM = 99;
-            int switcherPRW = 99;
+            int switcherPGM = 1;
+            int switcherPRW = 1;
 
 
             //Setup timers
@@ -66,6 +68,85 @@ namespace Vision_Automix
             tickTimer.Enabled = true;
             tickTimer.Elapsed += TickTimer_Elapsed;
         }
+
+
+        #region GUI PULL DATA
+        public bool[] GuiGetSpeakersOpen()
+        {
+            try
+            {
+                bool[] result = new bool[8] { false, false, false, false, false, false, false, false };
+
+                int localGuiSpeakerOpenCounter = 0;
+                foreach (int vol in speakersOpenOverTimeSum)
+                {
+                    result[localGuiSpeakerOpenCounter] = ((speakersOpenOverTimeSum[localGuiSpeakerOpenCounter] >= ((double)historyLength * 0.5)) ? true : false);
+                    localGuiSpeakerOpenCounter++;
+                }
+                return result;
+
+
+            } catch
+            {
+                return new bool[8] { false, false, false, false, false, false, false, false };
+
+            }
+
+        }
+
+        public int GuiGetPeopleTalking()
+        {
+            return peopleTalking;
+        }
+
+        public int GuiGetProgram()
+        {
+            return switcherPGM;
+        }
+        public int GuiGetPreview()
+        {
+            return switcherPRW;
+        }
+
+        public int GuiGetSpeakerIDForCamera(int cameraID)
+        {
+            return cameraPositions[(cameraID - 1)];
+        }
+
+        public string GuiGetSpeakerNameForCamera(int cameraID)
+        {
+
+            if (cameraID >= 1 && cameraID <= 8 && cameraPositions[(cameraID - 1)] != 99)
+            {
+                int positionOfCam = cameraPositions[(cameraID - 1)];
+                if (positionOfCam > 0) { return data.speakerNames[positionOfCam - 1]; }
+                else { return "Wide Shot"; }
+
+
+
+            }
+            else if (cameraID == 0)
+            {
+                return "Wide Shot";
+            }
+            else
+            {
+                return "Unknown";
+            }
+
+
+        }
+
+        public Int64 GuiGetCurrentShotDuration()
+        {
+            Int64 result = TimeManager.GetElapsedFromTimestamp(lastCutTime);
+            return ((result > 9999) ? 0 : result);
+        }
+
+        #endregion
+
+
+
 
         private void TickTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
@@ -84,20 +165,23 @@ namespace Vision_Automix
 
         private void tick()
         {
-            
-
+            //Console.WriteLine("...---...");
             ///*
             ///AUDIO AND SPEAKERS 
             ///
 
             # region Load current audio values into history
 
-            if (historyWriteLoopCounter >= speakersOpenOverTime.Length) { historyWriteLoopCounter = 0; }
+            if (historyWriteLoopCounter >= historyLength) { historyWriteLoopCounter = 0; }
             genericLoopCounter1 = 0;
             foreach (int openInt in runData.speakersOpen)
             {
                 speakersOpenOverTime[genericLoopCounter1, historyWriteLoopCounter] = openInt;
+
+                genericLoopCounter1++;
+
             }
+            historyWriteLoopCounter++;
             #endregion
 
             # region Create sum of history
@@ -112,29 +196,34 @@ namespace Vision_Automix
                     if (speakersOpenOverTime[genericLoopCounter1, genericLoopCounter2] == 1)
                     {
                         speakersOpenOverTimeSum[genericLoopCounter1]++;
+
                     }
                     genericLoopCounter2++;
                 }
+                genericLoopCounter2 = 0;
                 genericLoopCounter1++;
             }
+
             #endregion
 
             # region Decide how many people are talking
             int tempPeopleTalking = 0;
-            foreach (int talking in peopleTalkingHistory)
+            foreach (int talking in speakersOpenOverTimeSum)
             {
                 if (talking > (historyLength / 2)) { tempPeopleTalking++; }
             }
+
             #endregion
 
             # region Check this result against the last X results
-            if (peopleTalkingHistoryWriteLoopCounter >= historyLength) { peopleTalkingHistoryWriteLoopCounter = 0; }
+            if (peopleTalkingHistoryWriteLoopCounter >= (historyLength * 2)) { peopleTalkingHistoryWriteLoopCounter = 0; }
             peopleTalkingHistory[peopleTalkingHistoryWriteLoopCounter] = tempPeopleTalking;
 
             double avgPeopleTalk = Queryable.Average(peopleTalkingHistory.AsQueryable());
-            if (avgPeopleTalk < 1) { peopleTalking = 0; }
-            else if (avgPeopleTalk > 1 && avgPeopleTalk < 2) { peopleTalking = 1; }
-            else { avgPeopleTalk = 2; }
+            if (avgPeopleTalk < 0.1) { peopleTalking = 0; }
+            else if (avgPeopleTalk > 0.1 && avgPeopleTalk < 1) { peopleTalking = 1; }
+            else { peopleTalking = 2; }
+
 
             peopleTalkingHistoryWriteLoopCounter++;
             #endregion
@@ -151,6 +240,7 @@ namespace Vision_Automix
                     {
                         currentSpeaker = tempIndexOfSpeaker;
                         currentSpeakerChanged = true;
+                        Console.WriteLine("Setting speaker ID to " + currentSpeaker);
                     }
                 }
             }
@@ -161,40 +251,52 @@ namespace Vision_Automix
                 {
                     currentSpeaker = 0;
                     currentSpeakerChanged = true;
+                    Console.WriteLine("Setting speaker ID to " + currentSpeaker);
                 }
-                
+
             }
             #endregion
 
             ///*
             ///MOVE CAMERAS 
             ///
-
+            #region MOVE CAMERAS
             //Only move cameras is Current Speaker is changed && Current Speaker is not live on Program
             if (currentSpeakerChanged == true && (cameraPositions[(switcherPGM - 1)] != currentSpeaker))
             {
                 currentSpeakerChanged = false;
+                /*Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("Staring Move Camera routine...");*/
 
                 //Check if any cameras are pointed at the current speaker
                 bool[] camerasAvailable = GetCamerasPointingAtSpeaker(currentSpeaker);
 
                 //If there is one or more cameras available
-                if (camerasAvailable.Contains(true)){
-                    
-                    //There is already a camera pointed at the speaker, doing nothing
-
-                } else
+                
+                if (camerasAvailable.Contains(true))
                 {
+
+                    //There is already a camera pointed at the speaker, doing nothing
+                    //Console.WriteLine("Camera already pointed at Speaker " + currentSpeaker + ". Doing nothing.");
+
+                }
+                else
+                {
+                    //Console.WriteLine("No camera is pointed at Speaker " + currentSpeaker + ". Searching for camera available...");
                     //NO - No camera is pointed at current speaker
                     //Get available cameras (Cameras that have a position enabled for the speaker, but is NOT in PGM)
+
+
                     int cameraIDFound = 0;
 
                     genericLoopCounter1 = 0;
                     foreach (bool cam in camerasAvailable)
                     {
-                        if (cameraIDFound != 0)
+                        if (cameraIDFound == 0)
                         {
-                            if (camerasAvailable[genericLoopCounter1] == true && switcherPGM == (genericLoopCounter1 + 1)) { cameraIDFound = (genericLoopCounter1 + 1);  }
+                            if (GetPositionEnabledForCamera(data, (genericLoopCounter1 + 1), currentSpeaker) && switcherPGM != (genericLoopCounter1 + 1)) { cameraIDFound = (genericLoopCounter1 + 1);  }
+                            
                         }
                         genericLoopCounter1++;
                     }
@@ -202,41 +304,167 @@ namespace Vision_Automix
                     //Call position on camera if a camera is found
                     if (cameraIDFound != 0 && cameraIDFound >= 1 && cameraIDFound <= 8)
                     {
+                        //Console.WriteLine("Found Camera " + cameraIDFound + ". Pointing at Speaker " + currentSpeaker);
                         CallCameraPosition(data, cameraIDFound, currentSpeaker);
+
+                    }
+                    else
+                    {
+                       // Console.WriteLine("No camera found for Speaker " + currentSpeaker + ". Found cam ID: " + cameraIDFound);
                     }
                 }
-
-
-
-
-
-
-
+                
 
             }
+            #endregion
 
-
-
+           
             ///*
             ///SWITCH MIXER
             ///
 
             //Check if camera currently in PGM is showing the speaker currently talking
+            if (pgmSpeakerHistory != currentSpeaker)
+            {
+                
+                /*Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("Staring Switcher routine...");
+                Console.WriteLine("Current speaker: Speaker" + currentSpeaker);
+                Console.WriteLine("Current on air: Speaker " + cameraPositions[(switcherPGM - 1)]);*/
 
-            //YES
-            //Do nothing
+                //Is there any camera pointed at the current speaker?
+                bool[] camerasAvailable = GetCamerasPointingAtSpeaker(currentSpeaker);
 
-            //NO
-            //Is there any camera pointed at the current speaker?
-            //Yes
-            //Is minimum shot time reached?
-            //Yes
-            //Put camera in PROGRAM
-            //Reset current shottime
-            //No
-            //Put camera in PREVIEW
+                //Filter out cameras that are busy moving
+                genericLoopCounter1 = 0;
+                foreach (bool cam in camerasAvailable)
+                {
+
+                    if (GetCameraBusy(data, (genericLoopCounter1 + 1)) == true) { camerasAvailable[genericLoopCounter1] = false; }
+                    genericLoopCounter1++;
+                }
+                Console.WriteLine("Cameras available:");
+                Console.WriteLine("C1: " + camerasAvailable[0]);
+                Console.WriteLine("C2: " + camerasAvailable[1]);
+                Console.WriteLine("C3: " + camerasAvailable[2]);
+                Console.WriteLine("C4: " + camerasAvailable[3]);
+                Console.WriteLine("C5: " + camerasAvailable[4]);
+                Console.WriteLine("C6: " + camerasAvailable[5]);
+                Console.WriteLine("C7: " + camerasAvailable[6]);
+                Console.WriteLine("C8: " + camerasAvailable[7]);
+                if (camerasAvailable.Contains(true))
+                {
+
+                    //Get first available camera with speaker that is not busy
+                    int switchID = (Array.IndexOf(camerasAvailable, true) + 1);
+                    Console.WriteLine("Camera " + switchID + " is availabe for speaker " + currentSpeaker);
+                    //Is minimum shot time reached?
+                    if (TimeManager.GetElapsedFromTimestamp(lastCutTime) >= data.minimumShotTime)
+                    {
+                        if (switcherPGM != switchID)
+                        {
+                            Console.WriteLine("Minimum shottime reached. Switching on PGM...");
+                            //Put camera in PROGRAM
+                            TellMixer(data, runData, true, switchID);
+                            //TellMixer(data,runData,true,)
+                            lastCutTime = TimeManager.GetTimestamp();
+                            //Set bus info
+                            switcherPGM = switchID;
+                            pgmSpeakerHistory = currentSpeaker;
+                        }
+
+                    }
+                    else
+                    {
+                        if (switcherPRW != switchID)
+                        {
+                            Console.WriteLine("Minimum shottime NOT reached. Switching on PRW...");
+                            //Put camera in PREVIEW
+                            TellMixer(data, runData, false, switchID);
+                            //Set bus info
+                            switcherPRW = switchID;
+                        }
+
+                    }
 
 
+                }
+                else
+                {
+                    Console.WriteLine("NO CAMERA IS AVAILABLE");
+                }
+
+            }
+
+        }
+        private void TellMixer(ProjectData data, RuntimeData runData, bool bus, int camera)
+        {
+            ///*
+            ///BUS
+            ///TRUE = PROGRAM
+            ///FALSE = PREVIEW
+            ///
+
+
+
+            //Log
+            if (bus == true) { Console.WriteLine("Setting PGM to Camera " + camera); }
+
+            int page = 1;
+            int bank = 1;
+
+            //Get page/bank data
+            switch (camera)
+            {
+                case 1:
+                    page = (bus ? data.c1pgm[0] : data.c1prw[0]);
+                    bank = (bus ? data.c1pgm[1] : data.c1prw[1]);
+                    break;
+                case 2:
+                    page = (bus ? data.c2pgm[0] : data.c2prw[0]);
+                    bank = (bus ? data.c2pgm[1] : data.c2prw[1]);
+                    break;
+                case 3:
+                    page = (bus ? data.c3pgm[0] : data.c3prw[0]);
+                    bank = (bus ? data.c3pgm[1] : data.c3prw[1]);
+                    break;
+                case 4:
+                    page = (bus ? data.c4pgm[0] : data.c4prw[0]);
+                    bank = (bus ? data.c4pgm[1] : data.c4prw[1]);
+                    break;
+                case 5:
+                    page = (bus ? data.c5pgm[0] : data.c5prw[0]);
+                    bank = (bus ? data.c5pgm[1] : data.c5prw[1]);
+                    break;
+                case 6:
+                    page = (bus ? data.c6pgm[0] : data.c6prw[0]);
+                    bank = (bus ? data.c6pgm[1] : data.c6prw[1]);
+                    break;
+                case 7:
+                    page = (bus ? data.c7pgm[0] : data.c7prw[0]);
+                    bank = (bus ? data.c7pgm[1] : data.c7prw[1]);
+                    break;
+                case 8:
+                    page = (bus ? data.c8pgm[0] : data.c8prw[0]);
+                    bank = (bus ? data.c8pgm[1] : data.c8prw[1]);
+                    break;
+
+            }
+
+            //Send button press to companion
+            if ((bus == false && data.enablePRWbusControl == false) != true)      //Dont send command for PRW is PRW control is disabled
+            {
+                companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);
+            }
+
+
+
+
+
+            //Set GUI
+            if (bus == true) { runData.cameraPGM = camera; runData.lastCutTime = 0; }
+            else { runData.cameraPRW = camera; }
         }
 
         private bool[] GetCamerasPointingAtSpeaker(int speakerID)
@@ -249,19 +477,32 @@ namespace Vision_Automix
                 result[gcpasLoopCounter] = (cameraPositions[gcpasLoopCounter] == speakerID);
                 gcpasLoopCounter++;
             }
-
+            
             return result;
         }
 
-        private bool GetCameraBusy(ProjectData data, int cameraID)
+        public bool GetCameraBusy(ProjectData data, int cameraID)
         {
-            if (TimeManager.GetElapsedFromTimestamp(cameraLastMoveTime[(cameraID - 1)]) < data.cameraMoveTime) { return true; }
-            else { return false; }
+            try
+            {
+                if (TimeManager.GetElapsedFromTimestamp(cameraLastMoveTime[(cameraID - 1)]) < data.cameraMoveTime) { return true; }
+                else { return false; }
+            } catch  (Exception ex)
+            {
+                Console.WriteLine("ERROR getting Camera Busy status for Camera " + cameraID);
+                Console.WriteLine(ex);
+                return true;
+            }
+            
         }
 
         private bool GetPositionEnabledForCamera (ProjectData data, int cameraID, int speakerID)
         {
-            if (data.enabledCamera[(cameraID - 1)] && data.enabledSpeaker[(speakerID - 1)])
+            bool allow;
+            if (speakerID == 0) { allow = true; }
+            else { allow = data.enabledSpeaker[(speakerID - 1)]; }
+
+            if (data.enabledCamera[(cameraID - 1)] && allow)
             {
 
                 switch (cameraID)
@@ -450,9 +691,11 @@ namespace Vision_Automix
                         }
                         break;
                 }
+                
                 return false;
             } else
             {
+                Console.WriteLine("Speaker " + speakerID + " is not enabled, returning false.");
                 return false;
             }
         }
@@ -802,7 +1045,8 @@ namespace Vision_Automix
             cameraLastMoveTime[(cam - 1)] = TimeManager.GetTimestamp();
 
             //Set cameras position in data
-            runData.cameraPosition[(cam - 1)] = pos;
+            cameraPositions[(cam - 1)] = pos;
+            Console.WriteLine("Setting cameraPosition field " + (cam - 1) + " at " + pos);
 
             //Tell Companion to push the button
             companion.sendPush(runData, companion.getIPstringFromCon(data.companionCon), data.companionCon[4], page, bank);

@@ -547,6 +547,7 @@
             this.unchangedSettingsTimer = new System.Windows.Forms.Timer(this.components);
             this.formMovingTimer = new System.Windows.Forms.Timer(this.components);
             this.mixonePushData = new System.Windows.Forms.Timer(this.components);
+            this.labelPeopleTalking = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -8891,7 +8892,8 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logLabel});
+            this.logLabel,
+            this.labelPeopleTalking});
             this.statusStrip1.Location = new System.Drawing.Point(0, 621);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(997, 22);
@@ -9061,6 +9063,12 @@
             this.mixonePushData.Enabled = true;
             this.mixonePushData.Interval = 50;
             this.mixonePushData.Tick += new System.EventHandler(this.mixonePushData_Tick);
+            // 
+            // labelPeopleTalking
+            // 
+            this.labelPeopleTalking.Name = "labelPeopleTalking";
+            this.labelPeopleTalking.Size = new System.Drawing.Size(94, 17);
+            this.labelPeopleTalking.Text = "People talking: 0";
             // 
             // Form1
             // 
@@ -9845,6 +9853,7 @@
         private System.Windows.Forms.Timer formMovingTimer;
         private System.Windows.Forms.Label labelCurrentShotTime;
         private System.Windows.Forms.Timer mixonePushData;
+        private System.Windows.Forms.ToolStripStatusLabel labelPeopleTalking;
     }
 }
 
