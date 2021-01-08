@@ -341,7 +341,7 @@ namespace Vision_Automix
                 foreach (bool cam in camerasAvailable)
                 {
 
-                    if (GetCameraBusy(data, (genericLoopCounter1 + 1)) == true) { camerasAvailable[genericLoopCounter1] = false; }
+                    try { if (GetCameraBusy(data, (genericLoopCounter1 + 1)) == true) { camerasAvailable[genericLoopCounter1] = false; } } catch { Console.WriteLine("Error filtering out cameras that are busy moving..."); }
                     genericLoopCounter1++;
                 }
                 Console.WriteLine("Cameras available:");
@@ -502,202 +502,212 @@ namespace Vision_Automix
             if (speakerID == 0) { allow = true; }
             else { allow = data.enabledSpeaker[(speakerID - 1)]; }
 
-            if (data.enabledCamera[(cameraID - 1)] && allow)
+            try
             {
-
-                switch (cameraID)
+                if (data.enabledCamera[(cameraID - 1)] && allow)
                 {
-                    case 1:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c1p0[2]); 
-                            case 1:
-                                return Convert.ToBoolean(data.c1p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c1p2[2]); 
-                            case 3:
-                                return Convert.ToBoolean(data.c1p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c1p4[2]); 
-                            case 5:
-                                return Convert.ToBoolean(data.c1p5[2]); 
-                            case 6:
-                                return Convert.ToBoolean(data.c1p6[2]); 
-                            case 7:
-                                return Convert.ToBoolean(data.c1p7[2]); 
-                            case 8:
-                                return Convert.ToBoolean(data.c1p8[2]); 
-                        }break;
-                    case 2:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c2p0[2]);
-                            case 1:
-                                return Convert.ToBoolean(data.c2p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c2p2[2]); 
-                            case 3:
-                                return Convert.ToBoolean(data.c2p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c2p4[2]);
-                            case 5:
-                                return Convert.ToBoolean(data.c2p5[2]);
-                            case 6:
-                                return Convert.ToBoolean(data.c2p6[2]); 
-                            case 7:
-                                return Convert.ToBoolean(data.c2p7[2]);
-                            case 8:
-                                return Convert.ToBoolean(data.c2p8[2]); 
-                        }
-                        break;
-                    case 3:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c3p0[2]); 
-                            case 1:
-                                return Convert.ToBoolean(data.c3p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c3p2[2]); 
-                            case 3:
-                                return Convert.ToBoolean(data.c3p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c3p4[2]); 
-                            case 5:
-                                return Convert.ToBoolean(data.c3p5[2]);
-                            case 6:
-                                return Convert.ToBoolean(data.c3p6[2]); 
-                            case 7:
-                                return Convert.ToBoolean(data.c3p7[2]); 
-                            case 8:
-                                return Convert.ToBoolean(data.c3p8[2]); 
-                        }
-                        break;
-                    case 4:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c4p0[2]); 
-                            case 1:
-                                return Convert.ToBoolean(data.c4p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c4p2[2]);
-                            case 3:
-                                return Convert.ToBoolean(data.c4p3[2]);
-                            case 4:
-                                return Convert.ToBoolean(data.c4p4[2]); 
-                            case 5:
-                                return Convert.ToBoolean(data.c4p5[2]);
-                            case 6:
-                                return Convert.ToBoolean(data.c4p6[2]); 
-                            case 7:
-                                return Convert.ToBoolean(data.c4p7[2]); 
-                            case 8:
-                                return Convert.ToBoolean(data.c4p8[2]); 
-                        }
-                        break;
-                    case 5:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c5p0[2]); 
-                            case 1:
-                                return Convert.ToBoolean(data.c5p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c5p2[2]); 
-                            case 3:
-                                return Convert.ToBoolean(data.c5p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c5p4[2]); 
-                            case 5:
-                                return Convert.ToBoolean(data.c5p5[2]); 
-                            case 6:
-                                return Convert.ToBoolean(data.c5p6[2]); 
-                            case 7:
-                                return Convert.ToBoolean(data.c5p7[2]);
-                            case 8:
-                                return Convert.ToBoolean(data.c5p8[2]);
-                        }
-                        break;
-                    case 6:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c6p0[2]);
-                            case 1:
-                                return Convert.ToBoolean(data.c6p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c6p2[2]);
-                            case 3:
-                                return Convert.ToBoolean(data.c6p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c6p4[2]); 
-                            case 5:
-                                return Convert.ToBoolean(data.c6p5[2]); 
-                            case 6:
-                                return Convert.ToBoolean(data.c6p6[2]);
-                            case 7:
-                                return Convert.ToBoolean(data.c6p7[2]);
-                            case 8:
-                                return Convert.ToBoolean(data.c6p8[2]);
-                        }
-                        break;
-                    case 7:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c7p0[2]); 
-                            case 1:
-                                return Convert.ToBoolean(data.c7p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c7p2[2]); 
-                            case 3:
-                                return Convert.ToBoolean(data.c7p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c7p4[2]); 
-                            case 5:
-                                return Convert.ToBoolean(data.c7p5[2]); 
-                            case 6:
-                                return Convert.ToBoolean(data.c7p6[2]); 
-                            case 7:
-                                return Convert.ToBoolean(data.c7p7[2]);
-                            case 8:
-                                return Convert.ToBoolean(data.c7p8[2]); 
-                        }
-                        break;
-                    case 8:
-                        switch (speakerID)
-                        {
-                            case 0:
-                                return Convert.ToBoolean(data.c8p0[2]); 
-                            case 1:
-                                return Convert.ToBoolean(data.c8p1[2]); 
-                            case 2:
-                                return Convert.ToBoolean(data.c8p2[2]); 
-                            case 3:
-                                return Convert.ToBoolean(data.c8p3[2]); 
-                            case 4:
-                                return Convert.ToBoolean(data.c8p4[2]);
-                            case 5:
-                                return Convert.ToBoolean(data.c8p5[2]); 
-                            case 6:
-                                return Convert.ToBoolean(data.c8p6[2]);
-                            case 7:
-                                return Convert.ToBoolean(data.c8p7[2]);
-                            case 8:
-                                return Convert.ToBoolean(data.c8p8[2]); 
-                        }
-                        break;
+
+                    switch (cameraID)
+                    {
+                        case 1:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c1p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c1p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c1p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c1p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c1p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c1p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c1p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c1p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c1p8[2]);
+                            }
+                            break;
+                        case 2:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c2p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c2p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c2p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c2p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c2p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c2p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c2p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c2p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c2p8[2]);
+                            }
+                            break;
+                        case 3:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c3p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c3p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c3p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c3p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c3p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c3p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c3p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c3p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c3p8[2]);
+                            }
+                            break;
+                        case 4:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c4p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c4p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c4p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c4p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c4p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c4p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c4p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c4p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c4p8[2]);
+                            }
+                            break;
+                        case 5:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c5p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c5p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c5p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c5p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c5p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c5p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c5p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c5p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c5p8[2]);
+                            }
+                            break;
+                        case 6:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c6p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c6p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c6p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c6p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c6p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c6p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c6p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c6p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c6p8[2]);
+                            }
+                            break;
+                        case 7:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c7p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c7p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c7p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c7p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c7p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c7p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c7p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c7p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c7p8[2]);
+                            }
+                            break;
+                        case 8:
+                            switch (speakerID)
+                            {
+                                case 0:
+                                    return Convert.ToBoolean(data.c8p0[2]);
+                                case 1:
+                                    return Convert.ToBoolean(data.c8p1[2]);
+                                case 2:
+                                    return Convert.ToBoolean(data.c8p2[2]);
+                                case 3:
+                                    return Convert.ToBoolean(data.c8p3[2]);
+                                case 4:
+                                    return Convert.ToBoolean(data.c8p4[2]);
+                                case 5:
+                                    return Convert.ToBoolean(data.c8p5[2]);
+                                case 6:
+                                    return Convert.ToBoolean(data.c8p6[2]);
+                                case 7:
+                                    return Convert.ToBoolean(data.c8p7[2]);
+                                case 8:
+                                    return Convert.ToBoolean(data.c8p8[2]);
+                            }
+                            break;
+                    }
+
+                    return false;
                 }
-                
-                return false;
-            } else
+                else
+                {
+                    Console.WriteLine("Speaker " + speakerID + " is not enabled, returning false.");
+                    return false;
+                }
+            } catch
             {
-                Console.WriteLine("Speaker " + speakerID + " is not enabled, returning false.");
+                Console.WriteLine("Error getting Position Enabled for Camera.");
                 return false;
             }
+            
         }
 
         private void CallCameraPosition(ProjectData data, int cam, int pos)
